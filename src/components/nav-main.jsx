@@ -26,7 +26,7 @@ export function NavMain({
       <SidebarMenu>
         <SidebarMenuItem className="z-40">
           <SidebarMenuButton className="flex justify-end">
-          <SidebarTrigger /> 
+            <SidebarTrigger />
           </SidebarMenuButton>
         </SidebarMenuItem>
       </SidebarMenu>
@@ -41,9 +41,9 @@ export function NavMain({
             className="group/collapsible" >
             <SidebarMenuItem>
               <CollapsibleTrigger asChild>
-                <SidebarMenuButton tooltip={item.title} className={`${item.className} text-md`}>
+                <SidebarMenuButton tooltip={item.title} className={`${item.className} `}>
                   {item.icon && <img src={item.icon} />}
-                  <Link className="font-semibold" to={item?.url}>{item.title}</Link>
+                  <Link to={item?.url}>{item.title}</Link>
                 </SidebarMenuButton>
               </CollapsibleTrigger>
               <CollapsibleContent>
