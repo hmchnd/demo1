@@ -232,7 +232,7 @@ const SidebarTrigger = React.forwardRef(({ className, onClick, ...props }, ref) 
         toggleSidebar()
       }}
       {...props}>
-      <ChevronLeft />
+      <ChevronLeft className="!size-8" />
       <span className="sr-only">Toggle Sidebar</span>
     </Button>)
   );

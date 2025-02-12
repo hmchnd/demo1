@@ -62,8 +62,8 @@ export default function DashboardLayout() {
           <div className="size-8 rounded-sm bg-[#F0F0F3]">  </div>
           <div className="size-8 rounded-sm bg-[#F0F0F3]">  </div>
           <div className="size-8 rounded-sm bg-[#F0F0F3]">  </div>
-          <div className="max-w-lg w-full rounded-sm bg-[#F0F0F3] h-8"></div>
-          <div>
+          <div className="max-w-60 sm:max-w-sm  w-full rounded-sm bg-[#F0F0F3] h-8"></div>
+          <div className="flex-shrink-0">
             <button><img src={upload} alt="upload-icon" /></button>
           </div>
           <div className="flex gap-3 items-center flex-1  bg-[#F0F0F3] px-2 rounded-sm py-2" >
