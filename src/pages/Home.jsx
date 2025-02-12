@@ -3,6 +3,7 @@ import {
     Accordion, AccordionContent, AccordionItem,
     AccordionTrigger,
 } from "@/components/ui/accordion"
+import { project_managements } from "@/utils/constant"
 
 const Home = () => {
     return (
@@ -13,13 +14,9 @@ const Home = () => {
                         <span className="text-base text-[#60646C] font-semibold"><b className="text-black">4</b> Area Milestones</span></div></AccordionTrigger>
                     <AccordionContent>
                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 py-4 gap-y-4 gap-x-2">
-                            <AccordionCard />
-                            <AccordionCard />
-                            <AccordionCard />
-                            <AccordionCard />
-                            <AccordionCard />
-                            <AccordionCard />
-                            <AccordionCard />
+                            {project_managements?.map((projectItem) => (
+                                <AccordionCard key={projectItem.id} data={projectItem} />
+                            ))}
                         </div>
                     </AccordionContent>
                 </AccordionItem>

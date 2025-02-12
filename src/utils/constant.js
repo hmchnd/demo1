@@ -1,4 +1,4 @@
-export const project_management = [
+export const project_managements = [
   {
     id: 1,
     code: "1A-1",

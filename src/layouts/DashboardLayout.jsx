@@ -84,7 +84,7 @@ export default function DashboardLayout() {
             </div>
           </div>
           <div className="bg-[#F0F0F3]  py-2 rounded-sm flex justify-center px-5">
-            <button className="flex font-bold">Task View <ChevronDown /></button>
+            <button className="flex text-sm items-center font-bold">Task View <ChevronDown /></button>
           </div>
         </div>
         <div className="flex font-blod flex-1 flex-col gap-4 py-4 px-3 pt-0">
