@@ -1,22 +1,23 @@
 import { AppSidebar } from "@/components/app-sidebar"
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb"
 import { Input } from "@/components/ui/input"
-import { Separator } from "@/components/ui/separator"
 import {
   SidebarInset,
   SidebarProvider,
-  SidebarTrigger,
 } from "@/components/ui/sidebar"
-import { Bell, Menu, Search } from "lucide-react"
+import { Bell, ChevronDown, Menu, Plus, Search } from "lucide-react"
 import { Outlet } from "react-router-dom"
+
+// Icons 
 import calender from "@assets/icons/calender.svg"
+import dropdown from '@assets/icons/dropdown.svg'
+import dropdownTwo from '@assets/icons/dropdown2.svg'
+import upload from "@assets/icons/upload.svg"
+import minscreen from '@assets/icons/minscreen.svg'
+import fullscreen from '@assets/icons/fullscreen.svg'
+import lang from '@assets/icons/lang.svg'
+import filter from '@assets/icons/filter.svg'
+import { Slider } from "@/components/ui/slider"
+// Icons 
 
 export default function DashboardLayout() {
   return (
@@ -45,42 +46,48 @@ export default function DashboardLayout() {
             </div>
           </div>
         </header>
-        <div className="px-3">
+        <div className="px-3 flex gap-4 items-center">
           <button className="bg-[#BA5542] text-white px-2 py-1 rounded-md">Kanban</button>
-        </div>
-        {/* <header className="flex flex-1 h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12">
-          <div className="flex items-center gap-2 px-4 w-100">
-            <SidebarTrigger className="-ml-1" />
-            <Separator orientation="vertical" className="mr-2 h-4" />
-            <Breadcrumb className="flex flex-grow">
-              <BreadcrumbList className="flex flex-grow">
-                <div className="flex justify-between flex-grow">
-                  <BreadcrumbItem className="hidden md:block">
-                    <h2 className="text-black text-2xl font-bold">Your Next Project</h2>
-                  </BreadcrumbItem>
-                  <div className="flex items-center gap-2">
-                    <div className="relative">
-                      <Input type="email" className="rounded-xl bg-[#8b8d982b] pr-8" />
-                      <span className="absolute right-2 top-1/2 -translate-y-1/2">
-                        <Search />
-                      </span>
-                    </div>
-                    <div className="cursor-pointer">
-                      <Bell className="text-black font-bold" size={25} />
-                    </div>
-                    <div className="cursor-pointer">
-                      <img src={calender} alt="calender-icon" />
-                    </div>
-                    <div className="cursor-pointer">
-                      <Menu className="text-black" size={25} />
-                    </div>
-                  </div>
-                </div>
-              </BreadcrumbList>
-            </Breadcrumb>
+          <div>
+            <button>
+              <Plus strokeWidth={3} />
+            </button>
           </div>
-        </header>  */}
-        <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
+          <div>
+            <button className="h-8 w-12 px-2 rounded-sm bg-[#F0F0F3] "><img src={dropdown} className="w-20" alt="dropdown-icon" /></button>
+          </div>
+          <div>
+            <button><img src={dropdownTwo} alt="dropdown-icon" /></button>
+          </div>
+          <div className="size-8 rounded-sm bg-[#F0F0F3]">  </div>
+          <div className="size-8 rounded-sm bg-[#F0F0F3]">  </div>
+          <div className="size-8 rounded-sm bg-[#F0F0F3]">  </div>
+          <div className="max-w-sm w-full rounded-sm bg-[#F0F0F3] h-8"></div>
+          <div>
+            <button><img src={upload} alt="upload-icon" /></button>
+          </div>
+          <div className="flex gap-3 items-center flex-1  bg-[#F0F0F3] px-2 rounded-sm py-2" >
+            <div className="flex-shrink-0">
+              <button><img src={filter} alt="filter-icon" /></button>
+            </div>
+            <div className="flex-shrink-0">
+              <button><img src={lang} alt="lang-icon" /></button>
+            </div>
+            <div className=" max-w-40 w-full h-full flex items-center">
+              <Slider defaultValue={[33]} max={100} step={1} className="bg-[#f0f0f363]" />
+            </div>
+            <div className="flex-shrink-0">
+              <button> <img src={fullscreen} alt="" /></button>
+            </div>
+            <div className="flex-shrink-0">
+              <button> <img src={minscreen} alt="" /></button>
+            </div>
+          </div>
+          <div className="bg-[#F0F0F3] px-2 py-2 rounded-sm flex justify-center flex-1">
+            <button className="flex font-bold">Task View <ChevronDown /></button>
+          </div>
+        </div>
+        <div className="flex font-blod justify-center flex-1 flex-col gap-4 p-4 pt-0">
           <Outlet />
         </div>
       </SidebarInset>
