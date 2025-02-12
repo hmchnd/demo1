@@ -1,0 +1,26 @@
+export const project_management = [
+  {
+    id: 1,
+    code: "1A-1",
+    title: "Identify a project based on opportunities",
+    description: "Project identified",
+    assignee: "John Doe",
+    startDate: "1 Jan '24",
+    endDate: "31 Mar '24",
+    progress: "100%",
+    statusColor: "#4F85D9",
+    markColor: "#8ECEAA",
+  },
+  {
+    id: 2,
+    code: "2A-1",
+    title: "Further development of project schedule",
+    description: "Project schedule maintenance",
+    assignee: "John Doe",
+    startDate: "1 Nov '24",
+    endDate: "31 Dec '24",
+    progress: "100%",
+    statusColor: "#4F85D9",
+    markColor: "#F4A9AA",
+  },
+];

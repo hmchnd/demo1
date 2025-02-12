@@ -83,3 +83,6 @@
 .active-btn {
   @apply bg-[#e0e1e673];
 }
+body{
+  font-family: "Inter", serif;
+}

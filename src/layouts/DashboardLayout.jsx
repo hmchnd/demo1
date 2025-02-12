@@ -62,7 +62,7 @@ export default function DashboardLayout() {
           <div className="size-8 rounded-sm bg-[#F0F0F3]">  </div>
           <div className="size-8 rounded-sm bg-[#F0F0F3]">  </div>
           <div className="size-8 rounded-sm bg-[#F0F0F3]">  </div>
-          <div className="max-w-sm w-full rounded-sm bg-[#F0F0F3] h-8"></div>
+          <div className="max-w-lg w-full rounded-sm bg-[#F0F0F3] h-8"></div>
           <div>
             <button><img src={upload} alt="upload-icon" /></button>
           </div>
@@ -73,7 +73,7 @@ export default function DashboardLayout() {
             <div className="flex-shrink-0">
               <button><img src={lang} alt="lang-icon" /></button>
             </div>
-            <div className=" max-w-40 w-full h-full flex items-center">
+            <div className=" max-w-sm w-full h-full flex items-center">
               <Slider defaultValue={[33]} max={100} step={1} className="bg-[#f0f0f363]" />
             </div>
             <div className="flex-shrink-0">
@@ -83,11 +83,11 @@ export default function DashboardLayout() {
               <button> <img src={minscreen} alt="" /></button>
             </div>
           </div>
-          <div className="bg-[#F0F0F3] px-2 py-2 rounded-sm flex justify-center flex-1">
+          <div className="bg-[#F0F0F3]  py-2 rounded-sm flex justify-center px-5">
             <button className="flex font-bold">Task View <ChevronDown /></button>
           </div>
         </div>
-        <div className="flex font-blod justify-center flex-1 flex-col gap-4 p-4 pt-0">
+        <div className="flex font-blod flex-1 flex-col gap-4 py-4 px-3 pt-0">
           <Outlet />
         </div>
       </SidebarInset>
