@@ -2,7 +2,7 @@
 import * as React from "react"
 import { Slot } from "@radix-ui/react-slot"
 import { cva } from "class-variance-authority";
-import { ChevronLeft, PanelLeft } from "lucide-react"
+import { ChevronLeft, ChevronRight, } from "lucide-react"
 
 import { useIsMobile } from "@/hooks/use-mobile"
 import { cn } from "@/lib/utils"
@@ -141,7 +141,6 @@ const Sidebar = React.forwardRef((
   ref
 ) => {
   const { isMobile, state, openMobile, setOpenMobile } = useSidebar()
-
   if (collapsible === "none") {
     return (
       (<div
@@ -218,21 +217,24 @@ const Sidebar = React.forwardRef((
 Sidebar.displayName = "Sidebar"
 
 const SidebarTrigger = React.forwardRef(({ className, onClick, ...props }, ref) => {
-  const { toggleSidebar } = useSidebar()
-
+  const { state, toggleSidebar } = useSidebar()
+  console.log(state)
   return (
     (<Button
       ref={ref}
       data-sidebar="trigger"
       variant="ghost"
       size="icon"
-      className={cn("h-7 w-7", className)}
+      className={cn(
+        `h-7 w-7 ${className} ${state === 'collapsed' ? 'flex justify-center' : ''}`
+      )}
       onClick={(event) => {
         onClick?.(event)
         toggleSidebar()
       }}
       {...props}>
-      <ChevronLeft className="!size-8" />
+      {state === 'expanded' ? <ChevronLeft className="!size-8" /> : <ChevronRight className="!size-8" />}
+
       <span className="sr-only">Toggle Sidebar</span>
     </Button>)
   );
@@ -241,6 +243,7 @@ SidebarTrigger.displayName = "SidebarTrigger"
 
 const SidebarRail = React.forwardRef(({ className, ...props }, ref) => {
   const { toggleSidebar } = useSidebar()
+
 
   return (
     (<button
@@ -527,7 +530,7 @@ SidebarMenuBadge.displayName = "SidebarMenuBadge"
 const SidebarMenuSkeleton = React.forwardRef(({ className, showIcon = false, ...props }, ref) => {
   // Random width between 50 to 90%.
   const width = React.useMemo(() => {
-    return `${Math.floor(Math.random() * 40) + 50}%`;
+    return `${Math.floor(Math.random() * 40) + 50}% `;
   }, [])
 
   return (

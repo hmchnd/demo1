@@ -14,6 +14,7 @@ import {
   SidebarMenuSubButton,
   SidebarMenuSubItem,
   SidebarTrigger,
+  useSidebar,
 } from "@/components/ui/sidebar"
 import { Link } from "react-router-dom";
 import star from '@assets/icons/star.svg'
@@ -21,11 +22,12 @@ import star from '@assets/icons/star.svg'
 export function NavMain({
   items
 }) {
+  const { state, } = useSidebar()
   return (
     (<SidebarGroup>
       <SidebarMenu>
         <SidebarMenuItem className="z-40">
-          <SidebarMenuButton className="flex justify-end">
+          <SidebarMenuButton className={`flex ${state === 'collapsed' ? 'justify-center' : ''} justify-end`}>
             <SidebarTrigger />
           </SidebarMenuButton>
         </SidebarMenuItem>

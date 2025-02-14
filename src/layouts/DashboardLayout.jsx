@@ -26,7 +26,7 @@ export default function DashboardLayout() {
       <SidebarInset>
         <header className="p-3">
           <div className="flex justify-between items-center">
-            <h2 className="text-black text-2xl font-bold">Your Next Project</h2>
+            <h2 className="text-black text-[22px] font-bold">Your Next Project</h2>
             <div className="flex items-center gap-2">
               <div className="relative">
                 <Input type="email" className="rounded-xl bg-[##F0F0F3] pr-8" />
@@ -62,11 +62,11 @@ export default function DashboardLayout() {
           <div className="size-8 rounded-sm bg-[#F0F0F3]">  </div>
           <div className="size-8 rounded-sm bg-[#F0F0F3]">  </div>
           <div className="size-8 rounded-sm bg-[#F0F0F3]">  </div>
-          <div className="max-w-60 sm:max-w-sm  w-full rounded-sm bg-[#F0F0F3] h-8"></div>
+          <div className="max-w-sm sm:max-w-[20rem] w-full rounded-sm bg-[#F0F0F3] h-8"></div>
           <div className="flex-shrink-0">
             <button><img src={upload} alt="upload-icon" /></button>
           </div>
-          <div className="flex gap-3 items-center flex-1  bg-[#F0F0F3] px-2 rounded-sm py-2" >
+          <div className="flex gap-3 items-center max-w-sm flex-1  bg-[#F0F0F3] px-2 rounded-sm py-2" >
             <div className="flex-shrink-0">
               <button><img src={filter} alt="filter-icon" /></button>
             </div>
