@@ -16,7 +16,7 @@ const Header = () => {
     return (
         <> <header className="p-3">
             <div className="flex justify-between items-center">
-                <h2 className="text-black text-[22px] font-bold">Your Next Project</h2>
+                <h2 className="text-black text-[20px] font-bold">Your Next Project</h2>
                 <div className="flex items-center gap-2">
                     <div className="relative">
                         <Input type="email" className="rounded-xl bg-[##F0F0F3] pr-8" />

@@ -254,3 +254,21 @@ export const health_safety_environment = [
     markColor: "#8ECEAA",
   },
 ];
+export const metrics = [
+  { label: "On-Time Tasks Completion rate", value: "56%", color: "text-black" },
+  { label: "Issue Resolution Time", value: "48h", color: "text-black" },
+  { label: "Budget Variance", value: "-5%", color: "text-yellow-500" },
+  { label: "Resource Utilisation", value: "75%", color: "text-black" },
+  { label: "Approval Turnaround Time", value: "3%", color: "text-green-500" },
+  { label: "Late Task Percentage", value: "10%", color: "text-red-500" },
+];
+export const meetings = [
+  { title: "Project Kickoff Meeting", time: "12:00 - 13:00" },
+  { title: "Catch-up with John", time: "13:30 - 14:00" },
+  { title: "Risk Management Meeting", time: "15:00 - 16:00" },
+];
+export const users = [
+  { name: "John Doe", score: 1 },
+  { name: "John Doe the Second", score: 3 },
+  { name: "John Souls", score: 4 },
+];

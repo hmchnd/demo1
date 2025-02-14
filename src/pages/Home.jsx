@@ -1,14 +1,17 @@
 import AccordionCard from "@/components/AccordionCard"
+import Sidebar from "@/components/Sidebar"
 import {
     Accordion, AccordionContent, AccordionItem,
     AccordionTrigger,
 } from "@/components/ui/accordion"
-import { health_safety_environment, project_managements } from "@/utils/constant"
+import { health_safety_environment, meetings, metrics, project_managements, users } from "@/utils/constant"
+import userIcon from '@assets/icons/userorange.svg'
 
 const Home = () => {
     return (
         <div className="mt-2">
-            <Accordion type="single" collapsible defaultValue="item-2">
+            {/* <Sidebar/> */}
+            <Accordion type="multiple" collapsible defaultValue="item-2">
                 <AccordionItem value="item-0" className="bg-[#F0F0F3] rounded-sm px-2">
                     <AccordionTrigger>
                         <div className="flex flex-wrap gap-3">
@@ -20,7 +23,58 @@ const Home = () => {
                         </div>
                     </AccordionTrigger>
                     <AccordionContent>
-                        <h1>Test</h1>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 py-2 gap-y-4 gap-x-5">
+                            <div>
+                                <div className="flex justify-between items-center mb-1">
+                                    <h4 className="font-bold">KPIs</h4>
+                                    <span className="text-[#E5484D]"><b>1</b>
+                                    </span>
+                                </div>
+                                <ul className="list-none mt-2">
+                                    {metrics.map((metric, index) => (
+                                        <li key={index} className="flex justify-between mb-[2px]">
+                                            <span className="text-[12px]">{metric.label}</span>
+                                            <span className={`font-bold ${metric.color} text-[12px]`}>{metric.value}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                            <div>
+                                <div className="flex justify-between items-center mb-1">
+                                    <h4 className="font-bold">Follow-up</h4>
+                                </div>
+                                <ul>
+                                    {users.map((user, index) => (
+                                        <li key={index} className="flex items-center justify-between mb-[2px]">
+                                            <div className="flex items-center space-x-2">
+                                                <img src={userIcon} alt="user-icon" />
+                                                <span>{user.name}</span>
+                                            </div>
+                                            <span className="font-bold">{user.score}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                            <div>
+                                <div className="flex justify-between items-center mb-1">
+                                    <h4 className="font-bold">Task Completion Trends</h4>
+                                </div>
+
+                            </div>
+                            <div>
+                                <div className="flex justify-between items-center mb-1">
+                                    <h4 className="font-bold">Today</h4>
+                                </div>
+                                <ul className="list-none mt-2">
+                                    {meetings.map((meeting, index) => (
+                                        <li key={index} className="flex justify-between mb-[2px]">
+                                            <span className="text-[12px]">{meeting.title}</span>
+                                            <span className="font-bold text-[12px]">{meeting.time}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </div>
                     </AccordionContent>
                 </AccordionItem>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 py-2 gap-y-4 gap-x-2">
