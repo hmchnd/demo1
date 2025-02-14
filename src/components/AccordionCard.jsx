@@ -13,22 +13,24 @@ const AccordionCard = ({ data }) => {
             </div>
             <div>
                 <div className="flex items-center gap-1 text-base">
-                    <div className={`size-3 flex-shrink-0 rounded-full bg-[#8ECEAA]`}></div>
+                    <div className={`size-3 flex-shrink-0 rounded-full `} style={{
+                        backgroundColor: `${markColor}`
+                    }}></div>
                     <span className='text-[#60646C] text-[14px] font-semibold'>{code}</span>
                 </div>
                 <h4 className='text-[14px]/5 font-bold mb-2'>{title}</h4>
                 <div className='flex items-start gap-2 text-[15px] mt-1'>
                     <img src={task} alt="" className='size-4' />
-                    <span className='text-[#60646C] text-[14px]'>
+                    <span className='text-[#4e5053] text-[14px]'>
                         <span>{description}</span></span>
                 </div>
                 <div className='flex items-center gap-2 mt-1 '>
                     <img src={userIcon} alt="" className='flex-shrink-0 size-4' />
-                    <span className='text-[#60646C] text-[14px]'>{assignee}</span>
+                    <span className='text-[#4e5053] text-[14px]'>{assignee}</span>
                 </div>
                 <div className='flex items-center gap-2 mt-1'>
                     <img src={calenderIcon} alt="" className='font-bold size-4' />
-                    <span className='text-[#60646C] text-[14px]'>{startDate} - {endDate}</span>
+                    <span className='text-[#4e5053] text-[14px]'>{startDate} - {endDate}</span>
                 </div>
             </div>
 

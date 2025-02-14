@@ -46,7 +46,7 @@ export default function DashboardLayout() {
             </div>
           </div>
         </header>
-        <div className="px-3 flex gap-4 items-center">
+        <div className="px-3 flex gap-4 items-center justify-between">
           <button className="bg-[#BA5542] text-white px-2 py-1 rounded-md">Kanban</button>
           <div>
             <button>

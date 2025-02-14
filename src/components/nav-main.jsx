@@ -33,7 +33,14 @@ export function NavMain({
         </SidebarMenuItem>
       </SidebarMenu>
 
-      <SidebarGroupLabel className="text-center text-sm text-[#8B8D98] flex justify-center gap-2"><img src={star} alt="" /> Favorites</SidebarGroupLabel>
+      <SidebarMenu>
+        <SidebarMenuItem>
+          <SidebarMenuButton className="flex items-center justify-center gap-2">
+            <img src={star} alt="Favorites Icon" />
+            {state !== 'collapsed' && <span>Favorites</span>}
+          </SidebarMenuButton>
+        </SidebarMenuItem>
+      </SidebarMenu>
       <SidebarMenu className="mt-2">
         {items?.map((item) => (
           <Collapsible Collapsible
@@ -43,7 +50,8 @@ export function NavMain({
             className="group/collapsible" >
             <SidebarMenuItem>
               <CollapsibleTrigger asChild>
-                <SidebarMenuButton tooltip={item.title} className={`${item.className} `}>
+                <SidebarMenuButton tooltip={item.title} className={`${item.className} relative`}>
+                  {item?.task && <div className="bg-[#E5484D] size-4 rounded-full text-[10px] flex items-center absolute right-0 top-0 justify-center text-white"> {item?.task}</div>}
                   {item.icon && <img src={item.icon} />}
                   <Link to={item?.url}>{item.title}</Link>
                 </SidebarMenuButton>
@@ -65,6 +73,7 @@ export function NavMain({
           </Collapsible>
         ))}
       </SidebarMenu>
+
     </SidebarGroup >)
   );
 }

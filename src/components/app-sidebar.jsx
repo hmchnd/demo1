@@ -36,7 +36,8 @@ const data = {
       title: "Framsys Methodology",
       url: "about",
       icon: framsys,
-      className: 'active-btn'
+      className: 'active-btn',
+      task: 5
     },
     {
       title: "Construction NW",
@@ -48,7 +49,8 @@ const data = {
       title: "SAP Onboarding",
       url: "about",
       icon: sap,
-      className: 'active-btn'
+      className: 'active-btn',
+      task: 2
     },
     {
       title: "Recents",

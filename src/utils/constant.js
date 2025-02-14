@@ -45,7 +45,7 @@ export const project_managements = [
     endDate: "31 Oct '25",
     progress: "0%",
     statusColor: "#4F85D9",
-    markColor: "#F4A9AA",
+    markColor: "#E4C767",
   },
   {
     id: 5,
@@ -81,7 +81,7 @@ export const project_managements = [
     endDate: "27 Feb '25",
     progress: "100%",
     statusColor: "#4F85D9",
-    markColor: "#8ECEAA",
+    markColor: "#E4C767",
   },
   {
     id: 8,
@@ -141,7 +141,7 @@ export const project_managements = [
     endDate: "31 Dec '24",
     progress: "100%",
     statusColor: "#4F85D9",
-    markColor: "#F4A9AA",
+    markColor: "#E4C767",
   },
   {
     id: 13,
@@ -167,7 +167,7 @@ export const health_safety_environment = [
     endDate: "31 Mar '24",
     progress: "100%",
     statusColor: "#4F85D9",
-    markColor: "#8ECEAA",
+    markColor: "#E4C767",
   },
   {
     id: 2,
@@ -191,7 +191,7 @@ export const health_safety_environment = [
     endDate: "31 Aug '25",
     progress: "30%",
     statusColor: "#4F85D9",
-    markColor: "#8ECEAA",
+    markColor: "#E4C767",
   },
   {
     id: 4,
