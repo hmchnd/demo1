@@ -4,7 +4,6 @@ import calenderIcon from '@assets/icons/calendericon.svg'
 
 const AccordionCard = ({ data }) => {
     const { id, code, title, description, assignee, startDate, endDate, progress, statusColor, markColor } = data || {}
-    console.log(progress)
     return (
         <div className="flex gap-2 relative after:content-[''] after:absolute after:left-1/2 after:bottom-[-10px] after:h-[3px] after:w-[90%] after:bg-[#E0E1E6] after:-translate-x-1/2 after:rounded-full">
             <div className="h-full w-[10px] overflow-hidden rounded-md border-[2px] border-[#4f84d9a4] relative">

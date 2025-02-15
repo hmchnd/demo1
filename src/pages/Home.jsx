@@ -10,7 +10,6 @@ import userIcon from '@assets/icons/userorange.svg'
 const Home = () => {
     return (
         <div className="mt-2">
-            {/* <Sidebar/> */}
             <Accordion type="multiple" collapsible defaultValue="item-2">
                 <AccordionItem value="item-0" className="bg-[#F0F0F3] rounded-sm px-2">
                     <AccordionTrigger>

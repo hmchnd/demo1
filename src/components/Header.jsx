@@ -11,31 +11,34 @@ import fullscreen from '@assets/icons/fullscreen.svg'
 import lang from '@assets/icons/lang.svg'
 import filter from '@assets/icons/filter.svg'
 import { Slider } from "@/components/ui/slider"
+import Sidebar from "./Sidebar"
 
 const Header = () => {
     return (
-        <> <header className="p-3">
-            <div className="flex justify-between items-center">
-                <h2 className="text-black text-[20px] font-bold">Your Next Project</h2>
-                <div className="flex items-center gap-2">
-                    <div className="relative">
-                        <Input type="email" className="rounded-xl bg-[##F0F0F3] pr-8" />
-                        <span className="absolute right-2 top-1/2 -translate-y-1/2">
-                            <Search className="text-[gray]" />
-                        </span>
-                    </div>
-                    <div className="cursor-pointer">
-                        <Bell className="text-black font-bold" size={25} />
-                    </div>
-                    <div className="cursor-pointer">
-                        <img src={calender} alt="calender-icon" className="w-6 h-6" />
-                    </div>
-                    <div className="cursor-pointer">
-                        <Menu className="text-black" size={28} />
+        <>
+            <Sidebar />
+            <header className="p-3">
+                <div className="flex justify-between items-center">
+                    <h2 className="text-black text-[20px] font-bold">Your Next Project</h2>
+                    <div className="flex items-center gap-2">
+                        <div className="relative">
+                            <Input type="email" className="rounded-xl bg-[##F0F0F3] pr-8" />
+                            <span className="absolute right-2 top-1/2 -translate-y-1/2">
+                                <Search className="text-[gray]" />
+                            </span>
+                        </div>
+                        <div className="cursor-pointer">
+                            <Bell className="text-black font-bold" size={25} />
+                        </div>
+                        <div className="cursor-pointer">
+                            <img src={calender} alt="calender-icon" className="w-6 h-6" />
+                        </div>
+                        <div className="cursor-pointer">
+                            <Menu className="text-black" size={28} />
+                        </div>
                     </div>
                 </div>
-            </div>
-        </header>
+            </header>
             <div className="px-3 flex gap-4 items-center justify-between">
                 <button className="bg-[#BA5542] text-white px-2 py-1 rounded-md">Kanban</button>
                 <div>

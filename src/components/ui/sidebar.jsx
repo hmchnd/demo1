@@ -218,7 +218,6 @@ Sidebar.displayName = "Sidebar"
 
 const SidebarTrigger = React.forwardRef(({ className, onClick, ...props }, ref) => {
   const { state, toggleSidebar } = useSidebar()
-  console.log(state)
   return (
     (<Button
       ref={ref}
