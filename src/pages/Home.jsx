@@ -1,10 +1,12 @@
 import AccordionCard from "@/components/AccordionCard"
+import LineChart from "@/components/line-chart"
+
 import Sidebar from "@/components/Sidebar"
 import {
     Accordion, AccordionContent, AccordionItem,
     AccordionTrigger,
 } from "@/components/ui/accordion"
-import { health_safety_environment, meetings, metrics, project_managements, users } from "@/utils/constant"
+import { health_safety_environment, meetings, metrics, PROJECT_MANAGEMENTS, users } from "@/utils/constant"
 import userIcon from '@assets/icons/userorange.svg'
 
 const Home = () => {
@@ -58,7 +60,19 @@ const Home = () => {
                                 <div className="flex justify-between items-center mb-1">
                                     <h4 className="font-bold">Task Completion Trends</h4>
                                 </div>
-
+                                <div>
+                                    <LineChart />
+                                    <div className="flex items-center gap-4">
+                                        <div className="flex items-center gap-2">
+                                            <div className="size-3 rounded-full bg-[#876500]"></div><span>PMS</span>
+                                        </div>
+                                        <div className="flex items-center gap-2">
+                                            <div className="size-3 rounded-full bg-[#8A3A23]"></div><span>IT</span>
+                                        </div>
+                                        <div className="flex items-center gap-2">
+                                            <div className="size-3 rounded-full bg-[#659F4A]"></div><span>INT</span></div>
+                                    </div>
+                                </div>
                             </div>
                             <div>
                                 <div className="flex justify-between items-center mb-1">
@@ -148,7 +162,7 @@ const Home = () => {
                     <AccordionTrigger><div className="text-[16px] font-bold flex items-center gap-2">Project Management <span className="text-[`4px] text-[#60646C] font-semibold"><b className="text-black">5</b> Area Milestones</span></div></AccordionTrigger>
                     <AccordionContent>
                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 py-4 gap-y-4 gap-x-2">
-                            {project_managements?.map((projectItem) => (
+                            {PROJECT_MANAGEMENTS?.map((projectItem) => (
                                 <AccordionCard key={projectItem.id} data={projectItem} />
                             ))}
                         </div>

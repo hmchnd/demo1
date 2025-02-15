@@ -16,7 +16,7 @@ import Sidebar from "./Sidebar"
 const Header = () => {
     return (
         <>
-            <Sidebar />
+            {/* <Sidebar /> */}
             <header className="p-3">
                 <div className="flex justify-between items-center">
                     <h2 className="text-black text-[20px] font-bold">Your Next Project</h2>
@@ -55,7 +55,7 @@ const Header = () => {
                 <div className="size-8 rounded-sm bg-[#F0F0F3]">  </div>
                 <div className="size-8 rounded-sm bg-[#F0F0F3]">  </div>
                 <div className="size-8 rounded-sm bg-[#F0F0F3]">  </div>
-                <div className="max-w-sm sm:max-w-[20rem] w-full rounded-sm bg-[#F0F0F3] h-8"></div>
+                <div className="flex-1 w-full rounded-sm bg-[#F0F0F3] h-8"></div>
                 <div className="flex-shrink-0">
                     <button><img src={upload} alt="upload-icon" /></button>
                 </div>

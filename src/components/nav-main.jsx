@@ -22,11 +22,12 @@ export function NavMain({
   items
 }) {
   const { state, } = useSidebar()
+  console.log(state)
   return (
     (<SidebarGroup>
       <SidebarMenu>
         <SidebarMenuItem className="z-40">
-          <SidebarMenuButton className={`flex ${state === 'collapsed' ? 'justify-center' : ''} justify-end`}>
+          <SidebarMenuButton className={`flex ${state === 'collapsed' ? 'justify-center' : 'justify-end'}`}>
             <SidebarTrigger />
           </SidebarMenuButton>
         </SidebarMenuItem>
