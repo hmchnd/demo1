@@ -13,6 +13,7 @@ import filter from '@assets/icons/filter.svg'
 import { Slider } from "@/components/ui/slider"
 import Sidebar from "./Sidebar"
 import { useEffect, useRef, useState } from "react"
+import Navbar from "./Navbar"
 
 const Header = () => {
     const [showModal, setShowModal] = useState(false)
@@ -65,7 +66,8 @@ const Header = () => {
                     </div>
                 </div>
             </header>
-            <div className="px-3 flex gap-4 items-center justify-between">
+            <Navbar />
+            {/* <div className="px-3 flex gap-4 items-center justify-between">
                 <button className="bg-[#BA5542] text-white px-2 py-1 rounded-md">Kanban</button>
                 <div>
                     <button>
@@ -105,7 +107,8 @@ const Header = () => {
                 <div className="bg-[#F0F0F3]  py-2 rounded-sm flex justify-center px-5">
                     <button className="flex text-sm items-center font-bold">Task View <ChevronDown /></button>
                 </div>
-            </div></>
+            </div> */}
+        </>
     )
 }
 
