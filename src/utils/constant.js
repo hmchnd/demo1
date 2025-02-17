@@ -172,7 +172,8 @@ export const health_safety_environment = [
   {
     id: 2,
     code: "3A-2",
-    title: "Develop initial environmental management plans, select HSE management concept",
+    title:
+      "Develop initial environmental management plans, select HSE management concept",
     description: "Plans determined and approved with stakeholders",
     assignee: "John Doe",
     startDate: "1 Nov '24",
@@ -276,11 +277,78 @@ export const users = [
 export const projectDetails = [
   { label: "Planned Start Date", value: "19 June 2024" },
   { label: "Planned Finish Date", value: "8 February 2024" },
-  { label: "Preceding Task", value: "Stakeholder engagement regarding the project concept" },
-  { label: "Outcome", value: "Master project schedule" },
-  { 
-    label: "Outcome Description", 
-    value: "A master project schedule is a comprehensive plan outlining all tasks, timelines, and dependencies required to complete a project. It serves as a central reference for tracking progress, managing resources, and ensuring alignment among stakeholders."
+  {
+    label: "Preceding Task",
+    value: "Stakeholder engagement regarding the project concept",
   },
-  { label: "Responsible", value: "Framsys Admin" }
+  { label: "Outcome", value: "Master project schedule" },
+  {
+    label: "Outcome Description",
+    value:
+      "A master project schedule is a comprehensive plan outlining all tasks, timelines, and dependencies required to complete a project. It serves as a central reference for tracking progress, managing resources, and ensuring alignment among stakeholders.",
+  },
+  { label: "Responsible", value: "Framsys Admin" },
+];
+
+export const pendingTasks = [
+  {
+    id: 1,
+    taskId: "3A-1-1",
+    progress: "10%",
+    title: "Define project scope and objectives",
+    markColor: "#F4A9AA",
+    assignedTo: "John Doe",
+    startDate: "13 Jul '24",
+    endDate: "30 Sep '24",
+    completeProgress: "100%",
+  },
+];
+
+export const progressTasks = [
+  {
+    id: 1,
+    taskId: "3A-1-2",
+    progress: "10%",
+    title: "Identify tasks and dependencies",
+    markColor: "#8ECEAA",
+    assignedTo: "John Doe",
+    startDate: "13 Jul '24",
+    endDate: "30 Sep '24",
+    completeProgress: "33%",
+  },
+  {
+    id: 2,
+    taskId: "3A-1-3",
+    progress: "10%",
+    title: "Break down tasks and map dependencies",
+    markColor: "#8ECEAA",
+    assignedTo: "John Doe",
+    startDate: "24 Jun ‘24",
+    endDate: " 27 Feb ‘25",
+    completeProgress: "33%",
+  },
+  {
+    id: 3,
+    taskId: "3A-1-3",
+    progress: "10%",
+    title: "Perform critical path analysis",
+    markColor: "#E4C767",
+    assignedTo: "John Doe",
+    startDate: "1 Jul '25",
+    endDate: "31 Aug '25",
+    completeProgress: "33%",
+  },
+];
+export const completedTasks = [
+  {
+    id: 1,
+    taskId: "3A-1-5",
+    progress: "10%",
+    title: "Conduct stakeholder review and approval",
+    markColor: "#F4A9AA",
+    assignedTo: "John Doe",
+    startDate: "1 Jan '25 ",
+    endDate: "24 Dec '25",
+    completeProgress: "0%",
+  },
 ];
