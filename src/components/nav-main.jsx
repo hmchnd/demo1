@@ -22,7 +22,6 @@ export function NavMain({
   items
 }) {
   const { state, } = useSidebar()
-  console.log(state)
   return (
     (<SidebarGroup>
       <SidebarMenu>

@@ -12,11 +12,37 @@ import lang from '@assets/icons/lang.svg'
 import filter from '@assets/icons/filter.svg'
 import { Slider } from "@/components/ui/slider"
 import Sidebar from "./Sidebar"
+import { useEffect, useRef, useState } from "react"
 
 const Header = () => {
+    const [showModal, setShowModal] = useState(false)
+    const sidebarRef = useRef(null)
+
+    function handleShowModal() {
+        setShowModal((prev) => !prev)
+    }
+
+    useEffect(() => {
+        function handleClickOutside(event) {
+            if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
+                setShowModal(false);
+            }
+        }
+        if (showModal) {
+            document.addEventListener("mousedown", handleClickOutside);
+        }
+
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, [showModal]);
     return (
         <>
-            {/* <Sidebar /> */}
+            {showModal && (
+                <div ref={sidebarRef} className="fixed right-0 top-0 h-svh z-50 p-5 bg-white shadow-md min-w-96">
+                    <Sidebar />
+                </div>
+            )}
             <header className="p-3">
                 <div className="flex justify-between items-center">
                     <h2 className="text-black text-[20px] font-bold">Your Next Project</h2>
@@ -33,9 +59,9 @@ const Header = () => {
                         <div className="cursor-pointer">
                             <img src={calender} alt="calender-icon" className="w-6 h-6" />
                         </div>
-                        <div className="cursor-pointer">
+                        <button className="cursor-pointer" onClick={handleShowModal}>
                             <Menu className="text-black" size={28} />
-                        </div>
+                        </button>
                     </div>
                 </div>
             </header>

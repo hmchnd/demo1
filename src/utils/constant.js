@@ -272,3 +272,15 @@ export const users = [
   { name: "John Doe the Second", score: 3 },
   { name: "John Souls", score: 4 },
 ];
+
+export const projectDetails = [
+  { label: "Planned Start Date", value: "19 June 2024" },
+  { label: "Planned Finish Date", value: "8 February 2024" },
+  { label: "Preceding Task", value: "Stakeholder engagement regarding the project concept" },
+  { label: "Outcome", value: "Master project schedule" },
+  { 
+    label: "Outcome Description", 
+    value: "A master project schedule is a comprehensive plan outlining all tasks, timelines, and dependencies required to complete a project. It serves as a central reference for tracking progress, managing resources, and ensuring alignment among stakeholders."
+  },
+  { label: "Responsible", value: "Framsys Admin" }
+];
