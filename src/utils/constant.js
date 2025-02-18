@@ -2,13 +2,13 @@ export const PROJECT_MANAGEMENTS = [
   {
     id: 1,
     code: "3A-1",
-    title: "Identify a project based on opportunities",
+    title: "Identify a project based on opportunities..",
     description: "Project identified",
     assignee: "John Doe",
     startDate: "1 Jan '24",
     endDate: "31 Mar '24",
     progress: "100%",
-    statusColor: "#4F85D9",
+    statusColor: "#90B2E7",
     markColor: "#8ECEAA",
   },
   {
@@ -20,7 +20,7 @@ export const PROJECT_MANAGEMENTS = [
     startDate: "1 Nov '24",
     endDate: "31 Dec '24",
     progress: "100%",
-    statusColor: "#4F85D9",
+    statusColor: "#90B2E7",
     markColor: "#F4A9AA",
   },
   {
@@ -32,7 +32,7 @@ export const PROJECT_MANAGEMENTS = [
     startDate: "1 Jul '25",
     endDate: "31 Aug '25",
     progress: "25%",
-    statusColor: "#4F85D9",
+    statusColor: "#90B2E7",
     markColor: "#8ECEAA",
   },
   {
@@ -44,7 +44,7 @@ export const PROJECT_MANAGEMENTS = [
     startDate: "12 Sep '25",
     endDate: "31 Oct '25",
     progress: "0%",
-    statusColor: "#4F85D9",
+    statusColor: "#90B2E7",
     markColor: "#E4C767",
   },
   {
@@ -56,7 +56,7 @@ export const PROJECT_MANAGEMENTS = [
     startDate: "1 Jan '25",
     endDate: "24 Dec '25",
     progress: "100%",
-    statusColor: "#4F85D9",
+    statusColor: "#90B2E7",
     markColor: "#8ECEAA",
   },
   {
@@ -68,7 +68,7 @@ export const PROJECT_MANAGEMENTS = [
     startDate: "3 Apr '24",
     endDate: "30 Jun '24",
     progress: "100%",
-    statusColor: "#4F85D9",
+    statusColor: "#90B2E7",
     markColor: "#F4A9AA",
   },
   {
@@ -80,7 +80,7 @@ export const PROJECT_MANAGEMENTS = [
     startDate: "24 Jun '24",
     endDate: "27 Feb '25",
     progress: "100%",
-    statusColor: "#4F85D9",
+    statusColor: "#90B2E7",
     markColor: "#E4C767",
   },
   {

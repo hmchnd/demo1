@@ -1,7 +1,7 @@
 import AccordionCard from "@/components/AccordionCard"
 import LineChart from "@/components/line-chart"
 
-import Sidebar from "@/components/Sidebar"
+
 import {
     Accordion, AccordionContent, AccordionItem,
     AccordionTrigger,

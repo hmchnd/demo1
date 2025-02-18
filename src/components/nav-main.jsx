@@ -49,10 +49,10 @@ export function NavMain({
             className="group/collapsible" >
             <SidebarMenuItem>
               <CollapsibleTrigger asChild>
-                <SidebarMenuButton tooltip={item.title} className={`${item.className} relative`}>
+                <SidebarMenuButton tooltip={item.title} className={`${item.className} relative `}>
                   {item?.task && <div className="bg-[#E5484D] size-4 rounded-full text-[10px] flex items-center absolute right-0 top-0 justify-center text-white"> {item?.task}</div>}
                   {item.icon && <img src={item.icon} />}
-                  <Link to={item?.url}>{item.title}</Link>
+                  <Link to={item?.url} className="text-sm font-semibold">{item.title}</Link>
                 </SidebarMenuButton>
               </CollapsibleTrigger>
               <CollapsibleContent>
