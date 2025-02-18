@@ -8,7 +8,7 @@ import userIcon from '@assets/icons/userorange.svg'
 
 
 const TaskAccordion = ({ color }) => {
-    
+
     return (
         <>
             <AccordionItem value="item-0" className={`rounded-sm px-2 bg-[${color || 'bg-transparent'}]`} >
@@ -29,11 +29,11 @@ const TaskAccordion = ({ color }) => {
                                 <span className="text-[#E5484D]"><b>1</b>
                                 </span>
                             </div>
-                            <ul className="list-none mt-2">
+                            <ul className="list-none mt-2 flex flex-col gap-2">
                                 {metrics.map((metric, index) => (
-                                    <li key={index} className="flex justify-between mb-[2px]">
-                                        <span className="text-[12px]">{metric.label}</span>
-                                        <span className={`font-bold ${metric.color} text-[12px]`}>{metric.value}</span>
+                                    <li key={index} className="flex justify-between ">
+                                        <span className="text-[14px]">{metric.label}</span>
+                                        <span className={`font-bold ${metric.color} text-[14px]`}>{metric.value}</span>
                                     </li>
                                 ))}
                             </ul>
@@ -42,12 +42,12 @@ const TaskAccordion = ({ color }) => {
                             <div className="flex justify-between items-center mb-1">
                                 <h4 className="font-bold">Follow-up</h4>
                             </div>
-                            <ul>
+                            <ul className="flex flex-col gap-1">
                                 {users.map((user, index) => (
                                     <li key={index} className="flex items-center justify-between mb-[2px]">
                                         <div className="flex items-center space-x-2">
                                             <img src={userIcon} alt="user-icon" />
-                                            <span>{user.name}</span>
+                                            <span className="text-sm">{user.name}</span>
                                         </div>
                                         <span className="font-bold">{user.score}</span>
                                     </li>

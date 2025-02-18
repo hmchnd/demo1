@@ -17,7 +17,8 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip"
-
+import TasksSidebar from "../TasksSidebar";
+import { useSelector } from "react-redux";
 const SIDEBAR_COOKIE_NAME = "sidebar_state"
 const SIDEBAR_COOKIE_MAX_AGE = 60 * 60 * 24 * 7
 const SIDEBAR_WIDTH = "16rem"
@@ -267,8 +268,10 @@ const SidebarRail = React.forwardRef(({ className, ...props }, ref) => {
 SidebarRail.displayName = "SidebarRail"
 
 const SidebarInset = React.forwardRef(({ className, ...props }, ref) => {
+  const isSidebarOpen = useSelector((state) => state.slidebarSlice?.isOpen);
   return (
     (
+      <div className="flex">
         <main
           ref={ref}
           className={cn(
@@ -277,6 +280,11 @@ const SidebarInset = React.forwardRef(({ className, ...props }, ref) => {
             className
           )}
           {...props} />
+        {isSidebarOpen && <div className="w-full max-w-[400px] h-svh py-5 pr-5">
+          <TasksSidebar />
+        </div>}
+
+      </div>
     )
   );
 })

@@ -5,8 +5,11 @@ import statusIcon from "@assets/icons/statuslight.svg"
 import downIcon from "@assets/icons/downiconsmall.svg"
 import bell from '@assets/icons/bell.svg'
 import Navbar from "./Navbar"
+import { useDispatch } from "react-redux"
+import { toggleSidebar } from "@/store/slices/slidebarSlice"
 
 const Header = () => {
+    const dispatch = useDispatch()
     return (
         <>
             <header className="p-3">
@@ -26,7 +29,7 @@ const Header = () => {
                             <img src={bell} alt="" />
                         </div>
                         <button className="cursor-pointer" >
-                            <Menu className="text-black" size={28} />
+                            <Menu className="text-black" size={28} onClick={() => dispatch(toggleSidebar())} />
                         </button>
                     </div>
                 </div>
