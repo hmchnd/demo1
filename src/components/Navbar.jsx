@@ -23,7 +23,7 @@ import { Link, useLocation } from "react-router-dom"
 import filterIcon from '@assets/icons/filtericon.svg'
 import calicon from '@assets/icons/calicon.svg'
 import responsibleicon from '@assets/icons/responsibleicon.svg'
-import statusIcon from '@assets/icons/statusIcon.svg'
+import statusIcon from '@assets/icons/statusicon.svg'
 import camIcon from '@assets/icons/camicon.svg'
 import updown from '@assets/icons/updown.svg'
 import share from '@assets/icons/share.svg'
