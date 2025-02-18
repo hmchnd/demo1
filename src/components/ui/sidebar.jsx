@@ -271,7 +271,7 @@ const SidebarInset = React.forwardRef(({ className, ...props }, ref) => {
   const isSidebarOpen = useSelector((state) => state.slidebarSlice?.isOpen);
   return (
     (
-      <div className="flex">
+      <div className={`flex ${!isSidebarOpen ? 'flex-1' : ''}`}>
         <main
           ref={ref}
           className={cn(
