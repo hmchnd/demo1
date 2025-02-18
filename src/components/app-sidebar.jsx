@@ -28,7 +28,7 @@ const data = {
     avatar: user,
   },
   setting: {
-    name: 'setting',
+    name: 'Setting',
     avatar: setting
   },
   navMain: [
