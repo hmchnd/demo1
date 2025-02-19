@@ -37,6 +37,8 @@ const Navbar = () => {
 
     const [responsible, setResponsible] = useState(false)
     const [period, setPeriod] = useState(false)
+
+
     const handleCheckboxClick = (e, setter) => {
         e.preventDefault()
         e.stopPropagation()
@@ -55,7 +57,7 @@ const Navbar = () => {
                 </div>
                 <div>
                     <button className="w-[91px] h-[32px] px-2 flex gap-2 text-sm items-center bg-[#F0F0F3] rounded-[6px] text-[#60646C] font-medium">
-                        <Plus size={40} color="#60646C" strokeWidth={3} />Activity</button>
+                        <Plus size={currentPath === '/' ? 21 : 35} color="#60646C" strokeWidth={3} />{currentPath === '/' ? 'Task' : 'Activity'}</button>
                 </div>
             </div>
             <div className="flex items-center gap-2">

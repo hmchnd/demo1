@@ -21,10 +21,13 @@ const Home = () => {
                             <h4 className="font-black">IDENTIFY</h4>
                             <span className="size-6 rounded-full bg-[#E8E8EC] flex justify-center items-center">4</span>
                         </div>
-                        <div className="flex justify-between items-start mt-1">
-                            <small className="text-[#60646C] text-[12px]" >April</small>
-                            <div className="size-4 rounded-sm bg-[#30A46C] rotate-45 mt-3"></div>
-                            <small className="mr-2 text-[#60646C] text-[12px]">June</small>
+                        <div className="flex justify-between items-start">
+                            <small className="text-[#60646C] text-[9px]" >April</small>
+                        </div>
+                        <div className="flex justify-center">
+                            <div className="size-4 font-semibold -ml-14 text-[10px] flex items-center justify-center border-2 rounded-full border-[#E5484D]">
+                                P
+                            </div>
                         </div>
                     </div>
                     <div>
@@ -32,19 +35,23 @@ const Home = () => {
                             <h4 className="font-black">SELECT</h4>
                             <span className="size-6 rounded-full bg-[#E8E8EC] flex justify-center items-center">3</span>
                         </div>
-                        <div className="flex justify-center mt-1">
-                            <small className="text-[#60646C] text-[12px] ml-4">August</small></div>
+                        <div className="flex ">
+                            <small className="text-[#60646C] text-[9px]">June</small></div>
                     </div>
                     <div>
                         <div className="flex gap-2 font-bold items-center justify-center bg-[#F0F0F3] rounded-sm py-1">
                             <h4 className="font-black">DEFINE</h4>
                             <span className="size-6 rounded-full bg-[#E8E8EC] flex justify-center items-center">6</span>
                         </div>
-                        <div className="flex justify-between items-start mt-1">
-                            <div className="size-4 rounded-sm bg-[#BA5542] rotate-45 mt-3"></div>
-                            <div>
-                                <small className="mr-2 text-[#60646C] text-[12px]">October</small>
-                                <span className="text-[#BA5542] font-semibold text-[12px]">Monday, 30 Oct, 43w</span>
+                        <div className="flex justify-between items-start">
+                            <div className="flex gap-1">
+                                <small className="text-[#60646C] text-[9px]">August</small>
+
+                            </div>
+                        </div>
+                        <div className="flex justify-center">
+                            <div className="size-4 font-semibold -ml-4 text-[10px] flex items-center justify-center border-2 rounded-full border-[#60646C]">
+                                M
                             </div>
                         </div>
                     </div>
@@ -53,11 +60,16 @@ const Home = () => {
                             <h4 className="font-black text-[#BA5542]">EXECUTE</h4>
                             <span className="size-5 rounded-full bg-[#E5484D] text-white flex justify-center items-center">1</span>
                         </div>
-                        <div className="flex flex-col justify-center items-center mt-1">
-                            <small className="text-[#60646C]">December</small>
-                            <div className="flex items-center gap-2">
-                                <div className="size-4 rounded-sm bg-[#60646C] "></div>
-                                <div className="size-4 rounded-sm bg-[#BA5542] "></div>
+                        <div className="flex gap-[10px] items-center">
+                            <small className="text-[#60646C] text-[9px]">October</small>
+                            <span className="text-[#BA5542] font-semibold text-[9px]">Monday, 30 Oct, 43w</span>
+                        </div>
+                        <div className="flex justify-center gap-1">
+                            <div className="size-4 font-semibold text-[10px] flex items-center justify-center border-2 rounded-full border-[#E5484D]">
+                                M
+                            </div>
+                            <div className="h-4 w-[21px] font-semibold  text-[10px] flex items-center justify-center border-2 rounded-[50px] border-[#86DC45]">
+                                AC
                             </div>
                         </div>
                     </div>
@@ -66,12 +78,14 @@ const Home = () => {
                             <h4 className="font-black">OPERATE & CLOSE</h4>
                             <span className="size-6 rounded-full bg-[#E8E8EC] flex justify-center items-center">3</span>
                         </div>
-                        <div className="mt-1">
-                            <div className="flex justify-center">
-                                <small className="text-[12px] text-[#60646C]">February</small>
+                        <div>
+                            <div className="flex ">
+                                <small className="text-[9px] text-[#60646C]">December</small>
                             </div>
-                            <div className="flex justify-end ">
-                                <div className="size-4 rounded-full bg-[#30A46C] mr-6"></div>
+                        </div>
+                        <div className="flex justify-center">
+                            <div className="size-4 font-semibold -ml-4 text-[10px] flex items-center justify-center border-2 rounded-full border-[#60646C]">
+                                M
                             </div>
                         </div>
                     </div>
