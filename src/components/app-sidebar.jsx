@@ -37,55 +37,95 @@ const data = {
       url: "about",
       icon: framsys,
       className: 'active-btn',
-      task: 5
+      task: 5,
+      styleConfig: {
+        w: '22px',
+        h: "22px"
+      }
     },
     {
       title: "Construction NW",
       url: "about",
       icon: construction,
-      className: 'active-btn'
+      className: 'active-btn',
+      styleConfig: {
+        w: '22.16px',
+        h: "26px"
+      }
     },
     {
       title: "SAP Onboarding",
       url: "about",
       icon: sap,
       className: 'active-btn',
-      task: 2
+      task: 2,
+      styleConfig: {
+        w: '15.82px',
+        h: "26px"
+      }
     },
     {
       title: "Recents",
       url: "about",
       icon: recents,
+      styleConfig: {
+        w: '20px',
+        h: "20px"
+      }
     },
     {
       title: "Portfolio",
       url: "about",
       icon: portfolio,
+      styleConfig: {
+        w: '24px',
+        h: "21.87px"
+      }
     },
     {
       title: "Roadmap",
-      url: "about",
+      url: "/",
       icon: roadmap,
+      styleConfig: {
+        w: '24px',
+        h: "24px"
+      }
     },
     {
       title: "Kanban",
-      url: "about",
+      url: "kanban",
       icon: kanban,
+      styleConfig: {
+        w: '22px',
+        h: "22px"
+      }
     },
     {
       title: "Gantt",
       url: "about",
       icon: gantt,
+      styleConfig: {
+        w: '24px',
+        h: "24px"
+      }
     },
     {
       title: "Team",
       url: "about",
       icon: team,
+      styleConfig: {
+        w: '22px',
+        h: "22px"
+      }
     },
     {
       title: "Reports",
       url: "about",
       icon: reports,
+      styleConfig: {
+        w: '20.67px',
+        h: "22px"
+      }
     },
   ],
 }

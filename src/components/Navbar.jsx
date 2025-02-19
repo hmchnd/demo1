@@ -38,7 +38,6 @@ const Navbar = () => {
     const [responsible, setResponsible] = useState(false)
     const [period, setPeriod] = useState(false)
 
-
     const handleCheckboxClick = (e, setter) => {
         e.preventDefault()
         e.stopPropagation()

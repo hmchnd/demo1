@@ -34,42 +34,44 @@ export function NavMain({
 
       <SidebarMenu>
         <SidebarMenuItem>
-          <SidebarMenuButton className="flex items-center justify-center gap-2">
+          <SidebarMenuButton className="flex items-center justify-center gap-2 !h-4">
             <img src={star} alt="Favorites Icon" />
             {state !== 'collapsed' && <span>Favorites</span>}
           </SidebarMenuButton>
         </SidebarMenuItem>
       </SidebarMenu>
       <SidebarMenu className="mt-2">
-        {items?.map((item) => (
-          <Collapsible Collapsible
-            key={item.title}
-            asChild
-            defaultOpen={item.isActive}
-            className="group/collapsible" >
-            <SidebarMenuItem>
-              <CollapsibleTrigger asChild>
-                <SidebarMenuButton tooltip={item.title} className={`${item.className} relative `}>
-                  {item?.task && <div className="bg-[#E5484D] size-4 rounded-full text-[10px] flex items-center absolute right-0 top-0 justify-center text-white"> {item?.task}</div>}
-                  {item.icon && <img src={item.icon} />}
-                  <Link to={item?.url} className="text-sm font-semibold">{item.title}</Link>
-                </SidebarMenuButton>
-              </CollapsibleTrigger>
-              <CollapsibleContent>
-                <SidebarMenuSub>
-                  {item.items?.map((subItem) => (
-                    <SidebarMenuSubItem key={subItem.title}>
-                      <SidebarMenuSubButton asChild>
-                        <a href={subItem.url}>
-                          <span>{subItem.title}</span>
-                        </a>
-                      </SidebarMenuSubButton>
-                    </SidebarMenuSubItem>
-                  ))}
-                </SidebarMenuSub>
-              </CollapsibleContent>
-            </SidebarMenuItem>
-          </Collapsible>
+        {items?.map((item, i) => (
+          <SidebarMenuItem key={i}>
+            <SidebarMenuButton tooltip={item.title} className={`${item.className} ${state === "collapsed" ? "justify-center items-center" : ''} relative `}>
+              
+              {item?.task && <div className="bg-[#E5484D] size-4 rounded-full text-[10px] flex items-center absolute right-0 top-0 justify-center text-white"> {item?.task}</div>}
+
+              {item.icon && (
+                <Link to={item?.url}>
+                  <img src={item.icon} className={`h-${item.styleConfig.h} w-${item.styleConfig.w}`} />
+                </Link>
+              )}
+
+              {state === "expanded" && (
+                <Link to={item?.url} className="text-sm font-semibold">
+                  {item.title}
+                </Link>
+              )}
+            </SidebarMenuButton>
+            <SidebarMenuSub>
+              {item.items?.map((subItem) => (
+                <SidebarMenuSubItem key={subItem.title}>
+                  <SidebarMenuSubButton asChild>
+                    <Link to={subItem.url}>
+                      <span>{subItem.title}</span>
+                    </Link>
+                  </SidebarMenuSubButton>
+                </SidebarMenuSubItem>
+              ))}
+            </SidebarMenuSub>
+
+          </SidebarMenuItem>
         ))}
       </SidebarMenu>
 
