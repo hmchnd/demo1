@@ -1,6 +1,6 @@
 import TaskCard from '@/components/TaskCard'
 import TasksSidebar from '@/components/TasksSidebar'
-import { completedTasks, pendingTasks, progressTasks } from '@/utils/constant'
+import { completedTasks, kanbanSidebarConfig, pendingTasks, progressTasks } from '@/utils/constant'
 import menuDots from '@assets/icons/menu-dots.svg'
 
 import {
@@ -62,7 +62,7 @@ const Kanban = () => {
                             }
                         </div>
                     </div>
-                    <TasksSidebar />
+                    <TasksSidebar data={kanbanSidebarConfig} />
                 </div>
             </div>
         </div>

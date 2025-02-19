@@ -274,21 +274,83 @@ export const users = [
   { name: "John Souls", score: 4 },
 ];
 
-export const projectDetails = [
-  { label: "Planned Start Date", value: "19 June 2024" },
-  { label: "Planned Finish Date", value: "8 February 2024" },
-  {
-    label: "Preceding Task",
-    value: "Stakeholder engagement regarding the project concept",
+export const kanbanSidebarConfig = {
+  styleConfig: {
+    backgroundColor: "#E8E8EC",
+    iconBackground: "#F0F0F3",
+    badgeColor: "#F4A9AA",
+    borderColor: "#D9D9E0",
   },
-  { label: "Outcome", value: "Master project schedule" },
-  {
-    label: "Outcome Description",
-    value:
-      "A master project schedule is a comprehensive plan outlining all tasks, timelines, and dependencies required to complete a project. It serves as a central reference for tracking progress, managing resources, and ensuring alignment among stakeholders.",
+  task: {
+    title: "Task Name",
+    heading: "Develop a Master Project Schedule",
+    description_title: "Task description",
+    description:
+      "Developing a master project schedule involves organizing and structuring all aspects of the project into a cohesive timeline. It begins with defining the project’s goals and boundaries, ensuring clarity on what needs to be achieved. Tasks are then broken down into smaller activities, dependencies mapped, and resources allocated with realistic time estimates. The critical path is analyzed to identify the sequence of essential tasks, followed by a thorough review and approval process to finalize the schedule and align all stakeholders.",
   },
-  { label: "Responsible", value: "Framsys Admin" },
-];
+  projectDetails: [
+    { label: "Planned Start Date", value: "19 June 2024" },
+    { label: "Planned Finish Date", value: "8 August 2024" }, // Corrected inconsistency
+    {
+      label: "Preceding Task",
+      value: "Stakeholder engagement regarding the project concept",
+    },
+    { label: "Outcome", value: "Master Project Schedule" },
+    {
+      label: "Outcome Description",
+      value:
+        "A master project schedule is a comprehensive plan outlining all tasks, timelines, and dependencies required to complete a project. It serves as a central reference for tracking progress, managing resources, and ensuring alignment among stakeholders.",
+    },
+    { label: "Responsible", value: "Framsys Admin" },
+  ],
+  metadata: {
+    priorityBadge: {
+      text: "Red",
+      color: "#F4A9AA",
+      textColor: "#FFF7F7",
+    },
+    taskCode: {
+      text: "1A-1",
+      borderColor: "#D9D9E0",
+    },
+  },
+};
+
+export const sidebarConfig = {
+  styleConfig: {
+    backgroundColor: "bg-transparent",
+  },
+  task: {
+    title: "Project Name",
+    heading: "Framsys Methodology - Framework",
+    description_title: "Project description",
+    description:
+      "Framsys methodology is designed to streamline project delivery by integrating advanced frameworks that align with organisational goals. It emphasises a structured approach, ensuring clear visibility across all project stages and fostering collaboration among stakeholders. By leveraging intelligent tools and processes, Framsys enables teams to identify risks, allocate resources efficiently, and optimise workflows. The methodology is adaptable, allowing enterprises to scale solutions based on project complexity and requirements. With a focus on achieving measurable outcomes, Framsys transforms project management into a seamless and results-driven experience.",
+  },
+  projectDetails: [
+    { label: "Planned Start Date", value: "1 January 2024" },
+    { label: "Planned Finish Date", value: "23 March 2025" },
+    { label: "Preceding Task", value: "Sample Task Name" },
+    { label: "Outcome", value: "Sample Outcome Name" },
+    {
+      label: "Outcome Description",
+      value:
+        "Framsys methodology is designed to streamline project delivery by integrating advanced frameworks that align with organisational goals.",
+    },
+    { label: "Responsible", value: "John Doe" },
+  ],
+  metadata: {
+    priorityBadge: {
+      text: "Red",
+      color: "#F4A9AA",
+      textColor: "#FFF7F7",
+    },
+    taskCode: {
+      text: "1A-1",
+      borderColor: "#D9D9E0",
+    },
+  },
+};
 
 export const pendingTasks = [
   {

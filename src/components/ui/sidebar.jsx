@@ -19,6 +19,7 @@ import {
 } from "@/components/ui/tooltip"
 import TasksSidebar from "../TasksSidebar";
 import { useSelector } from "react-redux";
+import { sidebarConfig } from "@/utils/constant";
 const SIDEBAR_COOKIE_NAME = "sidebar_state"
 const SIDEBAR_COOKIE_MAX_AGE = 60 * 60 * 24 * 7
 const SIDEBAR_WIDTH = "16rem"
@@ -281,7 +282,7 @@ const SidebarInset = React.forwardRef(({ className, ...props }, ref) => {
           )}
           {...props} />
         {isSidebarOpen && <div className="w-full max-w-[400px] h-svh py-5 pr-5">
-          <TasksSidebar />
+          <TasksSidebar data={sidebarConfig} />
         </div>}
 
       </div>
