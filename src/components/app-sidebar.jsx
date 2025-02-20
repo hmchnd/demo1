@@ -60,7 +60,7 @@ const data = {
       className: 'active-btn',
       task: 2,
       styleConfig: {
-        w: '15.82px',
+        w: '22px',
         h: "26px"
       }
     },
@@ -69,7 +69,7 @@ const data = {
       url: "about",
       icon: recents,
       styleConfig: {
-        w: '20px',
+        w: '22px',
         h: "20px"
       }
     },
@@ -78,7 +78,7 @@ const data = {
       url: "about",
       icon: portfolio,
       styleConfig: {
-        w: '24px',
+        w: '22px',
         h: "21.87px"
       }
     },
@@ -87,7 +87,7 @@ const data = {
       url: "/",
       icon: roadmap,
       styleConfig: {
-        w: '24px',
+        w: '22px',
         h: "24px"
       }
     },
@@ -105,7 +105,7 @@ const data = {
       url: "gantt",
       icon: gantt,
       styleConfig: {
-        w: '24px',
+        w: '22px',
         h: "24px"
       }
     },
@@ -123,7 +123,7 @@ const data = {
       url: "about",
       icon: reports,
       styleConfig: {
-        w: '20.67px',
+        w: '22px',
         h: "22px"
       }
     },

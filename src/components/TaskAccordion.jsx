@@ -13,12 +13,12 @@ const TaskAccordion = ({ color }) => {
         <>
             <AccordionItem value="item-0" className={`rounded-sm px-2 bg-[${color || 'bg-transparent'}]`} >
                 <AccordionTrigger>
-                    <div className="flex flex-wrap gap-3">
-                        <div className="text-base flex gap-2"> <b className="text-black font-bold">  56% </b><span className="text-[#60646C] font-bold text-[14px]">Completed</span></div>
-                        <div className="text-base flex gap-2"> <b className="text-black font-bold"> 23 </b><span className="text-[#60646C] font-bold text-[14px]">Sub-projects</span></div>
-                        <div className="text-base flex gap-2"> <b className="rounded-sm px-1 font-bold bg-[#E5484D] text-white"> 2 </b><span className="text-[#60646C] font-bold text-[14px]">Task Due</span></div>
-                        <div className="text-base flex gap-2"> <b className="text-black font-bold">  5w </b><span className="text-[#60646C] font-bold text-[14px]">Until next milestone</span></div>
-                        <div className="text-base flex gap-2"> <b className="text-black font-bold">  1 </b><span className="text-[#60646C] font-bold text-[14px]">Pending Approval</span></div>
+                    <div className="flex flex-wrap gap-4">
+                        <div className="text-base flex gap-2"> <h6 className="text-[#101010] font-bold  text-[17px]">  56% </h6><span className="text-[#60646C] font-semibold text-[14px]">Completed</span></div>
+                        <div className="text-base flex gap-2"> <h6 className="text-[#101010] font-bold  text-[17px]"> 23 </h6><span className="text-[#60646C] font-semibold text-[14px]">Sub-projects</span></div>
+                        <div className="text-base flex gap-2"> <h6 className="rounded-full size-6 flex justify-center px-1 font-bold bg-[#E5484D] text-white"> 2 </h6><span className="text-[#60646C] font-semibold text-[14px]">Task Due</span></div>
+                        <div className="text-base flex gap-2"> <h6 className="text-[#101010] font-bold  text-[17px]">  5w </h6><span className="text-[#60646C] font-semibold text-[14px]">Until next milestone</span></div>
+                        <div className="text-base flex gap-2"> <h6 className="text-[#101010] text-[17px] font-bold">  1 </h6><span className="text-[#60646C] font-semibold text-[14px]">Pending Approval</span></div>
                     </div>
                 </AccordionTrigger>
                 <AccordionContent>

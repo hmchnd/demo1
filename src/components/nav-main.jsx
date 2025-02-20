@@ -49,7 +49,7 @@ export function NavMain({
 
               {item.icon && (
                 <Link to={item?.url} className={`${state === 'expanded' ? "pl-2" : ''}`}>
-                  <img src={item.icon} className={`h-${item.styleConfig.h} w-${item.styleConfig.w}`} />
+                  <img style={{ height: `${item.styleConfig.h}`, width: `${item.styleConfig.w}` }} src={item.icon} />
                 </Link>
               )}
 
