@@ -10,6 +10,9 @@ import {
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import dropdownIcon from '@assets/icons/dropdownicon.svg'
+
+import unchecked from '@assets/icons/uncheck.svg'
+import checked from '@assets/icons/check.svg'
 import { useSelector, useDispatch } from "react-redux";
 import { toggleOutcome, toggleResponsible, togglePeriod } from "@/store/slices/accordionSlice";
 import useCurrentPath from "@/hooks/useCurrentPath"
@@ -20,7 +23,9 @@ const Dropdown = () => {
 
     const dispatch = useDispatch();
     const { showOutcome, showResponsible, showPeriod } = useSelector((state) => state.accordion);
-
+    console.log(showOutcome)
+    console.log(showResponsible)
+    console.log(showPeriod)
     const handleCheckboxClick = (e) => {
         e.preventDefault();
         e.stopPropagation();
@@ -42,7 +47,9 @@ const Dropdown = () => {
                                 <label className="text-sm font-medium leading-none" onClick={handleCheckboxClick}>
                                     Outcome
                                 </label>
-                                <Checkbox checked={showOutcome} onCheckedChange={() => dispatch(toggleOutcome())} />
+                                <button className="size-4" onClick={() => dispatch(toggleOutcome())} >
+                                    <img src={showOutcome ? checked : unchecked} alt="check-icon" />
+                                </button>
                             </DropdownMenuItem>
                             <DropdownMenuSeparator />
                         </>
@@ -51,14 +58,18 @@ const Dropdown = () => {
                         <label className="text-sm font-medium leading-none" onClick={handleCheckboxClick}>
                             Responsible
                         </label>
-                        <Checkbox checked={showResponsible} onCheckedChange={() => dispatch(toggleResponsible())} />
+                        <button className="size-4" onClick={() => dispatch(toggleResponsible())} >
+                            <img src={showResponsible ? checked : unchecked} alt="check-icon" />
+                        </button>
                     </DropdownMenuItem>
                     <DropdownMenuSeparator />
                     <DropdownMenuItem onSelect={(e) => e.preventDefault()}>
                         <label className="text-sm font-medium leading-none" onClick={handleCheckboxClick}>
                             Period
                         </label>
-                        <Checkbox checked={showPeriod} onCheckedChange={() => dispatch(togglePeriod())} />
+                        <button className="size-4" onClick={() => dispatch(togglePeriod())} >
+                            <img src={showPeriod ? checked : unchecked} alt="check-icon" />
+                        </button>
                     </DropdownMenuItem>
                 </DropdownMenuGroup>
             </DropdownMenuContent>

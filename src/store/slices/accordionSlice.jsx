@@ -1,9 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    showOutcome: false,
-    showResponsible: false,
-    showPeriod: false,
+    showOutcome: true,
+    showResponsible: true,
+    showPeriod: true,
 };
 
 const accordionSlice = createSlice({

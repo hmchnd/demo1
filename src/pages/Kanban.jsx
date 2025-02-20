@@ -8,7 +8,6 @@ import {
 } from "@/components/ui/accordion"
 import TaskAccordion from '@/components/TaskAccordion'
 
-
 const Kanban = () => {
     return (
         <div className="p-1 rounded-[7px] shadow-[0px_2px_2px_rgba(0,0,0,0.1)]">
