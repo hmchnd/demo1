@@ -4,10 +4,7 @@ import { completedTasks, kanbanSidebarConfig, pendingTasks, progressTasks } from
 import menuDots from '@assets/icons/menu-dots.svg'
 
 import {
-    Accordion,
-    AccordionContent,
-    AccordionItem,
-    AccordionTrigger,
+    Accordion
 } from "@/components/ui/accordion"
 import TaskAccordion from '@/components/TaskAccordion'
 

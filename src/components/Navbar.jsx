@@ -29,6 +29,7 @@ import updown from '@assets/icons/updown.svg'
 import share from '@assets/icons/share.svg'
 
 import dropdownIcon from '@assets/icons/dropdownicon.svg'
+import Dropdown from "./Dropdown"
 
 
 const Navbar = () => {
@@ -37,6 +38,7 @@ const Navbar = () => {
 
     const [responsible, setResponsible] = useState(false)
     const [period, setPeriod] = useState(false)
+    const [outCome, setOutCome] = useState(false)
 
     const handleCheckboxClick = (e, setter) => {
         e.preventDefault()
@@ -66,42 +68,7 @@ const Navbar = () => {
                 <div className="flex items-center gap-2">
                     <button><img src={camIcon} alt="" /></button>
                     <button><img src={updown} alt="" /></button>
-                    <DropdownMenu>
-                        <DropdownMenuTrigger asChild>
-                            <Button variant="outline" className="bg-[#F0F0F3] border-none text-sm flex gap-3 focus-visible:ring-transparent">Detail level <img src={dropdownIcon} alt="" /></Button>
-                        </DropdownMenuTrigger>
-                        <DropdownMenuContent className="w-[143px] bg-[#E8E8EC]">
-                            <DropdownMenuLabel>Activity view</DropdownMenuLabel>
-                            <DropdownMenuSeparator />
-                            <DropdownMenuGroup>
-                                <DropdownMenuItem>
-                                    <label
-                                        htmlFor="Responsible"
-                                        className="text-sm font-medium leading-none "
-                                        onClick={(e) => handleCheckboxClick(e, setResponsible)}
-                                    >
-                                        Responsible
-                                    </label>
-                                    <Checkbox id="Responsible" onCheckedChange={() => setResponsible((prev) => !prev)}
-                                        onClick={(e) => e.stopPropagation()} />
-
-                                </DropdownMenuItem>
-                                <DropdownMenuSeparator />
-                                <DropdownMenuItem>
-                                    <label
-                                        htmlFor="Period"
-                                        className="text-sm font-medium leading-none" onClick={(e) => handleCheckboxClick(e, setPeriod)}
-                                    >
-                                        Period
-                                    </label>
-                                    <Checkbox id="Period" onCheckedChange={() => setPeriod((prev) => !prev)}
-                                        onClick={(e) => e.stopPropagation()} />
-
-                                </DropdownMenuItem>
-                            </DropdownMenuGroup>
-
-                        </DropdownMenuContent>
-                    </DropdownMenu>
+                    <Dropdown />
                     <button className="size-8"><img src={share} alt="" /></button>
                 </div></div>
 
