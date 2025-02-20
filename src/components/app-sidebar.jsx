@@ -102,7 +102,7 @@ const data = {
     },
     {
       title: "Gantt",
-      url: "about",
+      url: "gantt",
       icon: gantt,
       styleConfig: {
         w: '24px',

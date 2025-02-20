@@ -44,11 +44,11 @@ export function NavMain({
         {items?.map((item, i) => (
           <SidebarMenuItem key={i}>
             <SidebarMenuButton tooltip={item.title} className={`${item.className} ${state === "collapsed" ? "justify-center items-center" : ''} relative `}>
-              
+
               {item?.task && <div className="bg-[#E5484D] size-4 rounded-full text-[10px] flex items-center absolute right-0 top-0 justify-center text-white"> {item?.task}</div>}
 
               {item.icon && (
-                <Link to={item?.url}>
+                <Link to={item?.url} className={`${state === 'expanded' ? "pl-2" : ''}`}>
                   <img src={item.icon} className={`h-${item.styleConfig.h} w-${item.styleConfig.w}`} />
                 </Link>
               )}
