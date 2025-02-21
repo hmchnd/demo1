@@ -1,5 +1,4 @@
 import AccordionCard from "@/components/AccordionCard"
-import LineChart from "@/components/line-chart"
 import TaskAccordion from "@/components/TaskAccordion"
 
 
@@ -7,7 +6,7 @@ import {
     Accordion, AccordionContent, AccordionItem,
     AccordionTrigger,
 } from "@/components/ui/accordion"
-import { health_safety_environment, meetings, metrics, PROJECT_MANAGEMENTS, users } from "@/utils/constant"
+import { health_safety_environment, PROJECT_MANAGEMENTS, users } from "@/utils/constant"
 import userIcon from '@assets/icons/userorange.svg'
 
 const Home = () => {

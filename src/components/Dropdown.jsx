@@ -10,16 +10,19 @@ import {
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import dropdownIcon from '@assets/icons/dropdownicon.svg'
+import arrowUp from '@assets/icons/arrowUp.svg'
 
 import unchecked from '@assets/icons/uncheck.svg'
 import checked from '@assets/icons/check.svg'
 import { useSelector, useDispatch } from "react-redux";
 import { toggleOutcome, toggleResponsible, togglePeriod } from "@/store/slices/accordionSlice";
 import useCurrentPath from "@/hooks/useCurrentPath"
+import { useState } from "react"
 
 
 const Dropdown = () => {
     const currentPath = useCurrentPath()
+    const [open, setOpen] = useState(false);
 
     const dispatch = useDispatch();
     const { showOutcome, showResponsible, showPeriod } = useSelector((state) => state.accordion);
@@ -31,10 +34,10 @@ const Dropdown = () => {
         e.stopPropagation();
     };
     return (
-        <DropdownMenu>
+        <DropdownMenu onOpenChange={setOpen}>
             <DropdownMenuTrigger asChild>
                 <Button variant="outline" className="bg-[#F0F0F3] border-none text-sm flex gap-3 focus-visible:ring-transparent">
-                    Detail level <img src={dropdownIcon} alt="" />
+                    Detail level <img src={open ? arrowUp : dropdownIcon}  alt="" className="size-[16px]" />
                 </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent className="w-[143px] bg-[#E8E8EC]">
