@@ -90,25 +90,61 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-                <AccordionItem value="item-1" className="bg-[#F0F0F3] rounded-sm px-2 mt-1">
-                    <AccordionTrigger><div className="text-[16px] font-semibold flex items-center gap-2">Quality and Assurance
+                <AccordionItem value="item-1" className="rounded-sm mt-1">
+                    <AccordionTrigger className="bg-[#F9F9FB] px-2 rounded-sm"><div className="text-[16px] font-semibold flex items-center gap-2">Quality and Assurance
                         <span className="text-[14px] text-[#60646C] font-semibold"><b className="text-black">4</b> Area Milestones</span></div></AccordionTrigger>
                     <AccordionContent>
                         <h1>Test</h1>
                     </AccordionContent>
                 </AccordionItem>
-                <AccordionItem value="item-2" className="bg-[#F0F0F3] rounded-sm px-2 mt-2">
-                    <AccordionTrigger><div className="text-[16px] font-bold flex items-center gap-2">Project Management <span className="text-[`4px] text-[#60646C] font-semibold"><b className="text-black">5</b> Area Milestones</span></div></AccordionTrigger>
+                <AccordionItem value="item-2" className="rounded-sm mt-2">
+                    <AccordionTrigger className="bg-[#F9F9FB] px-2 rounded-sm" ><div className="text-[16px] font-bold flex items-center gap-2 ">Project Management <span className="text-[`4px] text-[#60646C] font-semibold"><b className="text-black">5</b> Area Milestones</span></div></AccordionTrigger>
                     <AccordionContent>
                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 py-4 gap-y-4 gap-x-2">
-                            {PROJECT_MANAGEMENTS?.map((projectItem) => (
-                                <AccordionCard key={projectItem.id} data={projectItem} />
-                            ))}
+                            <div className="flex  gap-2">
+                                <div className="flex-1 flex flex-col gap-3">
+                                    {PROJECT_MANAGEMENTS[0].map((item) => (
+                                        <AccordionCard data={item} key={item.id} />
+                                    ))}
+                                </div>
+                                <div className="w-3 h-full rounded-[4px] bg-[#F0F0F3]"></div>
+                            </div>
+                            <div className="flex  gap-2">
+                                <div className="flex-1 flex flex-col gap-3">
+                                    {PROJECT_MANAGEMENTS[1].map((item) => (
+                                        <AccordionCard data={item} key={item.id} />
+                                    ))}
+                                </div>
+                                <div className="w-3 h-full rounded-[4px] bg-[#F0F0F3]"></div>
+                            </div>
+                            <div className="flex  gap-2">
+                                <div className="flex-1 flex flex-col gap-3">
+                                    {PROJECT_MANAGEMENTS[2].map((item) => (
+                                        <AccordionCard data={item} key={item.id} />
+                                    ))}
+                                </div>
+                                <div className="w-3 h-full rounded-[4px] bg-[#F0F0F3]"></div>
+                            </div>
+                            <div className="flex  gap-2">
+                                <div className="flex-1 flex flex-col gap-3">
+                                    {PROJECT_MANAGEMENTS[3].map((item) => (
+                                        <AccordionCard data={item} key={item.id} />
+                                    ))}
+                                </div>
+                                <div className="w-3 h-full rounded-[4px] bg-[#F0F0F3]"></div>
+                            </div>
+                            <div className="flex  gap-2">
+                                <div className="flex-1 flex flex-col gap-3">
+                                    {PROJECT_MANAGEMENTS[4].map((item) => (
+                                        <AccordionCard data={item} key={item.id} />
+                                    ))}
+                                </div>
+                            </div>
                         </div>
                     </AccordionContent>
                 </AccordionItem>
-                <AccordionItem value="item-3" className="bg-[#F0F0F3] rounded-sm px-2 mt-2">
-                    <AccordionTrigger><div className="text-[16px] font-bold flex items-center gap-2">Health, Safety and Environment<span className="text-[14px] text-[#60646C] font-semibold"><b className="text-black">5</b> Area Milestones</span></div></AccordionTrigger>
+                <AccordionItem value="item-3" className="rounded-sm mt-2">
+                    <AccordionTrigger className="bg-[#F9F9FB] px-2 rounded-sm"><div className="text-[16px] font-bold flex items-center gap-2">Health, Safety and Environment<span className="text-[14px] text-[#60646C] font-semibold"><b className="text-black">5</b> Area Milestones</span></div></AccordionTrigger>
                     <AccordionContent>
                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 py-4 gap-y-4 gap-x-2">
                             {health_safety_environment?.map((projectItem) => (
