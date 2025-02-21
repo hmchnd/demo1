@@ -24,12 +24,12 @@ export function NavUser({
         <SidebarMenuButton
           size="lg"
           className={`data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground ${state === 'collapsed' ? 'justify-center' : ''}`}>
-          <Avatar className={`size-[26px] rounded-lg ${state === 'expanded' ? "pl-2 w-[36px] h-[26px]" : ''} `}>
-            <AvatarImage src={setting.avatar} alt={setting.name} className="object-contain" />
+          <Avatar className={`rounded-lg ${state === 'expanded' ? "pl-2 " : ''} `}>
+            <AvatarImage src={setting.avatar} alt={setting.name} className="object-contain size-[22px]" />
           </Avatar>
           {
             state === 'expanded' && <div className="grid flex-1 text-left text-sm leading-tight">
-              <span className=" font-semibold ">{setting?.name}</span>
+              <span className=" font-semibold text-sm">{setting?.name}</span>
             </div>
           }
         </SidebarMenuButton>
@@ -38,12 +38,12 @@ export function NavUser({
         <SidebarMenuButton
           size="lg"
           className={`data-[state=open]:bg-sidebar-accent bg-[#F0F0F3]  data-[state=open]:text-sidebar-accent-foreground ${state === 'collapsed' ? 'justify-center' : ''}`}>
-          <Avatar className={`size-[24px] rounded-lg ${state === 'expanded' ? "pl-2 w-[36px] h-[26px]" : ''} `}>
-            <AvatarImage src={user?.avatar} alt={user?.name} />
+          <Avatar className={` rounded-lg ${state === 'expanded' ? "pl-2" : ''} `}>
+            <AvatarImage src={user?.avatar} alt={user?.name} className="size-[22px]" />
           </Avatar>
           {
             state === 'expanded' && <div className="grid flex-1 text-left text-sm leading-tight">
-              <span className="truncate font-semibold ">{user?.name}</span>
+              <span className="truncate font-semibold text-sm">{user?.name}</span>
             </div>
           }
         </SidebarMenuButton>
