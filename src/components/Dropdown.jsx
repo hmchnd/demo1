@@ -10,7 +10,7 @@ import {
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import dropdownIcon from '@assets/icons/dropdownicon.svg'
-import arrowUp from '@assets/icons/arrowUp.svg'
+import arrowUp from '@assets/icons/arrowup.svg'
 
 import unchecked from '@assets/icons/uncheck.svg'
 import checked from '@assets/icons/check.svg'
