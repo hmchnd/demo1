@@ -6,6 +6,7 @@ import {
     Accordion, AccordionContent, AccordionItem,
     AccordionTrigger,
 } from "@/components/ui/accordion"
+import Divider from "@/components/ui/Divider"
 import { health_safety_environment, PROJECT_MANAGEMENTS, users } from "@/utils/constant"
 import userIcon from '@assets/icons/userorange.svg'
 
@@ -16,9 +17,13 @@ const Home = () => {
                 <TaskAccordion color="#F9F9FB" />
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 py-2 gap-y-4 gap-x-2">
                     <div>
-                        <div className="flex gap-2 font-bold items-center justify-center bg-[#F0F0F3] rounded-sm py-1">
-                            <h4 className="font-black">IDENTIFY</h4>
-                            <span className="size-6 rounded-full bg-[#E8E8EC] flex justify-center items-center">4</span>
+                        <div className="flex gap-1 ">
+                            <button className="font-semibold text-[12px] bg-[#E8E8EC] h-7 w-4 broder-2 rounded-sm">G</button>
+                            <div className="flex flex-1 gap-2 font-bold items-center justify-center bg-[#F0F0F3] rounded-sm py-1">
+                                <h4 className="font-black">IDENTIFY</h4>
+                                <span className="size-6 rounded-full bg-[#E8E8EC] flex justify-center items-center">4</span>
+                            </div>
+                            <button className="font-semibold text-[12px] bg-[#E8E8EC] h-7 w-4 broder-2 rounded-sm">G</button>
                         </div>
                         <div className="flex justify-between items-start">
                             <small className="text-[#60646C] text-[9px]" >April</small>
@@ -29,13 +34,16 @@ const Home = () => {
                             </div>
                         </div>
                     </div>
-                    <div>
-                        <div className="flex gap-2 font-bold items-center justify-center bg-[#F0F0F3] rounded-sm py-1">
-                            <h4 className="font-black">SELECT</h4>
-                            <span className="size-6 rounded-full bg-[#E8E8EC] flex justify-center items-center">3</span>
+                    <div className="flex gap-1">
+                        <div className="flex-1">
+                            <div className="flex gap-2 font-bold items-center justify-center bg-[#F0F0F3] rounded-sm py-1">
+                                <h4 className="font-black">SELECT</h4>
+                                <span className="size-6 rounded-full bg-[#E8E8EC] flex justify-center items-center">3</span>
+                            </div>
+                            <div className="flex ">
+                                <small className="text-[#60646C] text-[9px]">June</small></div>
                         </div>
-                        <div className="flex ">
-                            <small className="text-[#60646C] text-[9px]">June</small></div>
+                        <button className="font-semibold text-[12px] bg-[#E8E8EC] h-7 w-4 broder-2 rounded-sm">G</button>
                     </div>
                     <div>
                         <div className="flex gap-2 font-bold items-center justify-center bg-[#F0F0F3] rounded-sm py-1">
@@ -55,27 +63,34 @@ const Home = () => {
                         </div>
                     </div>
                     <div>
-                        <div className="flex gap-2 font-bold items-center justify-center bg-[#F0F0F3] rounded-sm py-1">
-                            <h4 className="font-black text-[#BA5542]">EXECUTE</h4>
-                            <span className="size-5 rounded-full bg-[#E5484D] text-white flex justify-center items-center">1</span>
-                        </div>
-                        <div className="flex gap-[10px] items-center">
-                            <small className="text-[#60646C] text-[9px]">October</small>
-                            <span className="text-[#BA5542] font-semibold text-[9px]">Monday, 30 Oct, 43w</span>
-                        </div>
-                        <div className="flex justify-center gap-1">
-                            <div className="size-4 font-semibold text-[10px] flex items-center justify-center border-2 rounded-full border-[#E5484D]">
-                                M
+                        <div>
+                            <div className="flex gap-2 font-bold items-center justify-center bg-[#F0F0F3] rounded-sm py-1">
+                                <h4 className="font-black text-[#BA5542]">EXECUTE</h4>
+                                <span className="size-5 rounded-full bg-[#E5484D] text-white flex justify-center items-center">1</span>
                             </div>
-                            <div className="h-4 w-[21px] font-semibold  text-[10px] flex items-center justify-center border-2 rounded-[50px] border-[#86DC45]">
-                                AC
+                            <div className="flex gap-[10px] items-center">
+                                <small className="text-[#60646C] text-[9px]">October</small>
+                                <span className="text-[#BA5542] font-semibold text-[9px]">Monday, 30 Oct, 43w</span>
+                            </div>
+                            <div className="flex justify-center gap-1">
+                                <div className="size-4 font-semibold text-[10px] flex items-center justify-center border-2 rounded-full border-[#E5484D]">
+                                    M
+                                </div>
+                                <div className="h-4 w-[21px] font-semibold  text-[10px] flex items-center justify-center border-2 rounded-[50px] border-[#86DC45]">
+                                    AC
+                                </div>
                             </div>
                         </div>
+
                     </div>
                     <div>
-                        <div className="flex gap-2 font-bold items-center justify-center bg-[#F0F0F3] rounded-sm py-1">
-                            <h4 className="font-black">OPERATE & CLOSE</h4>
-                            <span className="size-6 rounded-full bg-[#E8E8EC] flex justify-center items-center">3</span>
+                        <div className="flex gap-1">
+                            <button className="font-semibold text-[12px] bg-[#E8E8EC] h-7 w-4 broder-2 rounded-sm">G</button>
+                            <div className="flex flex-1 gap-2 font-bold items-center justify-center bg-[#F0F0F3] rounded-sm py-1">
+                                <h4 className="font-black">OPERATE & CLOSE</h4>
+                                <span className="size-6 rounded-full bg-[#E8E8EC] flex justify-center items-center">3</span>
+                            </div>
+                            <button className="font-semibold text-[12px] bg-[#E8E8EC] h-7 w-4 broder-2 rounded-sm">G</button>
                         </div>
                         <div>
                             <div className="flex ">
@@ -106,7 +121,7 @@ const Home = () => {
                                         <AccordionCard data={item} key={item.id} />
                                     ))}
                                 </div>
-                                <div className="w-3 h-full rounded-[4px] bg-[#F0F0F3]"></div>
+                                <Divider />
                             </div>
                             <div className="flex  gap-2">
                                 <div className="flex-1 flex flex-col gap-3">
@@ -114,7 +129,7 @@ const Home = () => {
                                         <AccordionCard data={item} key={item.id} />
                                     ))}
                                 </div>
-                                <div className="w-3 h-full rounded-[4px] bg-[#F0F0F3]"></div>
+                                <Divider />
                             </div>
                             <div className="flex  gap-2">
                                 <div className="flex-1 flex flex-col gap-3">
@@ -122,7 +137,7 @@ const Home = () => {
                                         <AccordionCard data={item} key={item.id} />
                                     ))}
                                 </div>
-                                <div className="w-3 h-full rounded-[4px] bg-[#F0F0F3]"></div>
+                                <Divider />
                             </div>
                             <div className="flex  gap-2">
                                 <div className="flex-1 flex flex-col gap-3">
@@ -130,7 +145,7 @@ const Home = () => {
                                         <AccordionCard data={item} key={item.id} />
                                     ))}
                                 </div>
-                                <div className="w-3 h-full rounded-[4px] bg-[#F0F0F3]"></div>
+                                <Divider />
                             </div>
                             <div className="flex  gap-2">
                                 <div className="flex-1 flex flex-col gap-3">
@@ -146,9 +161,41 @@ const Home = () => {
                     <AccordionTrigger className="bg-[#F9F9FB] px-2 rounded-sm"><div className="text-[16px] font-bold flex items-center gap-2">Health, Safety and Environment<span className="text-[14px] text-[#60646C] font-semibold"><b className="text-black">5</b> Area Milestones</span></div></AccordionTrigger>
                     <AccordionContent>
                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 py-4 gap-y-4 gap-x-2">
-                            {health_safety_environment?.map((projectItem) => (
-                                <AccordionCard key={projectItem.id} data={projectItem} />
-                            ))}
+                            <div className="flex  gap-2">
+                                <div className="flex-1 flex flex-col gap-3">
+                                    {health_safety_environment[0].map((item) => (
+                                        <AccordionCard data={item} key={item.id} />
+                                    ))}
+                                </div>
+                            </div>
+                            <div className="flex  gap-2">
+                                <div className="flex-1 flex flex-col gap-3">
+                                    {health_safety_environment[1].map((item) => (
+                                        <AccordionCard data={item} key={item.id} />
+                                    ))}
+                                </div>
+                            </div>
+                            <div className="flex  gap-2">
+                                <div className="flex-1 flex flex-col gap-3">
+                                    {health_safety_environment[2].map((item) => (
+                                        <AccordionCard data={item} key={item.id} />
+                                    ))}
+                                </div>
+                            </div>
+                            <div className="flex  gap-2">
+                                <div className="flex-1 flex flex-col gap-3">
+                                    {health_safety_environment[3].map((item) => (
+                                        <AccordionCard data={item} key={item.id} />
+                                    ))}
+                                </div>
+                            </div>
+                            <div className="flex  gap-2">
+                                <div className="flex-1 flex flex-col gap-3">
+                                    {health_safety_environment[4].map((item) => (
+                                        <AccordionCard data={item} key={item.id} />
+                                    ))}
+                                </div>
+                            </div>
                         </div>
                     </AccordionContent>
                 </AccordionItem>

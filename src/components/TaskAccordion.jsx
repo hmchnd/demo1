@@ -6,13 +6,17 @@ import {
 import { meetings, metrics, users } from "@/utils/constant"
 import userIcon from '@assets/icons/userorange.svg'
 
+import tasktime from '@assets/icons/tasktime.svg'
 
 const TaskAccordion = ({ color }) => {
     return (
         <>
             <AccordionItem value="item-0" className={`rounded-sm bg-[${color || 'bg-transparent'}]`} >
                 <AccordionTrigger className="border-[2px] border-[#E8E8EC] px-2 rounded-[6px]">
-                    <div className="flex flex-wrap gap-4">
+                    <div className="flex flex-wrap gap-3">
+                        <button>
+                            <img src={tasktime} alt="task-btn" className="w-[26] h-5" />
+                        </button>
                         <div className="text-base flex gap-2"> <h6 className="text-[#101010] font-bold  text-[17px]">  56% </h6><span className="text-[#60646C] font-semibold text-[14px]">Completed</span></div>
                         <div className="text-base flex gap-2"> <h6 className="text-[#101010] font-bold  text-[17px]"> 23 </h6><span className="text-[#60646C] font-semibold text-[14px]">Sub-projects</span></div>
                         <div className="text-base flex gap-2"> <h6 className="rounded-full size-6 flex justify-center px-1 font-bold bg-[#E5484D] text-white"> 2 </h6><span className="text-[#60646C] font-semibold text-[14px]">Task Due</span></div>

@@ -9,12 +9,8 @@ const TaskCard = ({ data }) => {
     const { assignedTo, completeProgress, endDate, markColor, progress, startDate, taskId, title } = data || {}
 
     return (
-        <div className="bg-[#F0F0F3] flex gap-2 rounded-[7px] p-2 ">
-            <div className="w-[8px] overflow-hidden rounded-[25px] border-[2px] border-[#90B2E7] relative">
-                <div className="absolute bottom-0 w-full bg-[#90B2E7]"
-                    style={{ height: `${completeProgress}` }}></div>
-            </div>
-            <div className='max-w-[83%]'>
+        <div className="bg-[#F0F0F3] flex gap-3 rounded-[7px] p-2 ">
+            <div className='w-full flex flex-col gap-1'>
                 <div className='flex justify-between'>
                     <div className='flex items-center gap-1'>
                         <div className="size-[10px] rounded-full" style={{
@@ -25,14 +21,20 @@ const TaskCard = ({ data }) => {
                     <span className='text-[#60646C] text-[12px] font-bold'>{progress}</span>
                 </div>
                 <h4 className='font-bold text-sm text-[#101010]'>{title}</h4>
-                {showResponsible && <div className='flex items-center gap-2 '>
-                    <img src={userIcon} alt="" className='flex-shrink-0  w-[10px] h-[12px]' />
-                    <span className='text-[#4e5053] text-[12px] font-medium'>{assignedTo}</span>
+                <div className="h-2 overflow-hidden rounded-[25px] border-[2px] border-[#90B2E7] relative">
+                    <div className="absolute bottom-0 w-full bg-[#90B2E7]"
+                        style={{ height: `${completeProgress}` }}></div>
+                </div>
+                {showResponsible && <div className='flex items-center gap-2'>
+                    <img src={userIcon} alt="" className='flex-shrink-0 size-3' />
+                    <span className='text-[#60646C] text-[12px]/[16px]'>{assignedTo}</span>
                 </div>}
-                {showPeriod && <div className='flex items-center gap-2 '>
-                    <img src={calenderIcon} alt="" className='font-bold  w-[10px] h-[12px] size-4' />
-                    <span className='text-[#4e5053] text-[12px] font-medium'>{startDate} - {endDate}</span>
-                </div>}
+                {
+                    showPeriod && <div className='flex items-center gap-2'>
+                        <img src={calenderIcon} alt="" className='font-bold size-3' />
+                        <span className='text-[#60646C] text-[12px]/[16px]'>{startDate} - {endDate}</span>
+                    </div>
+                }
             </div>
 
         </div>

@@ -10,11 +10,13 @@ import TaskAccordion from '@/components/TaskAccordion'
 
 const Kanban = () => {
     return (
-        <div className="p-1 rounded-[7px] shadow-[0px_2px_2px_rgba(0,0,0,0.1)]">
-            <Accordion type="single" collapsible className="w-full" defaultValue='item-1'>
-                <TaskAccordion />
-            </Accordion>
-            <div className=' mt-2'>
+        <div>
+            <div className='mt-2'>
+                <Accordion type="single" collapsible className="w-full" defaultValue='item-1'>
+                    <TaskAccordion />
+                </Accordion>
+            </div>
+            <div className='p-1 bg-[#F9F9FB] mt-2 rounded-[7px] shadow-[0px_2px_2px_rgba(0,0,0,0.1)]'>
                 <div className="grid grid-cols-[auto_340px] gap-2">
                     <div className="grid grid-cols-3 gap-2">
                         <div className='flex flex-col gap-2'>

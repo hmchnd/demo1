@@ -43,16 +43,13 @@ export function NavMain({
       <SidebarMenu className="mt-2">
         {items?.map((item, i) => (
           <SidebarMenuItem key={i}>
-            <SidebarMenuButton tooltip={item.title} className={`${item.className} ${state === "collapsed" ? "justify-center items-center" : ''} relative `}>
-
+            <SidebarMenuButton className={`${item.className} ${state === "collapsed" ? "justify-center items-center" : ''} relative `}>
               {item?.task && <div className="bg-[#E5484D] size-4 rounded-full text-[10px] flex items-center absolute right-0 top-0 justify-center text-white"> {item?.task}</div>}
-
               {item.icon && (
                 <Link to={item?.url} className={`${state === 'expanded' ? "pl-2" : ''}`}>
                   <img style={{ height: `${item.styleConfig.h}`, width: `${item.styleConfig.w}` }} src={item.icon} />
                 </Link>
               )}
-
               {state === "expanded" && (
                 <Link to={item?.url} className="text-sm font-semibold">
                   {item.title}
@@ -70,7 +67,6 @@ export function NavMain({
                 </SidebarMenuSubItem>
               ))}
             </SidebarMenuSub>
-
           </SidebarMenuItem>
         ))}
       </SidebarMenu>
