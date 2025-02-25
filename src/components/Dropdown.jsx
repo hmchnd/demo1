@@ -1,4 +1,3 @@
-import { Checkbox } from "@/components/ui/checkbox"
 import { Button } from "@/components/ui/button"
 import {
     DropdownMenu,
@@ -37,7 +36,7 @@ const Dropdown = () => {
         <DropdownMenu onOpenChange={setOpen}>
             <DropdownMenuTrigger asChild>
                 <Button variant="outline" className="bg-[#F0F0F3] border-none text-sm flex gap-3 focus-visible:ring-transparent">
-                    Detail level <img src={open ? arrowUp : dropdownIcon}  alt="" className="size-[16px]" />
+                    Detail level <img src={open ? arrowUp : dropdownIcon} alt="" className="size-[16px]" />
                 </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent className="w-[143px] bg-[#E8E8EC]">

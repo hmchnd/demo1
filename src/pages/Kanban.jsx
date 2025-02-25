@@ -10,14 +10,14 @@ import TaskAccordion from '@/components/TaskAccordion'
 
 const Kanban = () => {
     return (
-        <div>
+        <div className="h-full flex flex-col">
             <div className='mt-2'>
                 <Accordion type="single" collapsible className="w-full" defaultValue='item-1'>
                     <TaskAccordion />
                 </Accordion>
             </div>
-            <div className='p-1 bg-[#F9F9FB] mt-2 rounded-[7px] shadow-[0px_2px_2px_rgba(0,0,0,0.1)]'>
-                <div className="grid grid-cols-[auto_340px] gap-2">
+            <div className='p-1 bg-[#F0F0F3] mt-2 rounded-[7px] shadow-[0px_2px_2px_rgba(0,0,0,0.1)] flex-grow'>
+                <div className="grid grid-cols-[auto_180px] gap-2">
                     <div className="grid grid-cols-3 gap-2">
                         <div className='flex flex-col gap-2'>
                             <div className="flex items-center justify-between pr-1">
@@ -60,7 +60,6 @@ const Kanban = () => {
                             }
                         </div>
                     </div>
-                    <TasksSidebar data={kanbanSidebarConfig} />
                 </div>
             </div>
         </div>

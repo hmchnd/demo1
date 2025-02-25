@@ -3,11 +3,10 @@ import calenderIcon from '@assets/icons/calendericon.svg'
 import { useSelector } from 'react-redux';
 
 const TaskCard = ({ data }) => {
-    // Redux Toolkit
     const { showResponsible, showPeriod } = useSelector((state) => state.accordion);
-
     const { assignedTo, completeProgress, endDate, markColor, progress, startDate, taskId, title } = data || {}
 
+    
     return (
         <div className="bg-[#F0F0F3] flex gap-3 rounded-[7px] p-2 ">
             <div className='w-full flex flex-col gap-1'>

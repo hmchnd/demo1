@@ -4,6 +4,8 @@ import { Menu, Search } from "lucide-react"
 import statusIcon from "@assets/icons/statuslight.svg"
 import downIcon from "@assets/icons/downiconsmall.svg"
 import bell from '@assets/icons/bell.svg'
+import ai from '@assets/icons/ai.svg'
+
 import Navbar from "./Navbar"
 import { useDispatch } from "react-redux"
 import { toggleSidebar } from "@/store/slices/slidebarSlice"
@@ -26,6 +28,9 @@ const Header = () => {
                             </span>
                         </div>
                         <div className="cursor-pointer">
+                            <img src={ai} alt="" />
+                        </div>
+                            <div className="cursor-pointer">
                             <img src={bell} alt="" />
                         </div>
                         <button className="cursor-pointer" >

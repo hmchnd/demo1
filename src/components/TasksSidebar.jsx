@@ -1,7 +1,10 @@
 const TasksSidebar = ({ data }) => {
+    console.log(data)
+
     return (
         <>
-            <div className={`bg-[${data?.styleConfig?.backgroundColor || 'bg-transparent'}] rounded-[5px] p-[10px] flex flex-col gap-[10px]`}>
+            <h1>Hello</h1>
+            {/* <div className={`bg-[${data?.styleConfig?.backgroundColor || 'bg-transparent'}] rounded-[5px] p-[10px] flex flex-col gap-[10px]`}>
                 <div className='flex gap-3'>
                     <div className='size-[32px] rounded-[5px] bg-[#F0F0F3]'></div>
                     <div className='size-[32px] rounded-[5px] bg-[#F0F0F3]'></div>
@@ -31,7 +34,7 @@ const TasksSidebar = ({ data }) => {
                         </div>
                     })}
                 </div>
-            </div>
+            </div> */}
         </>
     )
 }

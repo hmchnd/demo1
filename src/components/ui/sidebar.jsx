@@ -19,6 +19,8 @@ import {
 } from "@/components/ui/tooltip"
 import TasksSidebar from "../TasksSidebar";
 import { useSelector } from "react-redux";
+import useCurrentPath from "@/hooks/useCurrentPath";
+import { useLocation } from "react-router-dom";
 const SIDEBAR_COOKIE_NAME = "sidebar_state"
 const SIDEBAR_COOKIE_MAX_AGE = 60 * 60 * 24 * 7
 const SIDEBAR_WIDTH = "16rem"
@@ -27,6 +29,9 @@ const SIDEBAR_WIDTH_ICON = "3rem"
 const SIDEBAR_KEYBOARD_SHORTCUT = "b"
 
 const SidebarContext = React.createContext(null)
+
+
+import { sidebarData } from "@/utils/constant.js";
 
 function useSidebar() {
   const context = React.useContext(SidebarContext)
@@ -268,10 +273,12 @@ const SidebarRail = React.forwardRef(({ className, ...props }, ref) => {
 SidebarRail.displayName = "SidebarRail"
 
 const SidebarInset = React.forwardRef(({ className, ...props }, ref) => {
+  const location = useLocation()
+  const currentPath = location.pathname
   const isSidebarOpen = useSelector((state) => state.slidebarSlice?.isOpen);
   return (
     (
-      <div className={`flex ${!isSidebarOpen ? 'flex-1' : ''}`}>
+      <div className={`flex flex-1`}>
         <main
           ref={ref}
           className={cn(
@@ -281,9 +288,10 @@ const SidebarInset = React.forwardRef(({ className, ...props }, ref) => {
           )}
           {...props} />
         {isSidebarOpen && <div className="w-full max-w-[400px] h-svh py-5 pr-5">
-          <TasksSidebar />
+          {
+            currentPath === '/' ? <TasksSidebar data={sidebarData.home} /> : <TasksSidebar data={sidebarData.kanban} />
+          }
         </div>}
-
       </div>
     )
   );

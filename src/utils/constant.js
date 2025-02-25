@@ -435,3 +435,35 @@ export const completedTasks = [
     completeProgress: "100%",
   },
 ];
+export const sidebarData = {
+  home: {
+    name: "Field Development Project",
+    description: "A Field Development Project is a comprehensive endeavour aimed at the systematic planning, design, and execution of improvements or expansions in a particular area or field. This may involve the exploration, extraction, or utilisation of resources, the implementation of new technologies or infrastructure...",
+    status: "In Progress",
+    state: "Behind Schedule",
+    dates: {
+      planned: { start: "1 January 2024", finish: "23 March 2025" },
+      forecast: { start: "1 January 2024", finish: "23 March 2025" },
+      actual: { start: "1 January 2024", finish: "23 March 2025" }
+    },
+    outcome: {
+      title: "Project Outcome",
+      description: "Field Development Project generates substantial increase in productivity, resulting in improved efficiency, higher output, and reduced costs, positively impacting the field's ..."
+    },
+    responsible: "John Doe",
+    phases: ["Identify", "Select", "Define", "Execute", "Operate & Close"],
+    projectAreas: [
+      "Commercial & Marketing",
+      "Economic & Finance",
+      "Health, Safety & Environment",
+      "Infrastructure, Facilities & Fabrication",
+      "Operations Management",
+      "Project Services",
+      "Procurement, Contracts & Logistics",
+      "Project Management",
+      "Quality Assurance",
+      "Subsurfaces"
+    ]
+  },
+  kanban: { title: "About Link 1", path: "/about-1" },
+};
