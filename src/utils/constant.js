@@ -11,6 +11,8 @@ export const PROJECT_MANAGEMENTS = [
       progress: "100%",
       statusColor: "#90B2E7",
       markColor: "#8ECEAA",
+      fill: "#92BCFE",
+      hasBorder: false,
     },
     {
       id: 6,
@@ -23,6 +25,8 @@ export const PROJECT_MANAGEMENTS = [
       progress: "100%",
       statusColor: "#90B2E7",
       markColor: "#F4A9AA",
+      fill: "#92BCFE",
+      hasBorder: false,
     },
     {
       id: 10,
@@ -35,6 +39,8 @@ export const PROJECT_MANAGEMENTS = [
       progress: "100%",
       statusColor: "#4F85D9",
       markColor: "#F4A9AA",
+      fill: "#92BCFE",
+      hasBorder: false,
     },
     {
       id: 12,
@@ -47,6 +53,8 @@ export const PROJECT_MANAGEMENTS = [
       progress: "100%",
       statusColor: "#4F85D9",
       markColor: "#E4C767",
+      fill: "#92BCFE",
+      hasBorder: false,
     },
   ],
   [
@@ -61,6 +69,8 @@ export const PROJECT_MANAGEMENTS = [
       progress: "100%",
       statusColor: "#90B2E7",
       markColor: "#F4A9AA",
+      fill: "#92BCFE",
+      hasBorder: false,
     },
     {
       id: 7,
@@ -73,6 +83,8 @@ export const PROJECT_MANAGEMENTS = [
       progress: "100%",
       statusColor: "#90B2E7",
       markColor: "#E4C767",
+      fill: "#92BCFE",
+      hasBorder: false,
     },
     {
       id: 11,
@@ -85,6 +97,8 @@ export const PROJECT_MANAGEMENTS = [
       progress: "100%",
       statusColor: "#4F85D9",
       markColor: "#8ECEAA",
+      fill: "#92BCFE",
+      hasBorder: false,
     },
     {
       id: 13,
@@ -97,6 +111,8 @@ export const PROJECT_MANAGEMENTS = [
       progress: "100%",
       statusColor: "#4F85D9",
       markColor: "#8ECEAA",
+      fill: "#92BCFE",
+      hasBorder: false,
     },
   ],
   [
@@ -121,9 +137,11 @@ export const PROJECT_MANAGEMENTS = [
       assignee: "John Doe the Second",
       startDate: "24 Jun '24",
       endDate: "27 Feb '25",
-      progress: "100%",
+      progress: "30%",
       statusColor: "#4F85D9",
       markColor: "#F4A9AA",
+      borderColor: "#4F85D9",
+      fill: "#4F85D9",
     },
   ],
   [
@@ -135,9 +153,11 @@ export const PROJECT_MANAGEMENTS = [
       assignee: "John Doe",
       startDate: "12 Sep '25",
       endDate: "31 Oct '25",
-      progress: "100%",
+      progress: "30%",
       statusColor: "#90B2E7",
       markColor: "#E4C767",
+      borderColor: "#4F85D9",
+      fill: "#4F85D9",
     },
     {
       id: 9,
@@ -147,9 +167,11 @@ export const PROJECT_MANAGEMENTS = [
       assignee: "John Doe the Second",
       startDate: "18 Dec '25",
       endDate: "24 Dec '25",
-      progress: "100%",
+      progress: "30%",
       statusColor: "#4F85D9",
       markColor: "#8ECEAA",
+      borderColor: "#4F85D9",
+      fill: "#4F85D9",
     },
   ],
   [
@@ -161,9 +183,10 @@ export const PROJECT_MANAGEMENTS = [
       assignee: "John Doe",
       startDate: "1 Jan '25",
       endDate: "24 Dec '25",
-      progress: "100%",
+      progress: "0%",
       statusColor: "#90B2E7",
       markColor: "#8ECEAA",
+      borderColor: "#4F85D9",
     },
   ],
 ];
@@ -441,12 +464,9 @@ export const completedTasks = [
     endDate: "24 Dec '25",
     completeProgress: "100%",
     fill: "#92BCFE",
-    isComleted: true
+    isComleted: true,
   },
 ];
-
-
-
 
 export const sidebarData = {
   projectDev: {

@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 const AccordionCard = ({ data }) => {
     const { showOutcome, showResponsible, showPeriod } = useSelector((state) => state.accordion);
 
-    const { code, title, description, assignee, startDate, endDate, progress, markColor } = data || {}
+    const { code, title, description, assignee, startDate, endDate, progress, markColor, borderColor, hasBorder, fill } = data || {}
     return (
         <div className=" h-max bg-[#F0F0F3] gap-2 relative p-2 rounded-[6px]">
             <div className='flex flex-col gap-1'>
@@ -17,9 +17,9 @@ const AccordionCard = ({ data }) => {
                     <span className='text-[#60646C] text-[14px] font-semibold'>{code}</span>
                 </div>
                 <h4 className='text-[14px]/5 font-bold'>{title}</h4>
-                <div className="w-full h-2 overflow-hidden rounded-[25px] border-[2px] border-[#92BCFE] relative">
+                <div className={`w-full h-2 overflow-hidden rounded-[2px] ${hasBorder === false ? "border-none" : "border-[2px]"} border-[#92BCFE] relative`} style={{ borderColor: `${borderColor || ''}` }}>
                     <div className="absolute left-0 h-full bg-[#92BCFE]"
-                        style={{ width: `${progress}` }}></div>
+                        style={{ width: `${progress}`, backgroundColor: `${fill || ''}` }}></div>
                 </div>
                 {showOutcome && <div className='flex items-center gap-2'>
                     <img src={task} alt="" className='size-3' />
