@@ -46,7 +46,7 @@ const Navbar = () => {
         setter((prev) => !prev)
     }
     return (
-        <div className="flex gap-2 px-3 justify-between">
+        <div className="flex gap-2 px-3 justify-between mb-2">
             <div className="flex items-center gap-2">
                 <div className="border-2 rounded-full border-[#CDCED6] flex items-center overflow-hidden max-w-max">
                     <Link to="/" className={`w-[80px] ${currentPath === '/' ? 'bg-[#BA5542] text-white' : ''} h-[32px] flex justify-center items-center px-2 text-[14px] font-medium`}>Roadmap</Link>

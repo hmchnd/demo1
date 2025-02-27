@@ -287,9 +287,9 @@ const SidebarInset = React.forwardRef(({ className, ...props }, ref) => {
             className
           )}
           {...props} />
-        {isSidebarOpen && <div className="w-full max-w-[400px] h-svh py-5 pr-5">
+        {isSidebarOpen && <div className="w-full max-w-[400px] h-svh pt-5 pr-5 pb-7 pl-3">
           {
-            currentPath === '/' ? <TasksSidebar data={sidebarData.home} /> : <TasksSidebar data={sidebarData.kanban} />
+            currentPath === '/' ? <TasksSidebar data={sidebarData.projectDev} /> : <TasksSidebar data={sidebarData.kanban} />
           }
         </div>}
       </div>

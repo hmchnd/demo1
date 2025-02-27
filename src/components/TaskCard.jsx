@@ -4,9 +4,8 @@ import { useSelector } from 'react-redux';
 
 const TaskCard = ({ data }) => {
     const { showResponsible, showPeriod } = useSelector((state) => state.accordion);
-    const { assignedTo, completeProgress, endDate, markColor, progress, startDate, taskId, title } = data || {}
-
-    
+    const { assignedTo, completeProgress, endDate, markColor, progress, startDate, taskId, title, borderColor, fill, isComleted } = data || {}
+    console.log(fill)
     return (
         <div className="bg-[#F0F0F3] flex gap-3 rounded-[7px] p-2 ">
             <div className='w-full flex flex-col gap-1'>
@@ -20,9 +19,10 @@ const TaskCard = ({ data }) => {
                     <span className='text-[#60646C] text-[12px] font-bold'>{progress}</span>
                 </div>
                 <h4 className='font-bold text-sm text-[#101010]'>{title}</h4>
-                <div className="h-2 overflow-hidden rounded-[25px] border-[2px] border-[#90B2E7] relative">
-                    <div className="absolute bottom-0 w-full bg-[#90B2E7]"
-                        style={{ height: `${completeProgress}` }}></div>
+                <div className={`h-2 overflow-hidden  rounded-[2px] ${isComleted ? 'border-none' : 'border-[2px]'} relative`} style={{ borderColor: `${borderColor || ''}` }} >
+                    <div className="absolute bottom-0 h-full"
+                        style={{ width: `${completeProgress}`, backgroundColor: `${fill || ''}` }}>
+                    </div>
                 </div>
                 {showResponsible && <div className='flex items-center gap-2'>
                     <img src={userIcon} alt="" className='flex-shrink-0 size-3' />
@@ -36,7 +36,7 @@ const TaskCard = ({ data }) => {
                 }
             </div>
 
-        </div>
+        </div >
     )
 }
 

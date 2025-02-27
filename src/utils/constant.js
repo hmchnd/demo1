@@ -383,7 +383,8 @@ export const pendingTasks = [
     assignedTo: "John Doe",
     startDate: "13 Jul '24",
     endDate: "30 Sep '24",
-    completeProgress: "100%",
+    completeProgress: "0%",
+    borderColor: "#4F85D9",
   },
 ];
 
@@ -397,7 +398,9 @@ export const progressTasks = [
     assignedTo: "John Doe",
     startDate: "13 Jul '24",
     endDate: "30 Sep '24",
-    completeProgress: "100%",
+    completeProgress: "30%",
+    borderColor: "#4F85D9",
+    fill: "#4F85D9",
   },
   {
     id: 2,
@@ -408,7 +411,9 @@ export const progressTasks = [
     assignedTo: "John Doe",
     startDate: "24 Jun ‘24",
     endDate: " 27 Feb ‘25",
-    completeProgress: "100%",
+    completeProgress: "30%",
+    borderColor: "#4F85D9",
+    fill: "#4F85D9",
   },
   {
     id: 3,
@@ -419,7 +424,9 @@ export const progressTasks = [
     assignedTo: "John Doe",
     startDate: "1 Jul '25",
     endDate: "31 Aug '25",
-    completeProgress: "100%",
+    completeProgress: "30%",
+    borderColor: "#4F85D9",
+    fill: "#4F85D9",
   },
 ];
 export const completedTasks = [
@@ -433,26 +440,49 @@ export const completedTasks = [
     startDate: "1 Jan '25 ",
     endDate: "24 Dec '25",
     completeProgress: "100%",
+    fill: "#92BCFE",
+    isComleted: true
   },
 ];
+
+
+
+
 export const sidebarData = {
-  home: {
-    name: "Field Development Project",
-    description: "A Field Development Project is a comprehensive endeavour aimed at the systematic planning, design, and execution of improvements or expansions in a particular area or field. This may involve the exploration, extraction, or utilisation of resources, the implementation of new technologies or infrastructure...",
-    status: "In Progress",
-    state: "Behind Schedule",
-    dates: {
-      planned: { start: "1 January 2024", finish: "23 March 2025" },
-      forecast: { start: "1 January 2024", finish: "23 March 2025" },
-      actual: { start: "1 January 2024", finish: "23 March 2025" }
-    },
-    outcome: {
-      title: "Project Outcome",
-      description: "Field Development Project generates substantial increase in productivity, resulting in improved efficiency, higher output, and reduced costs, positively impacting the field's ..."
-    },
-    responsible: "John Doe",
-    phases: ["Identify", "Select", "Define", "Execute", "Operate & Close"],
-    projectAreas: [
+  projectDev: {
+    labels: ["View in Portfolio", "View Reports"],
+    subTitle: "Project name",
+    projectName: "Field Development Project",
+    projectDisplayName: "Project name",
+    miniLabels: ["Label 1", "Label 2"],
+    projectDescriptionTitle: "Project description",
+    description:
+      "A Field Development Project is a comprehensive endeavour aimed at the systematic planning, design, and execution of improvements or expansions in a particular area or field. This may involve the exploration, extraction, or utilisation of resources, the implementation of new technologies or infrastructure...",
+    projectStatus: "In Progress",
+    projectState: "Behind Schedule",
+    projectDates: [
+      {
+        title: "Planned Dates",
+        startDate: "1 January 2024",
+        finishDate: "23 March 2025",
+      },
+      {
+        title: "Forecast Dates",
+        startDate: "1 January 2024",
+        finishDate: "23 March 2025",
+      },
+      {
+        title: "Actual Dates",
+        startDate: "1 January 2024",
+        finishDate: "23 March 2025",
+      },
+    ],
+    Outcome: "Project Outcome",
+    Outcome_description:
+      "Field Development Project generates substantial increase in productivity, resulting in improved efficiency, higher output, and reduced costs, positively impacting the field's ...",
+    Responsible: "John Doe",
+    Phases: ["Identify", "Select", "Define", "Execute", "Operate & Close"],
+    Project_Areas: [
       "Commercial & Marketing",
       "Economic & Finance",
       "Health, Safety & Environment",
@@ -462,8 +492,8 @@ export const sidebarData = {
       "Procurement, Contracts & Logistics",
       "Project Management",
       "Quality Assurance",
-      "Subsurfaces"
-    ]
+      "Subsurfaces",
+    ],
   },
-  kanban: { title: "About Link 1", path: "/about-1" },
+  kanbanLink: { title: "About Link 1", path: "/about-1" },
 };
