@@ -9,7 +9,7 @@ import { health_safety_environment, PROJECT_MANAGEMENTS,  } from "@/utils/consta
 
 const Home = () => {
     return (
-        <div className="mt-0 pr-1  max-h-[85vh] overflow-y-auto
+        <div className="mt-0 pr-1  max-h-[87vh] overflow-y-auto
   [&::-webkit-scrollbar]:w-1
   [&::-webkit-scrollbar-track]:bg-[none]
   [&::-webkit-scrollbar-thumb]:bg-[#E0E1E6]
