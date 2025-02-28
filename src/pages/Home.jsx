@@ -5,7 +5,7 @@ import {
     AccordionTrigger,
 } from "@/components/ui/accordion"
 import Divider from "@/components/ui/Divider"
-import { health_safety_environment, PROJECT_MANAGEMENTS } from "@/utils/constant"
+import { health_safety_environment, PROJECT_MANAGEMENTS,  } from "@/utils/constant"
 
 const Home = () => {
     return (
