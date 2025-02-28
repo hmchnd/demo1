@@ -3,9 +3,3 @@
   to = "/index.html"
   status = 200
 
-  [build]
-  command = "bun install && bun run build"
-  publish = "dist"
-
-[build.environment]
-  BUN_VERSION = "1.2.3"
