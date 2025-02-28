@@ -25,17 +25,14 @@ const Dropdown = () => {
 
     const dispatch = useDispatch();
     const { showOutcome, showResponsible, showPeriod } = useSelector((state) => state.accordion);
-    console.log(showOutcome)
-    console.log(showResponsible)
-    console.log(showPeriod)
     const handleCheckboxClick = (e) => {
         e.preventDefault();
         e.stopPropagation();
     };
     return (
-        <DropdownMenu onOpenChange={setOpen}>
+        <DropdownMenu onOpenChange={setOpen} >
             <DropdownMenuTrigger asChild>
-                <Button variant="outline" className="bg-[#F0F0F3] border-none text-sm flex gap-3 focus-visible:ring-transparent">
+                <Button variant="outline" className="bg-[#F0F0F3] border-none h-full text-sm flex gap-3 focus-visible:ring-transparent">
                     Detail level <img src={open ? arrowUp : dropdownIcon} alt="" className="size-[16px]" />
                 </Button>
             </DropdownMenuTrigger>

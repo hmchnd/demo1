@@ -1,34 +1,36 @@
 import AccordionCard from "@/components/AccordionCard"
 import TaskAccordion from "@/components/TaskAccordion"
-
-
 import {
     Accordion, AccordionContent, AccordionItem,
     AccordionTrigger,
 } from "@/components/ui/accordion"
 import Divider from "@/components/ui/Divider"
 import { health_safety_environment, PROJECT_MANAGEMENTS, users } from "@/utils/constant"
-import userIcon from '@assets/icons/userorange.svg'
 
 const Home = () => {
     return (
-        <div className="mt-2">
+        <div className="mt-0 pr-1  max-h-[85vh] overflow-y-auto
+  [&::-webkit-scrollbar]:w-1
+  [&::-webkit-scrollbar-track]:bg-[none]
+  [&::-webkit-scrollbar-thumb]:bg-[#E0E1E6]
+   [&::-webkit-scrollbar-thumb]:rounded-[4px]">
             <Accordion type="multiple" collapsible defaultValue="item-2">
                 <TaskAccordion color="#F9F9FB" />
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 py-2 gap-y-4 gap-x-2">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 py-2 gap-y-4">
                     <div>
-                        <div className="flex gap-1 ">
-                            <button className="font-semibold text-[12px] bg-[#E8E8EC] h-7 w-4 broder-2 rounded-sm">G</button>
+                        <div className="flex gap-1 h-7">
+                            <button className="font-semibold text-[12px] bg-[#E8E8EC] h-full w-4 broder-2 rounded-sm">G</button>
                             <div className="flex flex-1 gap-2 font-bold items-center justify-center bg-[#F0F0F3] rounded-sm py-1">
-                                <h4 className="font-black">IDENTIFY</h4>
+                                <h4 className="font-bold text-[#101010]">IDENTIFY</h4>
                                 <span className="size-6 rounded-full bg-[#E8E8EC] flex justify-center items-center">4</span>
                             </div>
-                            <button className="font-semibold text-[12px] bg-[#E8E8EC] h-7 w-4 broder-2 rounded-sm">G</button>
+                            <button className="font-semibold text-[12px] bg-[#E8E8EC] h-full w-4 broder-2 rounded-sm mr-1">G</button>
                         </div>
-                        <div className="flex justify-between items-start">
+                        <div className="grid grid-cols-[16px_auto] gap-1">
+                            <span></span>
                             <small className="text-[#60646C] text-[9px]" >April</small>
                         </div>
-                        <div className="flex justify-center">
+                        <div className="h-6 flex items-center justify-center">
                             <div className="size-4 font-semibold -ml-14 text-[10px] flex items-center justify-center border-2 rounded-full border-[#E5484D]">
                                 P
                             </div>
@@ -36,18 +38,19 @@ const Home = () => {
                     </div>
                     <div className="flex gap-1">
                         <div className="flex-1">
-                            <div className="flex gap-2 font-bold items-center justify-center bg-[#F0F0F3] rounded-sm py-1">
-                                <h4 className="font-black">SELECT</h4>
-                                <span className="size-6 rounded-full bg-[#E8E8EC] flex justify-center items-center">3</span>
-                            </div>
+                            <div className="flex gap-1 h-7">
+                                <div className="flex flex-1 gap-2 font-bold items-center justify-center bg-[#F0F0F3] rounded-sm py-1">
+                                    <h4 className="font-bold text-[#101010]">SELECT</h4>
+                                    <span className="size-6 rounded-full bg-[#E8E8EC] flex justify-center items-center">3</span>
+                                </div>
+                                <button className="font-semibold text-[12px] bg-[#E8E8EC] h-full w-4 broder-2 rounded-sm mr-1">G</button></div>
                             <div className="flex ">
                                 <small className="text-[#60646C] text-[9px]">June</small></div>
                         </div>
-                        <button className="font-semibold text-[12px] bg-[#E8E8EC] h-7 w-4 broder-2 rounded-sm">G</button>
                     </div>
                     <div>
-                        <div className="flex gap-2 font-bold items-center justify-center bg-[#F0F0F3] rounded-sm py-1">
-                            <h4 className="font-black">DEFINE</h4>
+                        <div className="flex h-7 gap-2 font-bold items-center justify-center bg-[#F0F0F3] rounded-sm py-1">
+                            <h4 className="font-bold text-[#101010]">DEFINE</h4>
                             <span className="size-6 rounded-full bg-[#E8E8EC] flex justify-center items-center">6</span>
                         </div>
                         <div className="flex justify-between items-start">
@@ -56,7 +59,7 @@ const Home = () => {
 
                             </div>
                         </div>
-                        <div className="flex justify-center">
+                        <div className="h-6 flex items-center justify-center">
                             <div className="size-4 font-semibold -ml-4 text-[10px] flex items-center justify-center border-2 rounded-full border-[#60646C]">
                                 M
                             </div>
@@ -64,40 +67,46 @@ const Home = () => {
                     </div>
                     <div>
                         <div>
-                            <div className="flex gap-2 font-bold items-center justify-center bg-[#F0F0F3] rounded-sm py-1">
-                                <h4 className="font-black text-[#BA5542]">EXECUTE</h4>
-                                <span className="size-5 rounded-full bg-[#E5484D] text-white flex justify-center items-center">1</span>
-                            </div>
-                            <div className="flex gap-[10px] items-center">
-                                <small className="text-[#60646C] text-[9px]">October</small>
-                                <span className="text-[#BA5542] font-semibold text-[9px]">Monday, 30 Oct, 43w</span>
-                            </div>
-                            <div className="flex justify-center gap-1">
-                                <div className="size-4 font-semibold text-[10px] flex items-center justify-center border-2 rounded-full border-[#E5484D]">
-                                    M
-                                </div>
-                                <div className="h-4 w-[21px] font-semibold  text-[10px] flex items-center justify-center border-2 rounded-[50px] border-[#86DC45]">
-                                    AC
+                            <div className="flex gap-1 h-7">
+                                <button className="font-semibold text-[12px] bg-[#E8E8EC] h-full w-4 broder-2 rounded-sm ml-1">G</button>
+
+                                <div className="flex flex-1 gap-2 font-bold items-center justify-center bg-[#F0F0F3] rounded-sm py-1">
+                                    <h4 className="font-bold text-[#BA5542] text-base">EXECUTE</h4>
+                                    <span className="size-5 rounded-full bg-[#E5484D] text-white flex justify-center items-center">1</span>
                                 </div>
                             </div>
+                            <div className="grid gap-1 grid-cols-[16px_auto]">
+                                <span></span>
+                                <div className="flex gap-[10px] items-center pl-1">
+                                    <small className="text-[#60646C] text-[9px]">October</small>
+                                    <span className="text-[#BA5542] font-semibold text-[9px]">Monday, 30 Oct, 43w</span>
+                                </div></div>
+                            <div className="h-6 flex items-center justify-center">
+                                <div className="flex justify-center gap-1">
+                                    <div className="size-4 font-semibold text-[10px] flex items-center justify-center border-2 rounded-full border-[#E5484D]">
+                                        M
+                                    </div>
+                                    <div className="h-4 w-[21px] font-semibold  text-[10px] flex items-center justify-center border-2 rounded-[50px] border-[#86DC45]">
+                                        AC
+                                    </div>
+                                </div></div>
                         </div>
 
                     </div>
                     <div>
-                        <div className="flex gap-1">
-                            <button className="font-semibold text-[12px] bg-[#E8E8EC] h-7 w-4 broder-2 rounded-sm">G</button>
+                        <div className="flex gap-1 h-7">
+                            <button className="font-semibold text-[12px] bg-[#E8E8EC] h-full w-4 broder-2 rounded-sm ml-1">G</button>
                             <div className="flex flex-1 gap-2 font-bold items-center justify-center bg-[#F0F0F3] rounded-sm py-1">
-                                <h4 className="font-black">OPERATE & CLOSE</h4>
+                                <h4 className="font-bold text-base text-[#101010]">OPERATE & CLOSE</h4>
                                 <span className="size-6 rounded-full bg-[#E8E8EC] flex justify-center items-center">3</span>
                             </div>
-                            <button className="font-semibold text-[12px] bg-[#E8E8EC] h-7 w-4 broder-2 rounded-sm">G</button>
+                            <button className="font-semibold text-[12px] bg-[#E8E8EC] h-full w-4 broder-2 rounded-sm">G</button>
                         </div>
-                        <div>
-                            <div className="flex ">
-                                <small className="text-[9px] text-[#60646C]">December</small>
-                            </div>
+                        <div className="grid grid-cols-[16px_auto] gap-1">
+                            <span></span>
+                            <small className="text-[#60646C] text-[9px] pl-1" >December</small>
                         </div>
-                        <div className="flex justify-center">
+                        <div className="h-6 flex items-center justify-center">
                             <div className="size-4 font-semibold -ml-4 text-[10px] flex items-center justify-center border-2 rounded-full border-[#60646C]">
                                 M
                             </div>
@@ -115,7 +124,8 @@ const Home = () => {
                     <AccordionTrigger className="bg-[#F9F9FB] px-2 rounded-sm" ><div className="text-[16px] font-bold flex items-center gap-2 ">Project Management <span className="text-[`4px] text-[#60646C] font-semibold"><b className="text-black">5</b> Area Milestones</span></div></AccordionTrigger>
                     <AccordionContent>
                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 py-4 gap-y-4 gap-x-2">
-                            <div className="flex  gap-2">
+                            <div className="flex gap-2">
+                                <Divider />
                                 <div className="flex-1 flex flex-col gap-3">
                                     {PROJECT_MANAGEMENTS[0].map((item) => (
                                         <AccordionCard data={item} key={item.id} />
@@ -153,6 +163,7 @@ const Home = () => {
                                         <AccordionCard data={item} key={item.id} />
                                     ))}
                                 </div>
+                                <Divider />
                             </div>
                         </div>
                     </AccordionContent>
