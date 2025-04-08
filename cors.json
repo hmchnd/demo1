@@ -1,0 +1,11 @@
+[
+  {
+    "origin": [
+      "http://framsys-react-app.storage.googleapis.com",
+      "https://framsys-react-app.storage.googleapis.com"
+    ],
+    "method": ["GET", "HEAD", "OPTIONS"],
+    "responseHeader": ["Content-Type", "Authorization"],
+    "maxAgeSeconds": 3600
+  }
+]
