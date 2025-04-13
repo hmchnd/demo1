@@ -1,137 +1,186 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import AccordionCard from "@/components/AccordionCard";
 import TaskAccordion from "@/components/TaskAccordion";
+import TaskDetails from "@/components/TaskDetails";
 import {
-  Accordion, AccordionContent, AccordionItem,
+  Accordion,
+  AccordionContent,
+  AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import Divider from "@/components/ui/Divider";
+import { ChevronRight } from 'lucide-react';
 import { useRoadmapTemplates, useFullRoadmapData } from '@/hooks/backendHooks';
 
 const Home = () => {
   const [selectedTemplateId, setSelectedTemplateId] = useState(null);
-  
-  // Load all available templates
+  const [selectedTask, setSelectedTask] = useState(null);
+  const [showDetailsPanel, setShowDetailsPanel] = useState(false);
+
   const { templates, loading: templatesLoading } = useRoadmapTemplates();
-  
-  // Load full template data when one is selected
-  const { 
-    areas, 
-    phases, 
-    tasks, 
-    loading: templateLoading 
-  } = useFullRoadmapData(selectedTemplateId);
+  const { areas, phases, tasks, loading: templateLoading } = useFullRoadmapData(selectedTemplateId);
 
-  // Count tasks per phase
-  const getTaskCountForPhase = (phaseid) => {
-    return tasks.filter(task => task.phase_id === phaseid).length;
+  useEffect(() => {
+    if (!selectedTemplateId && templates.length > 0) {
+      setSelectedTemplateId(templates[0].cuid);
+    }
+  }, [templates, selectedTemplateId]);
+
+  const handleTaskClick = (task) => {
+    setSelectedTask(task);
+    setShowDetailsPanel(true);
   };
 
-  // Group tasks by area
-  const getTasksByArea = (areaId) => {
-    return tasks.filter(task => task.area_id === areaId);
+  const handleClosePanel = () => {
+    setShowDetailsPanel(false);
   };
 
-  if (templatesLoading) {
-    return <div className="flex justify-center items-center h-[87vh]">Loading templates...</div>;
+  if (templatesLoading || (selectedTemplateId && templateLoading)) {
+    return <div className="flex justify-center items-center h-[87vh]">Loading...</div>;
   }
 
-  if (!selectedTemplateId && templates.length > 0) {
-    // Auto-select the first template if none is selected
-    setSelectedTemplateId(templates[0].cuid);
-    return <div className="flex justify-center items-center h-[87vh]">Loading roadmap data...</div>;
-  }
+  // ✅ Hardcoded task numbers for phases
+  const getPhaseTaskNumbers = (index) => {
+    switch (index) {
+      case 0:
+        return [1, 2, 3];
+      case 1:
+        return [4, 5, 6, 7, 8, 9];
+      case 2:
+        return [10, 11, 12, 13];
+      case 3:
+        return [14, 15, 16];
+      case 4:
+        return [17, 18, 19];
+      default:
+        return [];
+    }
+  };
 
   return (
-    <div className="mt-0 pr-1 max-h-[87vh] overflow-y-auto
-      [&::-webkit-scrollbar]:w-1
-      [&::-webkit-scrollbar-track]:bg-[none]
-      [&::-webkit-scrollbar-thumb]:bg-[#E0E1E6]
-      [&::-webkit-scrollbar-thumb]:rounded-[4px]">
-      
-      <Accordion type="multiple" collapsible defaultValue={['phases', ...phases.map(a => a.cuid)]}>
-        {/* Phases Section */}
-        <TaskAccordion color="#F9F9FB" />
-        
-        {/* Updated Phases Grid - now using 6 columns */}
-        <div className="grid grid-cols-6 gap-2 py-2 min-w-[1440px] overflow-x-auto">
-          {phases.map((phase, index) => (
-            <PhaseColumn 
-              key={phase.cuid}
-              phase={phase.name}
-              taskCount={getTaskCountForPhase(phase.cuid)}
-              isActive={index === 3} // Example: Execute phase is active
-            />
+    <div className="flex h-[87vh] relative">
+      {/* Main Content */}
+      <div className={`h-full overflow-y-auto transition-all duration-300 ${
+        showDetailsPanel ? 'w-2/3' : 'w-full'
+      }`}>
+        <Accordion type="multiple" collapsible defaultValue={['phases', ...phases.map(a => a.cuid)]}>
+          <TaskAccordion color="#F9F9FB" />
+
+          {/* Phase Header Grid */}
+          <div className="grid grid-cols-6 gap-2 py-2 min-w-[1440px] overflow-x-auto">
+            {phases.map((phase, index) => (
+              <PhaseColumn
+                key={phase.cuid}
+                phase={phase.name}
+                taskNumbers={getPhaseTaskNumbers(index)}
+                isActive={index === 3} // Just an example
+              />
+            ))}
+          </div>
+
+          {/* Task Cards by Area and Phase */}
+          {areas.map((area) => (
+            <AccordionItem key={area.cuid} value={area.cuid} className="rounded-sm mt-2">
+              <AccordionTrigger className="bg-[#F9F9FB] px-2 rounded-sm">
+                <div className="text-[16px] font-bold flex items-center gap-2">
+                  {area.name}
+                  {/* <span className="text-[14px] text-[#60646C] font-semibold">
+                    <b className="text-black">
+                      {tasks.filter(task => task.area_id === area.cuid).length}
+                    </b> Tasks
+                  </span> */}
+                </div>
+              </AccordionTrigger>
+              <AccordionContent>
+                <div className="grid grid-cols-6 gap-2 py-4 min-w-[1440px]">
+                  {phases.map((phase) => {
+                    const phaseTasks = tasks.filter(
+                      task => task.area_id === area.cuid && task.phase_id === phase.cuid
+                    );
+
+                    return (
+                      <div key={`${area.cuid}-${phase.cuid}`} className="flex flex-col gap-3">
+                        {phaseTasks.map((task) => (
+                          <AccordionCard
+                            key={task.cuid}
+                            data={{
+                              code: task.code || "1A-1",
+                              markColor: task.color || "#E5484D",
+                              id: task.cuid,
+                              title: task.name,
+                              description: task.description || "Developing a master project schedule involves organising and structuring all aspects of the project into a cohesive timeline",
+                              status: task.status,
+                              assignee: task.assignee || "Amit Tyagi",
+                              startDate: task.planned_start || "2024-01-01",
+                              endDate: task.planned_finish || "2025-10-19",
+                              progress: task.pct_complete || "50%",
+                            }}
+                            onClick={() => handleTaskClick(task)}
+                            isSelected={selectedTask?.cuid === task.cuid}
+                          />
+                        ))}
+                      </div>
+                    );
+                  })}
+                </div>
+              </AccordionContent>
+            </AccordionItem>
           ))}
-        </div>
+        </Accordion>
+      </div>
 
-        {/* Areas Sections */}
-        {areas.map((area) => (
-          <AccordionItem key={area.cuid} value={area.cuid} className="rounded-sm mt-2">
-            <AccordionTrigger className="bg-[#F9F9FB] px-2 rounded-sm">
-              <div className="text-[16px] font-bold flex items-center gap-2">
-                {area.name}
-                <span className="text-[14px] text-[#60646C] font-semibold">
-                  <b className="text-black">{getTasksByArea(area.cuid).length}</b> Tasks
-                </span>
-              </div>
-            </AccordionTrigger>
-            <AccordionContent>
-              {/* Updated Tasks Grid - matches phases layout */}
-              <div className="grid grid-cols-6 gap-2 py-4 min-w-[1440px]">
-                {phases.map((phase) => {
-                  const phaseTasks = getTasksByArea(area.cuid).filter(
-                    task => task.phase_id === phase.cuid
-                  );
-                  
-                  return (
-                    <div key={`${area.cuid}-${phase.cuid}`} className="flex flex-col gap-3">
-                      {phaseTasks.map((task) => (
-                        <AccordionCard 
-                          key={task.cuid} 
-                          data={{
-                            id: task.cuid,
-                            title: task.name,
-                            description: task.description,
-                            status: task.status,
-                          }} 
-                        />
-                      ))}
-                    </div>
-                  );
-                })}
-              </div>
-            </AccordionContent>
-          </AccordionItem>
-        ))}
-      </Accordion>
+      {/* Task Details Panel */}
+      {showDetailsPanel && (
+        <div className="w-1/3 h-full border-l border-gray-200 bg-white flex flex-col">
+          <div className="flex items-center justify-between p-4 border-b border-gray-200">
+            <button
+              onClick={handleClosePanel}
+              className="p-1 rounded-full hover:bg-gray-100"
+            >
+              <ChevronRight className="h-5 w-5 text-gray-600" />
+            </button>
+            <div className="flex-1"></div>
+          </div>
+          <div className="flex-1 overflow-y-auto">
+            <TaskDetails task={selectedTask} />
+          </div>
+        </div>
+      )}
     </div>
   );
 };
 
-// Phase Column Component
-const PhaseColumn = ({ phase, taskCount, isActive = false }) => {
+// ✅ PhaseColumn Component
+const PhaseColumn = ({ phase, taskNumbers = [], isActive = false }) => {
   return (
-    <div className="min-w-[200px]"> {/* Adjusted width for 6 columns */}
-      <div className="flex gap-1 h-7">
-        <div className="flex flex-1 gap-2 font-bold items-center justify-center bg-[#F0F0F3] rounded-sm py-1">
-          <h4 className={`font-bold ${isActive ? 'text-base' : ''}`} style={{ color: '#101010' }}>
-            {phase}
-          </h4>
-          <span className={`size-6 rounded-full ${isActive ? 'bg-[#E5484D] text-white' : 'bg-[#E8E8EC]'} flex justify-center items-center`}>
-            {taskCount}
-          </span>
-        </div>
-        <button className="font-semibold text-[12px] bg-[#E8E8EC] h-full w-4 broder-2 rounded-sm mr-1">G</button>
+    <div className="min-w-[200px] flex flex-col items-center border border-gray-300 rounded-sm py-2 px-1">
+      <div className="w-full mb-2 flex flex-col items-center">
+        <h4 className={`font-bold text-center ${isActive ? 'text-[#E5484D]' : 'text-[#101010]'}`}>
+          {phase}
+        </h4>
+        
       </div>
-      <div className="grid grid-cols-[16px_auto] gap-1">
-        <span></span>
-        <small className="text-[#60646C] text-[9px]">
-          JANUARY 2025 {/* Placeholder - replace with actual date logic */}
-        </small>
+      <div className="flex flex-wrap justify-center gap-1 mb-1">
+        {taskNumbers.map((num) => {
+          const getColor = () => {
+            if (isActive && num === 14) return 'bg-yellow-500 text-white';
+            if (isActive && num === 16) return 'bg-yellow-500 text-white';
+            if (isActive && num === 15) return 'bg-green-600 text-white';
+            return 'bg-[#E8E8EC] text-[#101010]';
+          };
+
+          return (
+            <span
+              key={num}
+              className={`w-6 h-6 rounded-full text-xs font-semibold flex justify-center items-center ${getColor()}`}
+            >
+              {num}
+            </span>
+          );
+        })}
       </div>
     </div>
   );
 };
+
 
 export default Home;

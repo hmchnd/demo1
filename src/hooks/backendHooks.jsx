@@ -31,6 +31,7 @@ export function useRoadmapTemplates() {
       });
       if (!response.ok) throw new Error('Failed to create template');
       const newTemplate = await response.json();
+      debugger
       setTemplates(prev => [...prev, newTemplate]);
       return newTemplate;
     } catch (err) {
