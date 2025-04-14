@@ -105,16 +105,16 @@ const TaskDetails = ({ task, onEditClick }) => {
             <h3 className="text-s mb-1 font-semibold text-[#101010]">
               {type} Dates
             </h3>
-            <div className="grid grid-cols-2 gap-1">
+            <div className="flex gap-8">
               {["Start", "Finish"].map((label) => (
                 <div
                   key={label}
-                  className="grid grid-cols-2 items-center gap-1"
+                  className="flex items-center gap-0.5"
                 >
-                  <span className="text-s pl-1 font-semibold tracking-wider text-[#60646C]">
+                  <span className="text-s w-[60px] pl-1 font-semibold tracking-wider text-[#60646C]">
                     {label}
                   </span>
-                  <h3 className="text-s mb-1 rounded-s bg-white p-1 px-2 font-semibold text-[#101010]">
+                  <h3 className="text-s mb-1 w-fit rounded-s bg-white p-1 px-2 font-semibold text-[#101010] whitespace-nowrap">
                     {task?.[`${type.toLowerCase()}${label}`] ||
                       (label === "Start"
                         ? "1 January 2024"
