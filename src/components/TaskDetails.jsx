@@ -2,8 +2,8 @@ import React from "react";
 
 const TaskDetails = ({ task, onEditClick }) => {
   return (
-    <div className="h-full flex flex-col bg-[#F1F2F4] min-w-[350px]">
-      <div className="flex items-center justify-between p-4 border-b border-gray-200">
+    <div className="h-full flex flex-col bg-[#F1F2F4] min-w-[350px]" style={{ position: 'relative', zIndex: 10 }}>
+      <div className="flex-shrink-0 flex items-center justify-between p-4 border-b border-gray-200">
         <button className="flex items-center gap-2 text-[#60646C] text-sm font-medium bg-white px-3 py-1.5 rounded-md border border-gray-200">
           <span>View Reports</span>
           <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -78,7 +78,7 @@ const TaskDetails = ({ task, onEditClick }) => {
                 <p className="text-sm font-medium text-[#101010]">Operations Management</p>
               </div>
             </div>
-
+ 
             {/* Divider before Dates */}
             <div className="border-t border-[#D1D1D6] pt-5"></div>
 
