@@ -24,13 +24,13 @@ export default defineConfig({
       }
     }
   },
-  server:{
+  // server:{
 
-    port: parseInt(process.env.PORT) || 8080,
-    host: true, // This allows it to accept external requests (important for Cloud Run)
-    strictPort: true,
-    allowedHosts: [
-      "framsys-react-frontend-530349298365.asia-south2.run.app", // 👈 Add your Cloud Run domain here
-    ],
-  }
+  //   port: parseInt(process.env.PORT) || 8080,
+  //   host: true, // This allows it to accept external requests (important for Cloud Run)
+  //   strictPort: true,
+  //   allowedHosts: [
+  //     "framsys-react-frontend-530349298365.asia-south2.run.app", // 👈 Add your Cloud Run domain here
+  //   ],
+  // }
 });

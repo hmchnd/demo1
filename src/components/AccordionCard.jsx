@@ -11,7 +11,7 @@ const AccordionCard = ({ data, onClick, isSelected }) => {
     return (
         <div 
           className={`h-max gap-2 relative p-2 rounded-[6px] cursor-pointer ${
-            isSelected ? 'bg-blue-100 border border-blue-300' : 'bg-[#F0F0F3]'
+            isSelected ? 'bg-blue-100 border border-blue-300' : 'bg-white'
           }`}
           onClick={onClick}
         >
@@ -24,13 +24,11 @@ const AccordionCard = ({ data, onClick, isSelected }) => {
                 </div>
                 <h4 className='text-[14px]/5 font-bold'>{title}</h4>
                 <div className="flex items-center gap-2">
-<div className={`w-full h-2 overflow-hidden rounded-[2px] ${hasBorder === false ? "border-none" : "border-[2px]"} border-[#92BCFE] relative`} style={{ borderColor: `${borderColor || ''}` }}>
-<div className="absolute left-0 h-full bg-[#92BCFE]" 
-         style={{ width: `${progress}`, backgroundColor: `${fill || ''}` }}></div>
-</div>
-<span className="text-sm">100%</span>
-
-                        
+                    <div className={`w-full h-2 overflow-hidden rounded-[2px] ${hasBorder === false ? "border-none" : "border-[2px]"} border-[#3b82f6] relative`} style={{ borderColor: `${borderColor || ''}` }}>
+                        <div className="absolute left-0 h-full bg-[#3b82f6]"
+                            style={{ width: `${progress}`, backgroundColor: `${fill || ''}` }}></div>
+                    </div>
+                    <span className="text-xs text-gray-500 flex-shrink-0">100%</span>
                 </div>
                 {showOutcome && <div className='flex items-center gap-2'>
                     <img src={task} alt="" className='size-3' />
