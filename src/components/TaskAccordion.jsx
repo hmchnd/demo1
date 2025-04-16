@@ -6,12 +6,54 @@ import {
 } from "@/components/ui/accordion";
 import { meetings, metrics, users } from "@/utils/constant";
 import userIcon from "@assets/icons/userorange.svg";
-
 import tasktime from "@assets/icons/tasktime.svg";
+import Navbar from "./Navbar";
+import { Input } from "@/components/ui/input";
+import { Menu } from "lucide-react";
+import statusIcon from "@assets/icons/statuslight.svg";
+import downIcon from "@assets/icons/downiconsmall.svg";
+import bell from '@assets/icons/bell.svg';
+import ai from '@assets/icons/ai.svg';
+import searchIcon from '@assets/icons/searchicon.svg';
+import { useDispatch } from "react-redux";
+import { toggleSidebar } from "@/store/slices/slidebarSlice";
 
-const TaskAccordion = ({ color }) => {
+const TaskAccordion = ({ color, showDetailsPanel }) => {
+  const dispatch = useDispatch();
+
   return (
     <>
+      <div className="flex flex-col">
+        <header className="h-10 flex items-center w-full px-1">
+          <div className="flex justify-between items-center flex-1">
+            <h4 className="text-black text-2xl font-bold flex items-center gap-3">
+              Field Development Project <button><img src={downIcon} alt="" /></button>
+            </h4>
+            <div className="flex items-center gap-2">
+             
+              <div className="relative">
+                <Input type="email" className="rounded-xl bg-[##F0F0F3] pr-8 max-w-[160px] h-6" />
+                <span className="absolute right-2 top-1/2 -translate-y-1/2">
+                  <img src={searchIcon} alt="" />
+                </span>
+              </div>
+              <div className="cursor-pointer">
+                <img src={statusIcon} alt="" />
+              </div>
+              <div className="cursor-pointer">
+                <img src={ai} alt="" />
+              </div>
+              <div className="cursor-pointer">
+                <img src={bell} alt="" />
+              </div>
+              {/* <button className="cursor-pointer">
+                <Menu className="text-black" size={28} onClick={() => dispatch(toggleSidebar())} />
+              </button> */}
+            </div>
+          </div>
+        </header>
+        <Navbar showDetailsPanel={showDetailsPanel} />
+      </div>
       <AccordionItem
         value="item-0"
         className={`rounded-sm bg-[${color || "bg-transparent"}]`}
@@ -22,13 +64,12 @@ const TaskAccordion = ({ color }) => {
               <img src={tasktime} alt="task-btn" className="h-5 w-[26]" />
             </button>
             <div className="bg-white px-4 py-1 rounded shadow flex gap-2 text-base">
-  <span className="text-[14px] font-semibold text-[#60646C]">
-    Completed
-  </span>
-  <h6 className="text-[17px] font-bold text-[#101010]">56%</h6>
-</div>
+              <span className="text-[14px] font-semibold text-[#60646C]">
+                Completed
+              </span>
+              <h6 className="text-[17px] font-bold text-[#101010]">56%</h6>
+            </div>
 
-            {/* <div className="text-base flex gap-2"> <h6 className="text-[#101010] font-bold  text-[17px]"> 23 </h6><span className="text-[#60646C] font-semibold text-[14px]">Sub-projects</span></div> */}
             <div className="bg-white px-4 py-1 rounded shadow flex gap-2 text-base">
               <span className="text-[14px] font-semibold text-[#60646C]">
                 Task Overdue

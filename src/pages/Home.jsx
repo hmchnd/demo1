@@ -38,54 +38,71 @@ const Home = () => {
     return <div className="flex justify-center items-center h-[87vh]">Loading...</div>;
   }
 
-  // ✅ Hardcoded task numbers for phases
   const getPhaseTaskNumbers = (index) => {
     switch (index) {
-      case 0:
-        return [1, 2, 3];
-      case 1:
-        return [4, 5, 6, 7, 8, 9];
-      case 2:
-        return [10, 11, 12, 13];
-      case 3:
-        return [14, 15, 16];
-      case 4:
-        return [17, 18, 19];
-      default:
-        return [];
+      case 0: return [1, 2, 3];
+      case 1: return [4, 5, 6, 7, 8, 9];
+      case 2: return [10, 11, 12, 13];
+      case 3: return [14, 15, 16];
+      case 4: return [17, 18, 19];
+      default: return [];
     }
   };
 
   return (
     <div className="flex h-[87vh] overflow-hidden">
       {/* Main Content */}
-      <div className={`transition-all duration-300 ${
-        showDetailsPanel ? 'w-[70%]' : 'w-full'
-      }`}>
+      <div className={`transition-all duration-300 ${showDetailsPanel ? 'w-[70%]' : 'w-full'}`}>
         <div className="h-full overflow-x-auto">
           <div className="min-w-[1440px] pr-4">
             <Accordion type="multiple" collapsible defaultValue={['phases', ...phases.map(a => a.cuid)]}>
-              <TaskAccordion color="#F9F9FB" />
+              <TaskAccordion color="#F9F9FB" showDetailsPanel={showDetailsPanel} />
 
               {/* Phase Header Grid */}
-              <div className="grid grid-cols-6 gap-2 py-2 pl-6 pr-6">
+              <div className="grid grid-cols-6 gap-2 py-2 pl-6 pr-6 relative">
+                {/* Left grey line */}
+                <div className="absolute left-0 top-0 bottom-0 w-6 bg-gray-100"></div>
+                {/* Right grey line */}
+                <div className="absolute right-0 top-0 bottom-0 w-6 bg-gray-100"></div>
+                
+                {/* Thicker, darker vertical lines - Only in phase header */}
+                <div className="absolute inset-0 w-full h-full pointer-events-none">
+                  {phases.map((_, index) => (
+                    index < phases.length - 1 && (
+                      <div 
+                        key={`line-${index}`} 
+                        style={{
+                          position: 'absolute',
+                          left: index === 0 ? '17.7%' : 
+                                index === 1 ? '33.75%' :
+                                index === 2 ? '49.9%' :
+                                index === 3 ? '66%' :
+                                '82.1%',
+                          width: '4px',
+                          height: '100%',
+                          backgroundColor: '#D1D1D6',
+                          zIndex: 1
+                        }}
+                      />
+                    )
+                  ))}
+                </div>
+
                 {phases.map((phase, index) => (
                   <div key={phase.cuid} className="relative">
-                    {/* G icon before first phase */}
+                    {/* G icons with thicker, darker borders */}
                     {index === 0 && (
-                      <div className="absolute -left-6 top-[60%] w-6 h-6 bg-gray-100 rotate-45 border border-gray-300 flex items-center justify-center z-10">
+                      <div className="absolute -left-6 top-[60%] w-6 h-6 bg-gray-100 rotate-45 border-2 border-gray-500 flex items-center justify-center z-10">
                         <span className="text-sm font-semibold -rotate-45">G</span>
                       </div>
                     )}
-                    {/* G icon between phases */}
                     {index > 0 && (
-                      <div className="absolute -left-4 top-[60%] w-6 h-6 bg-gray-100 rotate-45 border border-gray-300 flex items-center justify-center z-10">
+                      <div className="absolute -left-4 top-[60%] w-6 h-6 bg-gray-100 rotate-45 border-2 border-gray-500 flex items-center justify-center z-10">
                         <span className="text-sm font-semibold -rotate-45">G</span>
                       </div>
                     )}
-                    {/* G icon after last phase */}
                     {index === phases.length - 1 && (
-                      <div className="absolute -right-6 top-[60%] w-6 h-6 bg-gray-100 rotate-45 border border-gray-300 flex items-center justify-center z-10">
+                      <div className="absolute -right-6 top-[60%] w-6 h-6 bg-gray-100 rotate-45 border-2 border-gray-500 flex items-center justify-center z-10">
                         <span className="text-sm font-semibold -rotate-45">G</span>
                       </div>
                     )}
@@ -101,21 +118,43 @@ const Home = () => {
               {/* Task Cards by Area and Phase */}
               {areas.map((area) => (
                 <AccordionItem key={area.cuid} value={area.cuid} className="rounded-sm mt-2">
-                  <AccordionTrigger className="bg-[#F9F9FB] px-2 rounded-sm">
-                    <div className="text-[16px] font-bold flex items-center gap-2">
+                  <AccordionTrigger className="bg-[#F9F9FB] px-2 rounded-sm [&>svg]:ml-0 [&>svg]:mr-auto [&>svg]:order-2 flex flex-row">
+                    <div className="text-[18px] font-bold flex items-center gap-2 order-1">
                       {area.name}
                     </div>
                   </AccordionTrigger>
                   <AccordionContent>
-                    <div className="pl-6 pr-6">
-                      <div className="grid grid-cols-6 gap-2 py-4">
+                    <div className="pl-6 pr-6 relative">
+                      {/* Left grey line for tasks */}
+                      <div className="absolute left-0 top-0 bottom-0 w-6 bg-gray-100"></div>
+                      {/* Right grey line for tasks */}
+                      <div className="absolute right-0 top-0 bottom-0 w-6 bg-gray-100"></div>
+                      
+                      <div className="grid grid-cols-6 gap-2 py-4 relative">
+                        {/* Vertical divider lines for tasks */}
+                        {phases.map((_, index) => (
+                          index < phases.length - 1 && (
+                            <div 
+                              key={`line-${index}`} 
+                              className="absolute top-0 bottom-0"
+                              style={{
+                                left: `${(index + 1) * (100/6)}%`,
+                                transform: 'translateX(-50%)',
+                                width: '4px',
+                                backgroundColor: '#D1D1D6',
+                                zIndex: 0
+                              }}
+                            />
+                          )
+                        ))}
+
                         {phases.map((phase) => {
                           const phaseTasks = tasks.filter(
                             task => task.area_id === area.cuid && task.phase_id === phase.cuid
                           );
 
                           return (
-                            <div key={`${area.cuid}-${phase.cuid}`} className="flex flex-col gap-3">
+                            <div key={`${area.cuid}-${phase.cuid}`} className="flex flex-col gap-3 relative z-10">
                               {phaseTasks.map((task) => (
                                 <AccordionCard
                                   key={task.cuid}
@@ -173,7 +212,6 @@ const Home = () => {
   );
 };
 
-// ✅ PhaseColumn Component
 const PhaseColumn = ({ phase, taskNumbers = [], isActive = false }) => {
   return (
     <div className="w-full flex flex-col items-center border border-gray-300 rounded-sm py-2 px-1">
@@ -185,10 +223,12 @@ const PhaseColumn = ({ phase, taskNumbers = [], isActive = false }) => {
       <div className="w-full min-h-[32px] flex flex-wrap justify-center gap-1 mb-1">
         {taskNumbers.map((num) => {
           const getColor = () => {
-            if (isActive && num === 14) return 'bg-yellow-500 text-white';
-            if (isActive && num === 16) return 'bg-yellow-500 text-white';
-            if (isActive && num === 15) return 'bg-green-600 text-white';
-            return 'bg-[#E8E8EC] text-[#101010]';
+            // Keep special colors for 14, 15, 16
+            if (num === 14) return 'bg-yellow-500 text-white';
+            if (num === 16) return 'bg-yellow-500 text-white';
+            if (num === 15) return 'bg-green-600 text-white';
+            // White background for all other numbers
+            return 'bg-white text-[#101010] border border-gray-400';
           };
 
           return (
@@ -204,6 +244,5 @@ const PhaseColumn = ({ phase, taskNumbers = [], isActive = false }) => {
     </div>
   );
 };
-
 
 export default Home;
