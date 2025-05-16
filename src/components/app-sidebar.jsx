@@ -11,6 +11,7 @@ import {
 import setting from '@assets/icons/setting.svg'
 import user from '@assets/icons/user.svg'
 import framsys from '@assets/icons/framsys.svg'
+import Work from '@assets/icons/Work.png'
 import gantt from '@assets/icons/gantt.svg'
 import construction from '@assets/icons/construction.svg'
 import kanban from '@assets/icons/kanban.svg'
@@ -24,55 +25,56 @@ import team from '@assets/icons/team.svg'
 
 const data = {
   user: {
-    name: "Mikhail",
+    name: "Profile",
     avatar: user,
   },
   setting: {
-    name: 'Setting',
+    name: 'Settings',
     avatar: setting
   },
   navMain: [
     {
-      title: "Framsys Methodology",
+      title: "Work",
       url: "about",
-      icon: framsys,
-      className: 'active-btn',
-      task: 5,
-      styleConfig: {
-        w: '22px',
-        h: "22px"
-      }
-    },
-    {
-      title: "Construction NW",
-      url: "about",
-      icon: construction,
+      icon: Work,
       className: 'active-btn',
       styleConfig: {
-        w: '22.16px',
-        h: "26px"
-      }
-    },
-    {
-      title: "SAP Onboarding",
-      url: "about",
-      icon: sap,
-      className: 'active-btn',
-      task: 2,
-      styleConfig: {
         w: '22px',
-        h: "26px"
+        h: "22px",
+        fillColor: '#BA5643',
+        textColor: '#BA5643'
       }
     },
-    {
-      title: "Recents",
-      url: "about",
-      icon: recents,
-      styleConfig: {
-        w: '22px',
-        h: "20px"
-      }
-    },
+    //{
+    //  title: "Portfolio",
+    //  url: "about",
+    //  icon: construction,
+    //  className: 'active-btn',
+    //  styleConfig: {
+    //    w: '22.16px',
+    //    h: "26px"
+    //  }
+    //},
+    //{
+    //  title: "SAP Onboarding",
+    //  url: "about",
+    //  icon: sap,
+    //  className: 'active-btn',
+    //  task: 2,
+    //  styleConfig: {
+    //    w: '22px',
+    //    h: "26px"
+    //  }
+    //},
+    // {
+    //   title: "Recents",
+    //   url: "about",
+    //   icon: recents,
+    //   styleConfig: {
+    //    w: '22px',
+    //    h: "20px"
+    //  }
+    //},
     {
       title: "Portfolio",
       url: "about",
@@ -92,7 +94,7 @@ const data = {
       }
     },
     {
-      title: "Kanban",
+      title: "Activities",
       url: "kanban",
       icon: kanban,
       styleConfig: {
@@ -109,17 +111,17 @@ const data = {
         h: "24px"
       }
     },
+    //{
+    //  title: "Team",
+    //  url: "about",
+    //  icon: team,
+    //  styleConfig: {
+    //    w: '22px',
+    //    h: "22px"
+    //  }
+    //},
     {
-      title: "Team",
-      url: "about",
-      icon: team,
-      styleConfig: {
-        w: '22px',
-        h: "22px"
-      }
-    },
-    {
-      title: "Reports",
+      title: "Analytics",
       url: "about",
       icon: reports,
       styleConfig: {
@@ -134,14 +136,14 @@ export function AppSidebar({
   ...props
 }) {
   return (
-    (<Sidebar collapsible="icon" className="fixed left-0 top-0 h-screen bg-white border-r border-gray-200 shadow-lg" style={{ zIndex: 100 }} {...props}>
-      <SidebarHeader>
+    (<Sidebar collapsible="icon" className="fixed left-0 top-0 h-screen bg-[#F4F4F4] border-r border-gray-300 shadow-lg" style={{ zIndex: 100 }} {...props}>
+      <SidebarHeader className="bg-[#F4F4F4]">
         <TeamSwitcher teams={data.teams} />
       </SidebarHeader>
-      <SidebarContent>
+      <SidebarContent className="bg-[#F4F4F4]">
         <NavMain items={data.navMain} />
       </SidebarContent>
-      <SidebarFooter>
+      <SidebarFooter className="bg-[#F4F4F4]"> 
         <NavUser user={data.user} setting={data.setting} />
       </SidebarFooter>
       <SidebarRail />

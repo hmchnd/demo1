@@ -12,6 +12,7 @@ import { Input } from "@/components/ui/input";
 import { Menu } from "lucide-react";
 import statusIcon from "@assets/icons/statuslight.svg";
 import downIcon from "@assets/icons/downiconsmall.svg";
+import fielddevelopmenticon from "@assets/icons/fielddevelopmenticon.svg";
 import bell from '@assets/icons/bell.svg';
 import ai from '@assets/icons/ai.svg';
 import searchIcon from '@assets/icons/searchicon.svg';
@@ -27,7 +28,7 @@ const TaskAccordion = ({ color, showDetailsPanel }) => {
         <header className="h-10 flex items-center w-full px-1">
           <div className="flex justify-between items-center flex-1">
             <h4 className="text-black text-2xl font-bold flex items-center gap-3">
-              Field Development Project <button><img src={downIcon} alt="" /></button>
+              Field Development Project <button><img src={downIcon} alt="" /></button> <button><img src={fielddevelopmenticon} alt="" /></button>
             </h4>
             <div className="flex items-center gap-2">
              
@@ -58,7 +59,7 @@ const TaskAccordion = ({ color, showDetailsPanel }) => {
         value="item-0"
         className={`rounded-sm bg-[${color || "bg-transparent"}]`}
       >
-        <AccordionTrigger className="rounded-[6px] border-[2px] border-[#E8E8EC] px-2">
+        {/* <AccordionTrigger className="rounded-[6px] border-[2px] border-[#E8E8EC] px-2">
           <div className="flex flex-wrap gap-3">
             <button>
               <img src={tasktime} alt="task-btn" className="h-5 w-[26]" />
@@ -90,7 +91,7 @@ const TaskAccordion = ({ color, showDetailsPanel }) => {
               <h6 className="text-[17px] font-bold text-[#101010]"> 1 </h6>
             </div>
           </div>
-        </AccordionTrigger>
+        </AccordionTrigger> */}
         <AccordionContent>
           <div className="grid grid-cols-1 gap-x-5 gap-y-4 py-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
             <div>

@@ -10,7 +10,7 @@ export default function DashboardLayout() {
     <SidebarProvider>
       <AppSidebar />
       <SidebarInset>
-        <div className="flex font-blod flex-1 flex-col gap-4 py-4 px-1 pt-0">
+        <div className="flex font-blod flex-1 flex-col gap-4 py-4 px-1 pt-0 bg-[#F4F4F4]">
           <Outlet />
         </div>
       </SidebarInset>

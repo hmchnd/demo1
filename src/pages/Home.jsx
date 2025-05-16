@@ -50,7 +50,7 @@ const Home = () => {
   };
 
   return (
-    <div className="flex h-[87vh] overflow-hidden">
+    <div className="flex min-h-screen h-[87vh] overflow-hidden bg-[#F4F4F4]">
       <div className="flex-1 flex overflow-hidden">
         <div className={`transition-all duration-300 ${showDetailsPanel ? 'w-[70%]' : 'w-full'}`}>
           <div className="h-full overflow-x-auto">
@@ -60,50 +60,102 @@ const Home = () => {
 
                 {/* Phase Header Grid */}
                 <div className="grid grid-cols-6 gap-2 py-2 pl-6 pr-6 relative">
-                  {/* Left grey line */}
-                  <div className="absolute left-0 top-0 bottom-0 w-6 bg-gray-100"></div>
-                  {/* Right grey line */}
-                  <div className="absolute right-0 top-0 bottom-0 w-6 bg-gray-100"></div>
-                  
-                  {/* Thicker, darker vertical lines - Only in phase header */}
-                  <div className="absolute inset-0 w-full h-full pointer-events-none">
-                    {phases.map((_, index) => (
-                      index < phases.length - 1 && (
-                        <div 
-                          key={`line-${index}`} 
-                          style={{
-                            position: 'absolute',
-                            left: index === 0 ? '17.7%' : 
-                                  index === 1 ? '33.75%' :
-                                  index === 2 ? '49.9%' :
-                                  index === 3 ? '66%' :
-                                  '82.1%',
-                            width: '4px',
-                            height: '100%',
-                            backgroundColor: '#D1D1D6',
-                            zIndex: 1
-                          }}
-                        />
-                      )
-                    ))}
-                  </div>
-
                   {phases.map((phase, index) => (
                     <div key={phase.cuid} className="relative">
-                      {/* G icons with thicker, darker borders */}
+                      {/* G icons with updated styling */}
                       {index === 0 && (
-                        <div className="absolute -left-6 top-[60%] w-6 h-6 bg-gray-100 rotate-45 border-2 border-gray-500 flex items-center justify-center z-10">
-                          <span className="text-sm font-semibold -rotate-45">G</span>
+                        <div className="absolute -left-6 top-[60%] w-6 h-6 bg-gray-100 rotate-45 flex items-center justify-center z-10"
+                          style={{
+                            borderRadius: 'var(--size-border-radius-4px, 4px)',
+                            border: '2px solid var(--color-stroke-support-green-dim1-default, #157D15)',
+                            background: 'var(--color-fill-component-neutral-dim1-default, #F9F9FB)'
+                          }}>
+                          <span className="text-sm font-semibold -rotate-45" style={{ color: '#0D4F0D' }}>G</span>
                         </div>
                       )}
-                      {index > 0 && (
-                        <div className="absolute -left-4 top-[60%] w-6 h-6 bg-gray-100 rotate-45 border-2 border-gray-500 flex items-center justify-center z-10">
-                          <span className="text-sm font-semibold -rotate-45">G</span>
+                      {index > 0 && index < 4 && (
+                        <div className="absolute -left-4 top-[60%] w-6 h-6 bg-gray-100 rotate-45 flex items-center justify-center z-10"
+                          style={{
+                            borderRadius: 'var(--size-border-radius-4px, 4px)',
+                            border: '2px solid var(--color-stroke-support-green-dim1-default, #157D15)',
+                            background: 'var(--color-fill-component-neutral-dim1-default, #F9F9FB)'
+                          }}>
+                          <span className="text-sm font-semibold -rotate-45" style={{ color: '#0D4F0D' }}>G</span>
+                        </div>
+                      )}
+                      {index === 4 && (
+                        <div 
+                          className="absolute -left-4 top-[60%] w-6 h-6 rotate-45 flex items-center justify-center z-10"
+                          style={{
+                            borderRadius: 'var(--size-border-radius-4px, 4px)',
+                            border: '2px solid var(--color-stroke-support-yellow-default, #D4C209)',
+                            background: 'var(--color-fill-component-neutral-dim1-default, #F9F9FB)'
+                          }}
+                        >
+                          <span 
+                            className="text-sm font-semibold -rotate-45"
+                            style={{
+                              color: 'var(--color-text-yellow-default, #5A3E00)',
+                              textAlign: 'center',
+                              fontFamily: 'var(--text-font-primary, Inter)',
+                              fontSize: 'var(--text-size-small, 12px)',
+                              fontStyle: 'normal',
+                              fontWeight: 'var(--text-weight-semibold, 600)',
+                              lineHeight: 'normal'
+                            }}
+                          >
+                            G
+                          </span>
+                        </div>
+                      )}
+                      {index === 5 && (
+                        <div 
+                          className="absolute -left-4 top-[60%] w-6 h-6 rotate-45 flex items-center justify-center z-10"
+                          style={{
+                            borderRadius: 'var(--size-border-radius-4px, 4px)',
+                            border: '2px solid #808080',
+                            background: 'var(--color-fill-component-neutral-dim1-default, #F9F9FB)'
+                          }}
+                        >
+                          <span 
+                            className="text-sm font-semibold -rotate-45"
+                            style={{
+                              color: '#808080',
+                              textAlign: 'center',
+                              fontFamily: 'var(--text-font-primary, Inter)',
+                              fontSize: 'var(--text-size-small, 12px)',
+                              fontStyle: 'normal',
+                              fontWeight: 'var(--text-weight-semibold, 600)',
+                              lineHeight: 'normal'
+                            }}
+                          >
+                            G
+                          </span>
                         </div>
                       )}
                       {index === phases.length - 1 && (
-                        <div className="absolute -right-6 top-[60%] w-6 h-6 bg-gray-100 rotate-45 border-2 border-gray-500 flex items-center justify-center z-10">
-                          <span className="text-sm font-semibold -rotate-45">G</span>
+                        <div 
+                          className="absolute -right-6 top-[60%] w-6 h-6 rotate-45 flex items-center justify-center z-10"
+                          style={{
+                            borderRadius: 'var(--size-border-radius-4px, 4px)',
+                            border: '2px solid #808080',
+                            background: 'var(--color-fill-component-neutral-dim1-default, #F9F9FB)'
+                          }}
+                        >
+                          <span 
+                            className="text-sm font-semibold -rotate-45"
+                            style={{
+                              color: '#808080',
+                              textAlign: 'center',
+                              fontFamily: 'var(--text-font-primary, Inter)',
+                              fontSize: 'var(--text-size-small, 12px)',
+                              fontStyle: 'normal',
+                              fontWeight: 'var(--text-weight-semibold, 600)',
+                              lineHeight: 'normal'
+                            }}
+                          >
+                            G
+                          </span>
                         </div>
                       )}
                       <PhaseColumn
@@ -125,29 +177,7 @@ const Home = () => {
                     </AccordionTrigger>
                     <AccordionContent>
                       <div className="pl-6 pr-6 relative">
-                        {/* Left grey line for tasks */}
-                        <div className="absolute left-0 top-0 bottom-0 w-6 bg-gray-100"></div>
-                        {/* Right grey line for tasks */}
-                        <div className="absolute right-0 top-0 bottom-0 w-6 bg-gray-100"></div>
-                        
                         <div className="grid grid-cols-6 gap-2 py-4 relative">
-                          {/* Vertical divider lines for tasks */}
-                          {phases.map((_, index) => (
-                            index < phases.length - 1 && (
-                              <div 
-                                key={`line-${index}`} 
-                                className="absolute top-0 bottom-0"
-                                style={{
-                                  left: `${(index + 1) * (100/6)}%`,
-                                  transform: 'translateX(-50%)',
-                                  width: '4px',
-                                  backgroundColor: '#D1D1D6',
-                                  zIndex: 0
-                                }}
-                              />
-                            )
-                          ))}
-
                           {phases.map((phase) => {
                             const phaseTasks = tasks.filter(
                               task => task.area_id === area.cuid && task.phase_id === phase.cuid
@@ -215,27 +245,48 @@ const Home = () => {
 
 const PhaseColumn = ({ phase, taskNumbers = [], isActive = false }) => {
   return (
-    <div className="w-full flex flex-col items-center border border-gray-300 rounded-sm py-2 px-1">
+    <div className="w-full flex flex-col items-center border border-gray-300 rounded-sm py-2 px-1 bg-white">
       <div className="w-full flex flex-col items-center">
-        <h4 className={`font-bold text-center mb-3 ${isActive ? 'text-[#E5484D]' : 'text-[#101010]'}`}>
+        <h4 className={`text-center mb-3 ${isActive ? 'text-[#E5484D]' : ''}`} style={{
+          overflow: 'hidden',
+          color: phase === 'Execute' ? 'var(--color-text-brand-default, #AE4F3E)' : 'var(--color-text-neutral-dim1-default, #595959)',
+          leadingTrim: 'both',
+          textEdge: 'cap',
+          textOverflow: 'ellipsis',
+          fontFamily: 'var(--text-font-primary, Inter)',
+          fontSize: 'var(--text-size-body, 14px)',
+          fontStyle: 'normal',
+          fontWeight: phase === 'Execute' ? 'var(--text-weight-semibold, 600)' : '500',
+          lineHeight: 'normal',
+          textTransform: 'capitalize'
+        }}>
           {phase}
         </h4>
       </div>
       <div className="w-full min-h-[32px] flex flex-wrap justify-center gap-1 mb-1">
         {taskNumbers.map((num) => {
           const getColor = () => {
-            // Keep special colors for 14, 15, 16
-            if (num === 14) return 'bg-yellow-500 text-white';
-            if (num === 16) return 'bg-yellow-500 text-white';
-            if (num === 15) return 'bg-green-600 text-white';
-            // White background for all other numbers
-            return 'bg-white text-[#101010] border border-gray-400';
+            // Keep special colors for 14, 15, 16 but make them circular
+            if (num === 14) return 'bg-yellow-500 text-white rounded-full';
+            if (num === 16) return 'bg-yellow-500 text-white rounded-full';
+            if (num === 15) return 'bg-green-600 text-white rounded-full';
+            // Apply new styling for numbers 1-13 (keeping them circular)
+            if (num >= 1 && num <= 13) return 'rounded-full';
+            // Default styling for other numbers
+            return 'bg-white text-[#101010] border border-gray-400 rounded-full';
           };
 
           return (
             <span
               key={num}
-              className={`w-6 h-6 rounded-full text-xs font-semibold flex justify-center items-center ${getColor()}`}
+              className={`w-6 h-6 text-xs font-semibold flex justify-center items-center ${getColor()}`}
+              style={
+                num >= 1 && num <= 13 ? {
+                  border: '1px solid var(--color-stroke-support-green-dim1-default, #157D15)',
+                  background: 'var(--color-fill-component-neutral-dim1-default, #F9F9FB)',
+                  color: '#0D4F0D'
+                } : {}
+              }
             >
               {num}
             </span>

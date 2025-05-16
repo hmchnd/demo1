@@ -1,4 +1,3 @@
-
 import {
   Collapsible,
   CollapsibleContent,
@@ -23,10 +22,10 @@ export function NavMain({
 }) {
   const { state, } = useSidebar()
   return (
-    (<SidebarGroup>
+    (<SidebarGroup className="bg-[#F4F4F4]"> 
       <SidebarMenu>
         <SidebarMenuItem className="z-40">
-          <SidebarMenuButton className={`flex ${state === 'collapsed' ? 'justify-center' : 'justify-end'} !hover:bg-transparent`}>
+          <SidebarMenuButton className={`flex ${state === 'collapsed' ? 'justify-center' : 'justify-end'} hover:bg-gray-200`}> 
             <SidebarTrigger />
           </SidebarMenuButton>
         </SidebarMenuItem>
@@ -34,16 +33,14 @@ export function NavMain({
 
       <SidebarMenu>
         <SidebarMenuItem>
-          <SidebarMenuButton className="flex items-center justify-center gap-2 !h-4">
-            <img src={star} alt="Favorites Icon" />
-            {state !== 'collapsed' && <span>Favorites</span>}
+          <SidebarMenuButton className="flex items-center justify-center gap-2 !h-4"> 
           </SidebarMenuButton>
         </SidebarMenuItem>
       </SidebarMenu>
       <SidebarMenu className="mt-2">
         {items?.map((item, i) => (
           <SidebarMenuItem key={i}>
-            <SidebarMenuButton className={`${item.className} ${state === "collapsed" ? "justify-center items-center" : ''} relative `}>
+            <SidebarMenuButton className={`${item.className} ${state === "collapsed" ? "justify-center items-center" : ''} relative hover:bg-gray-200`}> {/* व्हाइट हटाकर ग्रे कर दिया */}
               {item?.task && <div className="bg-[#E5484D] size-4 rounded-full text-[10px] flex items-center absolute right-0 top-0 justify-center text-white"> {item?.task}</div>}
               {item.icon && (
                 <Link to={item?.url} className={`${state === 'expanded' ? "pl-2" : ''}`}>
@@ -51,7 +48,14 @@ export function NavMain({
                 </Link>
               )}
               {state === "expanded" && (
-                <Link to={item?.url} className="text-sm font-semibold">
+                <Link to={item?.url} className="text-sm" style={{
+                  color: 'var(--color-text-neutral-dim1-default, #595959)',
+                  fontFamily: 'var(--text-font-primary, Inter)',
+                  fontSize: 'var(--text-size-body, 14px)',
+                  fontStyle: 'normal',
+                  fontWeight: 'var(--text-weight-medium, 500)',
+                  lineHeight: 'normal'
+                }}> 
                   {item.title}
                 </Link>
               )}
@@ -59,9 +63,9 @@ export function NavMain({
             <SidebarMenuSub>
               {item.items?.map((subItem) => (
                 <SidebarMenuSubItem key={subItem.title}>
-                  <SidebarMenuSubButton asChild>
+                  <SidebarMenuSubButton asChild className="hover:bg-gray-200"> 
                     <Link to={subItem.url}>
-                      <span>{subItem.title}</span>
+                      <span className="text-black">{subItem.title}</span> 
                     </Link>
                   </SidebarMenuSubButton>
                 </SidebarMenuSubItem>
@@ -70,7 +74,6 @@ export function NavMain({
           </SidebarMenuItem>
         ))}
       </SidebarMenu>
-
-    </SidebarGroup >)
+    </SidebarGroup>)
   );
 }
