@@ -25,7 +25,7 @@ export function NavMain({
     (<SidebarGroup className="bg-[#F4F4F4]"> 
       <SidebarMenu>
         <SidebarMenuItem className="z-40">
-          <SidebarMenuButton className={`flex ${state === 'collapsed' ? 'justify-center' : 'justify-end'} hover:bg-gray-200`}> 
+          <SidebarMenuButton className={`flex ${state === 'collapsed' ? 'justify-center' : 'justify-end'} !bg-transparent !hover:bg-transparent`}> 
             <SidebarTrigger />
           </SidebarMenuButton>
         </SidebarMenuItem>
