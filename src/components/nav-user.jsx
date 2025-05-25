@@ -22,28 +22,40 @@ export function NavUser({
     (<SidebarMenu>
       <SidebarMenuItem>
         <SidebarMenuButton
-          size="lg"
-          className={`data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground ${state === 'collapsed' ? 'justify-center' : ''}`}>
-          <Avatar className={`rounded-lg ${state === 'expanded' ? "pl-2 " : ''} `}>
-            <AvatarImage src={setting.avatar} alt={setting.name} className="object-contain size-[22px]" />
+          className={`flex items-center gap-3 ${state === 'collapsed' ? 'justify-center' : ''} data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground`}>
+          <Avatar className={` ${state === 'expanded' ? " " : ''} `}>
+            <AvatarImage src={setting.avatar} alt={setting.name} className="object-contain size-[20px]" />
           </Avatar>
           {
             state === 'expanded' && <div className="grid flex-1 text-left text-sm leading-tight">
-              <span className=" font-semibold text-sm">{setting?.name}</span>
+              <span className=" font-semibold text-sm" style={{
+                color: '#595959',
+                fontFamily: 'var(--text-font-primary, Inter)',
+                fontSize: 'var(--text-size-body, 14px)',
+                fontStyle: 'normal',
+                fontWeight: 'var(--text-weight-medium, 500)',
+                lineHeight: 'normal'
+              }}>{setting?.name}</span>
             </div>
           }
         </SidebarMenuButton>
       </SidebarMenuItem>
       <SidebarMenuItem>
         <SidebarMenuButton
-          size="lg"
-          className={`data-[state=open]:bg-sidebar-accent bg-[#F0F0F3]  data-[state=open]:text-sidebar-accent-foreground ${state === 'collapsed' ? 'justify-center' : ''}`}>
-          <Avatar className={` rounded-lg ${state === 'expanded' ? "pl-2" : ''} `}>
-            <AvatarImage src={user?.avatar} alt={user?.name} className="size-[22px]" />
+          className={`flex items-center gap-3 ${state === 'collapsed' ? 'justify-center' : ''} data-[state=open]:bg-sidebar-accent bg-[#F0F0F3]  data-[state=open]:text-sidebar-accent-foreground`}>
+          <Avatar className={` ${state === 'expanded' ? "" : ''} `}>
+            <AvatarImage src={user?.avatar} alt={user?.name} className="size-[20px]" />
           </Avatar>
           {
             state === 'expanded' && <div className="grid flex-1 text-left text-sm leading-tight">
-              <span className="truncate font-semibold text-sm">{user?.name}</span>
+              <span className="truncate font-semibold text-sm" style={{
+                color: '#595959',
+                fontFamily: 'var(--text-font-primary, Inter)',
+                fontSize: 'var(--text-size-body, 14px)',
+                fontStyle: 'normal',
+                fontWeight: 'var(--text-weight-medium, 500)',
+                lineHeight: 'normal'
+              }}>{user?.name}</span>
             </div>
           }
         </SidebarMenuButton>

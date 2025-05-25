@@ -1,9 +1,4 @@
 import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from "@/components/ui/collapsible"
-import {
   SidebarGroup,
   SidebarMenu,
   SidebarMenuButton,
@@ -11,45 +6,50 @@ import {
   SidebarMenuSub,
   SidebarMenuSubButton,
   SidebarMenuSubItem,
-  SidebarTrigger,
   useSidebar,
 } from "@/components/ui/sidebar"
 import { Link } from "react-router-dom";
-import star from '@assets/icons/star.svg'
+import vector from '@assets/icons/vector.svg'
 
 export function NavMain({
   items
 }) {
-  const { state, } = useSidebar()
+  const { state, toggleSidebar } = useSidebar();
   return (
-    (<SidebarGroup className="bg-[#F4F4F4]"> 
-      <SidebarMenu>
-        <SidebarMenuItem className="z-40">
-          <SidebarMenuButton className={`flex ${state === 'collapsed' ? 'justify-center' : 'justify-end'} !bg-transparent !hover:bg-transparent`}> 
-            <SidebarTrigger />
-          </SidebarMenuButton>
-        </SidebarMenuItem>
-      </SidebarMenu>
-
+    <SidebarGroup className="bg-[#F4F4F4]"> 
+      {/* Vector icon section with right alignment */}
       <SidebarMenu>
         <SidebarMenuItem>
-          <SidebarMenuButton className="flex items-center justify-center gap-2 !h-4"> 
+          <SidebarMenuButton 
+            onClick={toggleSidebar}
+            className="flex items-center justify-end gap-2 !h-4 pr-6 cursor-pointer"> 
+            <img 
+              src={vector} 
+              style={{
+                width: '6.869px',
+                height: 'var(--size-12, 12px)',
+                aspectRatio: '6.87/12.00',
+                fill: 'var(--color-icon-neutral-dim2-default, #ABABAB)'
+              }}
+              alt="close icon"
+            />
           </SidebarMenuButton>
         </SidebarMenuItem>
       </SidebarMenu>
+      
       <SidebarMenu className="mt-2">
         {items?.map((item, i) => (
           <SidebarMenuItem key={i}>
-            <SidebarMenuButton className={`${item.className} ${state === "collapsed" ? "justify-center items-center" : ''} relative hover:bg-gray-200`}> {/* व्हाइट हटाकर ग्रे कर दिया */}
+            <SidebarMenuButton className={`${item.className} ${state === "collapsed" ? "justify-center items-center" : ''} relative hover:bg-gray-200 flex items-center gap-3`}>
               {item?.task && <div className="bg-[#E5484D] size-4 rounded-full text-[10px] flex items-center absolute right-0 top-0 justify-center text-white"> {item?.task}</div>}
               {item.icon && (
-                <Link to={item?.url} className={`${state === 'expanded' ? "pl-2" : ''}`}>
-                  <img style={{ height: `${item.styleConfig.h}`, width: `${item.styleConfig.w}` }} src={item.icon} />
+                <Link to={item?.url} className={`${state === 'expanded' ? "pl-2" : ''} flex-shrink-0`}>
+                  <img style={{ height: '20px', width: '20px' }} src={item.icon} />
                 </Link>
               )}
               {state === "expanded" && (
                 <Link to={item?.url} className="text-sm" style={{
-                  color: 'var(--color-text-neutral-dim1-default, #595959)',
+                  color: item.title === 'Roadmap' ? '#AE4F3E' : 'var(--color-text-neutral-dim1-default, #595959)',
                   fontFamily: 'var(--text-font-primary, Inter)',
                   fontSize: 'var(--text-size-body, 14px)',
                   fontStyle: 'normal',
@@ -74,6 +74,6 @@ export function NavMain({
           </SidebarMenuItem>
         ))}
       </SidebarMenu>
-    </SidebarGroup>)
+    </SidebarGroup>
   );
 }

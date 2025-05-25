@@ -39,8 +39,8 @@ const data = {
       icon: Work,
       className: 'active-btn',
       styleConfig: {
-        w: '22px',
-        h: "22px",
+        w: '20px',
+        h: '20px',
         fillColor: '#BA5643',
         textColor: '#BA5643'
       }
@@ -80,8 +80,8 @@ const data = {
       url: "about",
       icon: portfolio,
       styleConfig: {
-        w: '22px',
-        h: "21.87px"
+        w: '20px',
+        h: '20px'
       }
     },
     {
@@ -89,8 +89,9 @@ const data = {
       url: "/",
       icon: roadmap,
       styleConfig: {
-        w: '22px',
-        h: "24px"
+        w: '20px',
+        h: '20px'
+        
       }
     },
     {
@@ -98,8 +99,8 @@ const data = {
       url: "kanban",
       icon: kanban,
       styleConfig: {
-        w: '22px',
-        h: "22px"
+        w: '20px',
+        h: '20px'
       }
     },
     {
@@ -107,8 +108,8 @@ const data = {
       url: "gantt",
       icon: gantt,
       styleConfig: {
-        w: '22px',
-        h: "24px"
+        w: '20px',
+        h: '20px'
       }
     },
     //{
@@ -125,8 +126,8 @@ const data = {
       url: "about",
       icon: reports,
       styleConfig: {
-        w: '22px',
-        h: "22px"
+        w: '20px',
+        h: '20px'
       }
     },
   ],
