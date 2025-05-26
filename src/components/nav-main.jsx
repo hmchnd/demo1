@@ -9,7 +9,7 @@ import {
   useSidebar,
 } from "@/components/ui/sidebar"
 import { Link } from "react-router-dom";
-import vector from '@assets/icons/vector.svg'
+import sidebarcollapse from '@assets/icons/sidebarcollapse.svg'
 
 export function NavMain({
   items
@@ -17,14 +17,14 @@ export function NavMain({
   const { state, toggleSidebar } = useSidebar();
   return (
     <SidebarGroup className="bg-[#F4F4F4]"> 
-      {/* Vector icon section with right alignment */}
+      {/* sidebarcollapse icon section with right alignment */}
       <SidebarMenu>
         <SidebarMenuItem>
           <SidebarMenuButton 
             onClick={toggleSidebar}
-            className="flex items-center justify-end gap-2 !h-4 pr-6 cursor-pointer"> 
+            className="flex items-center justify-end gap-2 !h-8 pr-6 cursor-pointer"> 
             <img 
-              src={vector} 
+              src={sidebarcollapse} 
               style={{
                 width: '6.869px',
                 height: 'var(--size-12, 12px)',
@@ -40,7 +40,7 @@ export function NavMain({
       <SidebarMenu className="mt-2">
         {items?.map((item, i) => (
           <SidebarMenuItem key={i}>
-            <SidebarMenuButton className={`${item.className} ${state === "collapsed" ? "justify-center items-center" : ''} relative hover:bg-gray-200 flex items-center gap-3`}>
+            <SidebarMenuButton className={`${item.className} ${state === "collapsed" ? "justify-center items-center" : ''} relative hover:bg-gray-200 flex items-center gap-3 !h-8`}>
               {item?.task && <div className="bg-[#E5484D] size-4 rounded-full text-[10px] flex items-center absolute right-0 top-0 justify-center text-white"> {item?.task}</div>}
               {item.icon && (
                 <Link to={item?.url} className={`${state === 'expanded' ? "pl-2" : ''} flex-shrink-0`}>
