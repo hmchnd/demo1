@@ -22,12 +22,12 @@ export function NavUser({
     (<SidebarMenu>
       <SidebarMenuItem>
         <SidebarMenuButton
-          className={`flex items-center gap-3 ${state === 'collapsed' ? 'justify-center' : ''} data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground`}>
-          <Avatar className={` ${state === 'expanded' ? " " : ''} `}>
+          className={`flex items-center ${state === 'collapsed' ? 'justify-center' : ''} data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground`}>
+          <Avatar className={`${state === 'expanded' ? "pl-2" : ''} flex-shrink-0 py-2`}>
             <AvatarImage src={setting.avatar} alt={setting.name} className="object-contain size-[20px]" />
           </Avatar>
           {
-            state === 'expanded' && <div className="grid flex-1 text-left text-sm leading-tight">
+            state === 'expanded' && <div className="grid flex-1 text-left text-sm leading-tight pl-3">
               <span className=" font-semibold text-sm" style={{
                 color: '#595959',
                 fontFamily: 'var(--text-font-primary, Inter)',
@@ -42,12 +42,12 @@ export function NavUser({
       </SidebarMenuItem>
       <SidebarMenuItem>
         <SidebarMenuButton
-          className={`flex items-center gap-3 ${state === 'collapsed' ? 'justify-center' : ''} data-[state=open]:bg-sidebar-accent bg-[#F0F0F3]  data-[state=open]:text-sidebar-accent-foreground`}>
-          <Avatar className={` ${state === 'expanded' ? "" : ''} `}>
+          className={`flex items-center ${state === 'collapsed' ? 'justify-center' : ''} data-[state=open]:bg-sidebar-accent bg-[#F0F0F3] data-[state=open]:text-sidebar-accent-foreground`}>
+          <Avatar className={`${state === 'expanded' ? "pl-2" : ''} flex-shrink-0 py-2`}>
             <AvatarImage src={user?.avatar} alt={user?.name} className="size-[20px]" />
           </Avatar>
           {
-            state === 'expanded' && <div className="grid flex-1 text-left text-sm leading-tight">
+            state === 'expanded' && <div className="grid flex-1 text-left text-sm leading-tight pl-3">
               <span className="truncate font-semibold text-sm" style={{
                 color: '#595959',
                 fontFamily: 'var(--text-font-primary, Inter)',

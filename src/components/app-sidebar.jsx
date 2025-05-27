@@ -11,7 +11,7 @@ import {
 import setting from '@assets/icons/setting.svg'
 import user from '@assets/icons/user.svg'
 import framsys from '@assets/icons/framsys.svg'
-import Work from '@assets/icons/Work.png'
+import Work from '@assets/icons/Work.svg'
 import gantt from '@assets/icons/gantt.svg'
 import construction from '@assets/icons/construction.svg'
 import kanban from '@assets/icons/kanban.svg'

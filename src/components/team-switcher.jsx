@@ -9,7 +9,7 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from "@/components/ui/sidebar"
-import logo from '@assets/images/logo.png'
+import framsys from '@assets/icons/framsys.svg'
 
 export function TeamSwitcher() {
   const { isMobile } = useSidebar()
@@ -23,7 +23,15 @@ export function TeamSwitcher() {
               className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground group-data-[collapsible=icon]:!size-10 group-data-[collapsible=icon]:!p-2">
               <div
                 className="flex aspect-square size-10 items-center justify-center rounded-lg text-sidebar-primary-foreground">
-                <img src={logo} alt="admin-logo" />
+                <img 
+                  src={framsys} 
+                  alt="framsys-logo" 
+                  style={{
+                    width: '20.842px',
+                    height: 'var(--size-24, 24px)',
+                    aspectRatio: '20.84/24.00'
+                  }}
+                />
               </div>
             </SidebarMenuButton>
           </DropdownMenuTrigger>

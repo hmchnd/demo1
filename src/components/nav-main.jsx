@@ -40,15 +40,15 @@ export function NavMain({
       <SidebarMenu className="mt-2">
         {items?.map((item, i) => (
           <SidebarMenuItem key={i}>
-            <SidebarMenuButton className={`${item.className} ${state === "collapsed" ? "justify-center items-center" : ''} relative hover:bg-gray-200 flex items-center gap-3 !h-8`}>
+            <SidebarMenuButton className={`${item.className} ${state === "collapsed" ? "justify-center items-center" : ''} relative hover:bg-gray-200 flex items-center !h-8`}>
               {item?.task && <div className="bg-[#E5484D] size-4 rounded-full text-[10px] flex items-center absolute right-0 top-0 justify-center text-white"> {item?.task}</div>}
               {item.icon && (
-                <Link to={item?.url} className={`${state === 'expanded' ? "pl-2" : ''} flex-shrink-0`}>
+                <Link to={item?.url} className={`${state === 'expanded' ? "pl-2" : ''} flex-shrink-0 py-2`}>
                   <img style={{ height: '20px', width: '20px' }} src={item.icon} />
                 </Link>
               )}
               {state === "expanded" && (
-                <Link to={item?.url} className="text-sm" style={{
+                <Link to={item?.url} className="text-sm pl-3" style={{
                   color: item.title === 'Roadmap' ? '#AE4F3E' : 'var(--color-text-neutral-dim1-default, #595959)',
                   fontFamily: 'var(--text-font-primary, Inter)',
                   fontSize: 'var(--text-size-body, 14px)',
