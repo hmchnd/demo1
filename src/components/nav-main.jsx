@@ -16,7 +16,17 @@ export function NavMain({
 }) {
   const { state, toggleSidebar } = useSidebar();
   return (
-    <SidebarGroup className="bg-[#F4F4F4]"> 
+    <SidebarGroup 
+      className={"bg-[#F4F4F4]"}
+      style={state === 'collapsed' ? {
+        display: 'inline-flex',
+        height: '920px',
+        padding: 'var(--size-12, 12px) var(--size-12, 12px) var(--size-8, 8px) var(--size-12, 12px)',
+        flexDirection: 'column',
+        alignItems: 'center',
+        flexShrink: 0
+      } : {}}
+    > 
       {/* sidebarcollapse icon section with right alignment */}
       <SidebarMenu>
         <SidebarMenuItem>
