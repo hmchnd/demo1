@@ -25,14 +25,14 @@ const TaskAccordion = ({ color, showDetailsPanel }) => {
   return (
     <>
       <div className="flex flex-col">
-        <header className="h-10 flex items-center w-full px-1">
+        <header className="h-10 flex items-center w-full">
           <div className="flex justify-between items-center flex-1">
             <h4 className="text-black text-xl font-bold flex items-center gap-3">
               Field Development Project <button><img src={downIcon} alt="" /></button> <button><img src={fielddevelopmenticon} alt="" /></button>
             </h4>
             <div className="flex items-center gap-2">
              
-              <div className="relative flex w-[191px] h-7 py-1 px-2 justify-end items-center gap-2.5">
+              <div className="relative flex h-7 py-1 px-2 justify-end items-center gap-2.5">
                 
                 <Input type="email" placeholder="Search..." className="rounded-xl bg-[##F0F0F3] pl-2 pr-8 max-w-[160px] h-6 w-full" />
                 <span className="absolute right-2 top-1/2 -translate-y-1/2">
