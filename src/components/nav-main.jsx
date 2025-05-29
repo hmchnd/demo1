@@ -47,7 +47,7 @@ export function NavMain({
         </SidebarMenuItem>
       </SidebarMenu>
       
-      <SidebarMenu className="mt-2">
+      <SidebarMenu className={`${state === 'expanded' ? 'mt-2' : ''}`}>
         {items?.map((item, i) => (
           <SidebarMenuItem key={i}>
             <SidebarMenuButton className={`${item.className} ${state === "collapsed" ? "justify-center items-center" : ''} relative hover:bg-gray-200 flex items-center !h-8`}>

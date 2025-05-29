@@ -23,7 +23,7 @@ import useCurrentPath from "@/hooks/useCurrentPath";
 import { useLocation } from "react-router-dom";
 const SIDEBAR_COOKIE_NAME = "sidebar_state"
 const SIDEBAR_COOKIE_MAX_AGE = 60 * 60 * 24 * 7
-const SIDEBAR_WIDTH = "160px"
+const SIDEBAR_WIDTH = "150px"
 const SIDEBAR_WIDTH_MOBILE = "18rem"
 const SIDEBAR_WIDTH_ICON = "60px"
 const SIDEBAR_KEYBOARD_SHORTCUT = "b"
@@ -317,7 +317,7 @@ const SidebarHeader = React.forwardRef(({ className, ...props }, ref) => {
     (<div
       ref={ref}
       data-sidebar="header"
-      className={cn("flex flex-col gap-2 p-2", className)}
+      className={cn("flex flex-col gap-2", className)}
       {...props} />)
   );
 })

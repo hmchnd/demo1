@@ -10,13 +10,13 @@ import LeftArrow from '@assets/icons/LeftArrow.svg'
 
 const Navbar = ({ showDetailsPanel = false }) => {
     return (
-        <div className="flex gap-2 px-4 py-2 justify-between items-center border-b border-gray-200">
-            <div className="flex items-center gap-2 h-8">
+        <div className="flex gap-2 px-2 h-7 justify-between items-center border-b border-gray-200 self-stretch">
+            <div className="flex items-center gap-2 h-6">
                     <button >
-                        <img src={LeftArrow} alt="" className="w-6 h-6" />
+                        <img src={LeftArrow} alt="" className="w-6 h-6" style={{ height: '13.704px', flexShrink: 0, alignSelf: 'stretch', aspectRatio: '16.00/13.70' }} />
                     </button>
-                <div className="h-full">
-                    <button className="w-[72px] h-full px-2 flex gap-2 text-sm items-center bg-[#EBEBEB] rounded-[6px] text-[#60646C] font-medium">
+                <div className="h-full flex items-center">
+                    <button className="w-[72px] h-6 px-2 py-0 flex justify-center items-center gap-2 text-sm bg-[#EBEBEB] rounded-[6px] text-[#60646C] font-medium self-stretch">
                         <Plus size={21} color="#60646C" strokeWidth={3} />
                         <span className="text-[#1C2024] text-sm font-medium">Task</span>
                     </button>
@@ -24,10 +24,12 @@ const Navbar = ({ showDetailsPanel = false }) => {
             </div>
 
             <div className="flex items-center gap-4">
+                <div className="flex items-center">
+                    <button className="text-white font-medium text-sm bg-[#AE4F3E] h-8 px-3 rounded-l-[6px] border border-gray-200">All Phases</button>
+                    <button className="text-[#101010] font-medium text-sm bg-[#EBEBEB] h-8 px-3 border-t border-b border-gray-200">3 Phases</button>
+                    <button className="text-[#101010] font-medium text-sm bg-[#EBEBEB] h-8 px-3 rounded-r-[6px] border border-gray-200">1 Phase</button>
+                </div>
                 <div className="flex items-center gap-2">
-                    <button className="text-white font-medium text-sm bg-[#AE4F3E] h-8 px-3 rounded-[6px]">All Phases</button>
-                    <button className="text-[#101010] font-medium text-sm bg-[#EBEBEB] h-8 px-3 rounded-[6px]">3 Phases</button>
-                    <button className="text-[#101010] font-medium text-sm bg-[#EBEBEB] h-8 px-3 rounded-[6px]">1 Phase</button>
                     <button className="border border-[#E0E1E6] gap-2 h-8 rounded-[6px] px-3 py-1 flex items-center text-sm bg-[#EBEBEB]">
                         <img src={filterIcon} alt="" className="w-4 h-4" />
                         <span className="text-[#101010] font-medium">Filter</span>
