@@ -14,21 +14,21 @@ import framsys from '@assets/icons/framsys.svg'
 export function TeamSwitcher() {
   const { isMobile } = useSidebar()
   return (
-    (<SidebarMenu>
-      <SidebarMenuItem>
+    (<SidebarMenu className="p-0">
+      <SidebarMenuItem className="p-0">
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <SidebarMenuButton
               size="lg"
-              className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground group-data-[collapsible=icon]:!size-10">
+              className="p-0 data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground">
               <div
-                className="flex aspect-square size-10 items-center justify-center rounded-lg text-sidebar-primary-foreground">
+                className="flex items-center justify-start pl-3 py-3 text-sidebar-primary-foreground">
                 <img 
                   src={framsys} 
                   alt="framsys-logo" 
                   style={{
-                    width: '20.842px',
-                    height: 'var(--size-24, 24px)',
+                    width: '20px',
+                    height: '20px',
                     aspectRatio: '20.84/24.00'
                   }}
                 />

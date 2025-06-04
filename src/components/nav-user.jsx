@@ -22,8 +22,8 @@ export function NavUser({
     (<SidebarMenu>
       <SidebarMenuItem>
         <SidebarMenuButton
-          className={`flex items-center ${state === 'collapsed' ? 'justify-center' : ''} data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground`}>
-          <Avatar className={`${state === 'expanded' ? "pl-2" : ''} flex-shrink-0 py-2`}>
+          className={`flex items-center justify-start ${state === 'collapsed' ? 'pl-[8px]' : 'pl-2'} data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground !h-9`}>
+          <Avatar className={`${state === 'expanded' ? "" : ''} flex-shrink-0 py-2`}>
             <AvatarImage src={setting.avatar} alt={setting.name} className="object-contain size-[20px]" />
           </Avatar>
           {
@@ -42,8 +42,8 @@ export function NavUser({
       </SidebarMenuItem>
       <SidebarMenuItem>
         <SidebarMenuButton
-          className={`flex items-center ${state === 'collapsed' ? 'justify-center' : ''} data-[state=open]:bg-sidebar-accent bg-[#F0F0F3] data-[state=open]:text-sidebar-accent-foreground`}>
-          <Avatar className={`${state === 'expanded' ? "pl-2" : ''} flex-shrink-0 py-2`}>
+          className={`flex items-center justify-start ${state === 'collapsed' ? 'pl-[8px]' : 'pl-2'} data-[state=open]:bg-sidebar-accent bg-[#F0F0F3] data-[state=open]:text-sidebar-accent-foreground !h-9`}>
+          <Avatar className={`${state === 'expanded' ? "" : ''} flex-shrink-0 py-2`}>
             <AvatarImage src={user?.avatar} alt={user?.name} className="size-[20px]" />
           </Avatar>
           {
