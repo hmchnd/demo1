@@ -137,7 +137,7 @@ export function AppSidebar({
   ...props
 }) {
   return (
-    (<Sidebar collapsible="icon" className="fixed left-0 top-0 h-screen bg-[#F4F4F4] border-r border-gray-300 shadow-lg" style={{ zIndex: 100 }} {...props}>
+    (<Sidebar collapsible="icon" className="fixed left-0 top-0 h-screen bg-[#F4F4F4] border-t border-l border-gray-300 shadow-[2px_2px_4px_rgba(0,0,0,0.1)] rounded-tr-lg" style={{ zIndex: 100 }} {...props}>
       <SidebarHeader className="bg-[#F4F4F4]">
         <TeamSwitcher teams={data.teams} />
       </SidebarHeader>

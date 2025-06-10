@@ -64,7 +64,7 @@ const Home = () => {
                     <div key={phase.cuid} className="relative">
                       {/* G icons with updated styling */}
                       {index === 0 && (
-                        <div className="absolute -left-6 top-[60%] w-6 h-6 bg-gray-100 rotate-45 flex items-center justify-center z-10"
+                        <div className="absolute -left-6 top-[48%] w-6 h-6 bg-gray-100 rotate-45 flex items-center justify-center z-10"
                           style={{
                             borderRadius: 'var(--size-border-radius-4px, 4px)',
                             border: '2px solid var(--color-stroke-support-green-dim1-default, #157D15)',
@@ -74,7 +74,7 @@ const Home = () => {
                         </div>
                       )}
                       {index > 0 && index < 4 && (
-                        <div className="absolute -left-4 top-[60%] w-6 h-6 bg-gray-100 rotate-45 flex items-center justify-center z-10"
+                        <div className="absolute -left-4 top-[48%] w-6 h-6 bg-gray-100 rotate-45 flex items-center justify-center z-10"
                           style={{
                             borderRadius: 'var(--size-border-radius-4px, 4px)',
                             border: '2px solid var(--color-stroke-support-green-dim1-default, #157D15)',
@@ -85,7 +85,7 @@ const Home = () => {
                       )}
                       {index === 4 && (
                         <div 
-                          className="absolute -left-4 top-[60%] w-6 h-6 rotate-45 flex items-center justify-center z-10"
+                          className="absolute -left-4 top-[48%] w-6 h-6 rotate-45 flex items-center justify-center z-10"
                           style={{
                             borderRadius: 'var(--size-border-radius-4px, 4px)',
                             border: '2px solid var(--color-stroke-support-yellow-default, #D4C209)',
@@ -110,7 +110,7 @@ const Home = () => {
                       )}
                       {index === 5 && (
                         <div 
-                          className="absolute -left-4 top-[60%] w-6 h-6 rotate-45 flex items-center justify-center z-10"
+                          className="absolute -left-4 top-[48%] w-6 h-6 rotate-45 flex items-center justify-center z-10"
                           style={{
                             borderRadius: 'var(--size-border-radius-4px, 4px)',
                             border: '2px solid #808080',
@@ -135,7 +135,7 @@ const Home = () => {
                       )}
                       {index === phases.length - 1 && (
                         <div 
-                          className="absolute -right-6 top-[60%] w-6 h-6 rotate-45 flex items-center justify-center z-10"
+                          className="absolute -right-6 top-[48%] w-6 h-6 rotate-45 flex items-center justify-center z-10"
                           style={{
                             borderRadius: 'var(--size-border-radius-4px, 4px)',
                             border: '2px solid #808080',
@@ -245,7 +245,7 @@ const Home = () => {
 
 const PhaseColumn = ({ phase, taskNumbers = [], isActive = false }) => {
   return (
-    <div className="w-full flex flex-col items-center border border-gray-300 rounded-sm py-2 px-1 bg-white">
+    <div className="w-full flex flex-col items-center py-2 px-1 bg-white">
       <div className="w-full flex flex-col items-center">
         <h4 className={`text-center mb-3 ${isActive ? 'text-[#E5484D]' : ''}`} style={{
           overflow: 'hidden',

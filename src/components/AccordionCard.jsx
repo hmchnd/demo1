@@ -22,7 +22,7 @@ const AccordionCard = ({ data, onClick, isSelected }) => {
                     }}></div>
                     <span className='text-[#60646C] text-[14px] font-semibold'>{code}</span>
                 </div>
-                <h4 className='text-[14px]/5 font-bold'>{title}</h4>
+                <h4 className='text-[14px]/5 font-bold h-[32px]'>{title}</h4>
                 <div className="flex items-center gap-2">
                     <div className={`w-full h-2 overflow-hidden rounded-[2px] ${hasBorder === false ? "border-none" : "border-[2px]"} border-[#8888EA] relative`} style={{ borderColor: `${borderColor || ''}` }}>
                         <div className="absolute left-0 h-full bg-[#8888EA]"
