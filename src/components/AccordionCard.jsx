@@ -10,19 +10,19 @@ const AccordionCard = ({ data, onClick, isSelected }) => {
     
     return (
         <div 
-          className={`h-max gap-2 relative p-2 rounded-[6px] cursor-pointer ${
-            isSelected ? 'bg-blue-100 border border-blue-300' : 'bg-white'
+          className={`h-max gap-2 relative p-2 rounded-[6px] cursor-pointer border border-gray-200 bg-white ${
+            isSelected ? 'bg-blue-100 border-blue-300' : ''
           }`}
           onClick={onClick}
         >
             <div className='flex flex-col gap-1'>
                 <div className="flex items-center gap-1 text-base">
-                    <div className={`size-3 flex-shrink-0 rounded-full `} style={{
+                    <div className={`size-2.5 flex-shrink-0 rounded-full `} style={{
                         backgroundColor: `${markColor}`
                     }}></div>
-                    <span className='text-[#60646C] text-[14px] font-semibold'>{code}</span>
+                    <span className='text-[#60646C] text-[10px] font-semibold'>{code}</span>
                 </div>
-                <h4 className='text-[14px]/5 font-bold h-[32px]'>{title}</h4>
+                <h4 className='text-[14px]/5 font-bold h-[32px] mt-0'>{title}</h4>
                 <div className="flex items-center gap-2">
                     <div className={`w-full h-2 overflow-hidden rounded-[2px] ${hasBorder === false ? "border-none" : "border-[2px]"} border-[#8888EA] relative`} style={{ borderColor: `${borderColor || ''}` }}>
                         <div className="absolute left-0 h-full bg-[#8888EA]"

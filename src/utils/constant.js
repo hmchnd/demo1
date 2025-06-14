@@ -330,7 +330,7 @@ export const kanbanSidebarConfig = {
     heading: "Develop a Master Project Schedule",
     description_title: "Task description",
     description:
-      "Developing a master project schedule involves organizing and structuring all aspects of the project into a cohesive timeline. It begins with defining the project’s goals and boundaries, ensuring clarity on what needs to be achieved. Tasks are then broken down into smaller activities, dependencies mapped, and resources allocated with realistic time estimates. The critical path is analyzed to identify the sequence of essential tasks, followed by a thorough review and approval process to finalize the schedule and align all stakeholders.",
+      "Project identified",
   },
   projectDetails: [
     { label: "Planned Start Date", value: "19 June 2024" },

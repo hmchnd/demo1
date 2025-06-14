@@ -52,7 +52,7 @@ const Home = () => {
   return (
     <div className="flex min-h-screen h-[87vh] overflow-hidden bg-[#F4F4F4]">
       <div className="flex-1 flex overflow-hidden">
-        <div className={`transition-all duration-300 ${showDetailsPanel ? 'w-[70%]' : 'w-full'}`}>
+        <div className={`transition-all duration-300 ${showDetailsPanel ? 'w-[70%]' : 'w-full'}`} style={{ background: '#FEFEFE' }}>
           <div className="h-full overflow-x-auto">
             <div className="min-w-[1440px] pr-4">
               <Accordion type="multiple" collapsible defaultValue={['phases', ...phases.map(a => a.cuid)]}>
@@ -64,17 +64,30 @@ const Home = () => {
                     <div key={phase.cuid} className="relative">
                       {/* G icons with updated styling */}
                       {index === 0 && (
-                        <div className="absolute -left-6 top-[48%] w-6 h-6 bg-gray-100 rotate-45 flex items-center justify-center z-10"
+                        <div className="absolute -left-4 top-[54%] w-6 h-6 rotate-45 flex items-center justify-center z-10"
                           style={{
                             borderRadius: 'var(--size-border-radius-4px, 4px)',
                             border: '2px solid var(--color-stroke-support-green-dim1-default, #157D15)',
                             background: 'var(--color-fill-component-neutral-dim1-default, #F9F9FB)'
                           }}>
-                          <span className="text-sm font-semibold -rotate-45" style={{ color: '#0D4F0D' }}>G</span>
+                          <span
+                            className="text-sm font-semibold -rotate-45"
+                            style={{
+                              color: 'var(--color-text-green-default, #0D4F0D)',
+                              textAlign: 'center',
+                              fontFamily: 'var(--text-font-primary, Inter)',
+                              fontSize: 'var(--text-size-small, 12px)',
+                              fontStyle: 'normal',
+                              fontWeight: 'var(--text-weight-semibold, 600)',
+                              lineHeight: 'normal',
+                            }}
+                          >
+                            G
+                          </span>
                         </div>
                       )}
                       {index > 0 && index < 4 && (
-                        <div className="absolute -left-4 top-[48%] w-6 h-6 bg-gray-100 rotate-45 flex items-center justify-center z-10"
+                        <div className="absolute -left-4 top-[54%] w-6 h-6 bg-gray-100 rotate-45 flex items-center justify-center z-10"
                           style={{
                             borderRadius: 'var(--size-border-radius-4px, 4px)',
                             border: '2px solid var(--color-stroke-support-green-dim1-default, #157D15)',
@@ -85,7 +98,7 @@ const Home = () => {
                       )}
                       {index === 4 && (
                         <div 
-                          className="absolute -left-4 top-[48%] w-6 h-6 rotate-45 flex items-center justify-center z-10"
+                          className="absolute -left-4 top-[54%] w-6 h-6 rotate-45 flex items-center justify-center z-10"
                           style={{
                             borderRadius: 'var(--size-border-radius-4px, 4px)',
                             border: '2px solid var(--color-stroke-support-yellow-default, #D4C209)',
@@ -110,7 +123,7 @@ const Home = () => {
                       )}
                       {index === 5 && (
                         <div 
-                          className="absolute -left-4 top-[48%] w-6 h-6 rotate-45 flex items-center justify-center z-10"
+                          className="absolute -left-4 top-[54%] w-6 h-6 rotate-45 flex items-center justify-center z-10"
                           style={{
                             borderRadius: 'var(--size-border-radius-4px, 4px)',
                             border: '2px solid #808080',
@@ -135,7 +148,7 @@ const Home = () => {
                       )}
                       {index === phases.length - 1 && (
                         <div 
-                          className="absolute -right-6 top-[48%] w-6 h-6 rotate-45 flex items-center justify-center z-10"
+                          className="absolute -right-6 top-[54%] w-6 h-6 rotate-45 flex items-center justify-center z-10"
                           style={{
                             borderRadius: 'var(--size-border-radius-4px, 4px)',
                             border: '2px solid #808080',
@@ -245,9 +258,9 @@ const Home = () => {
 
 const PhaseColumn = ({ phase, taskNumbers = [], isActive = false }) => {
   return (
-    <div className="w-full flex flex-col items-center py-2 px-1 bg-white">
+    <div className="w-full flex flex-col items-center justify-center border border-gray-300 rounded-sm h-[60px] px-1 bg-white">
       <div className="w-full flex flex-col items-center">
-        <h4 className={`text-center mb-3 ${isActive ? 'text-[#E5484D]' : ''}`} style={{
+        <h4 className={`text-center h-[28px] flex items-center justify-center ${isActive ? 'text-[#E5484D]' : ''}`} style={{
           overflow: 'hidden',
           color: phase === 'Execute' ? 'var(--color-text-brand-default, #AE4F3E)' : 'var(--color-text-neutral-dim1-default, #595959)',
           leadingTrim: 'both',
@@ -263,7 +276,7 @@ const PhaseColumn = ({ phase, taskNumbers = [], isActive = false }) => {
           {phase}
         </h4>
       </div>
-      <div className="w-full min-h-[32px] flex flex-wrap justify-center gap-1 mb-1">
+      <div className="w-full min-h-[32px] flex flex-wrap justify-center gap-1 mb-1 items-center">
         {taskNumbers.map((num) => {
           const getColor = () => {
             // Keep special colors for 14, 15, 16 but make them circular
@@ -279,7 +292,7 @@ const PhaseColumn = ({ phase, taskNumbers = [], isActive = false }) => {
           return (
             <span
               key={num}
-              className={`w-6 h-6 text-xs font-semibold flex justify-center items-center ${getColor()}`}
+              className={`w-6 h-6 text-xs font-semibold flex justify-center items-center ${getColor()} mt-[2px]`}
               style={
                 num >= 1 && num <= 13 ? {
                   border: '1px solid var(--color-stroke-support-green-dim1-default, #157D15)',
