@@ -61,7 +61,64 @@ const Home = () => {
                 {/* Phase Header Grid */}
                 <div className="grid grid-cols-6 gap-2 py-2 pl-6 pr-6 relative">
                   {phases.map((phase, index) => (
-                    <div key={phase.cuid} className="relative">
+                    <div key={phase.cuid} className="relative h-full">
+                      {/* Start separator for first column */}
+                      {index === 0 && (
+                        <div
+                          style={{
+                            position: 'absolute',
+                            top: 0,
+                            left: '-8px',
+                            width: '8px',
+                            height: '100%',
+                            background: '#EBEBEB',
+                            borderRadius: '2px',
+                            pointerEvents: 'none',
+                            zIndex: 1,
+                          }}
+                        />
+                      )}
+                      {/* End separator for last column and last G icon */}
+                      {index === phases.length - 1 && (
+                        <>
+                          <div
+                            style={{
+                              position: 'absolute',
+                              top: 0,
+                              right: '-8px',
+                              width: '8px',
+                              height: '100%',
+                              background: '#EBEBEB',
+                              borderRadius: '2px',
+                              pointerEvents: 'none',
+                              zIndex: 1,
+                            }}
+                          />
+                          <div 
+                            className="absolute -right-6 top-[54%] w-6 h-6 rotate-45 flex items-center justify-center z-10"
+                            style={{
+                              borderRadius: 'var(--size-border-radius-4px, 4px)',
+                              border: '2px solid #808080',
+                              background: 'var(--color-fill-component-neutral-dim1-default, #F9F9FB)'
+                            }}
+                          >
+                            <span 
+                              className="text-sm font-semibold -rotate-45"
+                              style={{
+                                color: '#808080',
+                                textAlign: 'center',
+                                fontFamily: 'var(--text-font-primary, Inter)',
+                                fontSize: 'var(--text-size-small, 12px)',
+                                fontStyle: 'normal',
+                                fontWeight: 'var(--text-weight-semibold, 600)',
+                                lineHeight: 'normal'
+                              }}
+                            >
+                              G
+                            </span>
+                          </div>
+                        </>
+                      )}
                       {/* G icons with updated styling */}
                       {index === 0 && (
                         <div className="absolute -left-4 top-[54%] w-6 h-6 rotate-45 flex items-center justify-center z-10"
@@ -146,36 +203,27 @@ const Home = () => {
                           </span>
                         </div>
                       )}
-                      {index === phases.length - 1 && (
-                        <div 
-                          className="absolute -right-6 top-[54%] w-6 h-6 rotate-45 flex items-center justify-center z-10"
-                          style={{
-                            borderRadius: 'var(--size-border-radius-4px, 4px)',
-                            border: '2px solid #808080',
-                            background: 'var(--color-fill-component-neutral-dim1-default, #F9F9FB)'
-                          }}
-                        >
-                          <span 
-                            className="text-sm font-semibold -rotate-45"
-                            style={{
-                              color: '#808080',
-                              textAlign: 'center',
-                              fontFamily: 'var(--text-font-primary, Inter)',
-                              fontSize: 'var(--text-size-small, 12px)',
-                              fontStyle: 'normal',
-                              fontWeight: 'var(--text-weight-semibold, 600)',
-                              lineHeight: 'normal'
-                            }}
-                          >
-                            G
-                          </span>
-                        </div>
-                      )}
                       <PhaseColumn
                         phase={phase.name}
                         taskNumbers={getPhaseTaskNumbers(index)}
                         isActive={index === 3}
                       />
+                      {/* Separator: only between phases, not after last */}
+                      {index !== phases.length - 1 && (
+                        <div
+                          style={{
+                            position: 'absolute',
+                            top: 0,
+                            right: '-8px',
+                            width: '8px',
+                            height: '100%',
+                            background: '#EBEBEB',
+                            borderRadius: '2px',
+                            pointerEvents: 'none',
+                            zIndex: 1,
+                          }}
+                        />
+                      )}
                     </div>
                   ))}
                 </div>
@@ -192,13 +240,45 @@ const Home = () => {
                     <AccordionContent>
                       <div className="pl-6 pr-6 relative">
                         <div className="grid grid-cols-6 gap-2 py-4 relative">
-                          {phases.map((phase) => {
+                          {phases.map((phase, index) => {
                             const phaseTasks = tasks.filter(
                               task => task.area_id === area.cuid && task.phase_id === phase.cuid
                             );
 
                             return (
-                              <div key={`${area.cuid}-${phase.cuid}`} className="flex flex-col gap-3 relative z-10">
+                              <div key={`${area.cuid}-${phase.cuid}`} className="flex flex-col gap-3 relative z-10 h-full px-2">
+                                {/* Start separator for first column */}
+                                {index === 0 && (
+                                  <div
+                                    style={{
+                                      position: 'absolute',
+                                      top: 0,
+                                      left: '-8px',
+                                      width: '8px',
+                                      height: '100%',
+                                      background: '#EBEBEB',
+                                      borderRadius: '2px',
+                                      pointerEvents: 'none',
+                                      zIndex: 1,
+                                    }}
+                                  />
+                                )}
+                                {/* End separator for last column */}
+                                {index === phases.length - 1 && (
+                                  <div
+                                    style={{
+                                      position: 'absolute',
+                                      top: 0,
+                                      right: '-8px',
+                                      width: '8px',
+                                      height: '100%',
+                                      background: '#EBEBEB',
+                                      borderRadius: '2px',
+                                      pointerEvents: 'none',
+                                      zIndex: 1,
+                                    }}
+                                  />
+                                )}
                                 {phaseTasks.map((task) => (
                                   <AccordionCard
                                     key={task.cuid}
@@ -218,6 +298,22 @@ const Home = () => {
                                     isSelected={selectedTask?.cuid === task.cuid}
                                   />
                                 ))}
+                                {/* Separator: only between phases, not after last */}
+                                {index !== phases.length - 1 && (
+                                  <div
+                                    style={{
+                                      position: 'absolute',
+                                      top: 0,
+                                      right: '-8px',
+                                      width: '8px',
+                                      height: '100%',
+                                      background: '#EBEBEB',
+                                      borderRadius: '2px',
+                                      pointerEvents: 'none',
+                                      zIndex: 1,
+                                    }}
+                                  />
+                                )}
                               </div>
                             );
                           })}
@@ -260,7 +356,7 @@ const Home = () => {
 
 const PhaseColumn = ({ phase, taskNumbers = [], isActive = false }) => {
   return (
-    <div className="w-full flex flex-col items-center justify-center border border-gray-300 rounded-sm h-[60px] px-1 bg-white">
+    <div className="w-full flex flex-col items-center justify-center rounded-sm h-[60px] px-1" style={{ background: '#F9F9FB' }}>
       <div className="w-full flex flex-col items-center">
         <h4 className={`text-center h-[28px] flex items-center justify-center ${isActive ? 'text-[#E5484D]' : ''}`} style={{
           overflow: 'hidden',
