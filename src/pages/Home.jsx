@@ -50,9 +50,9 @@ const Home = () => {
   };
 
   return (
-    <div className="flex min-h-screen h-[87vh] overflow-hidden bg-[#F4F4F4]">
+    <div className="flex min-h-screen h-[87vh] overflow-hidden" style={{ background: '#F4F4F4' }}>
       <div className="flex-1 flex overflow-hidden">
-        <div className={`transition-all duration-300 ${showDetailsPanel ? 'w-[70%]' : 'w-full'}`} style={{ background: '#FEFEFE' }}>
+        <div className={`transition-all duration-300 ${showDetailsPanel ? 'w-[70%]' : 'w-full'}`}>
           <div className="h-full overflow-x-auto">
             <div className="min-w-[1440px] pr-4">
               <Accordion type="multiple" collapsible defaultValue={['phases', ...phases.map(a => a.cuid)]}>
@@ -181,6 +181,7 @@ const Home = () => {
                 </div>
 
                 {/* Task Cards by Area and Phase */}
+                <div style={{ background: '#FEFEFE' }}>
                 {areas.map((area) => (
                   <AccordionItem key={area.cuid} value={area.cuid} className="rounded-sm mt-2">
                     <AccordionTrigger className="bg-[#F9F9FB] px-2 rounded-sm [&>svg]:ml-0 [&>svg]:mr-auto [&>svg]:order-2 flex flex-row">
@@ -225,6 +226,7 @@ const Home = () => {
                     </AccordionContent>
                   </AccordionItem>
                 ))}
+                </div>
               </Accordion>
             </div>
           </div>
