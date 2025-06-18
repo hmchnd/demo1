@@ -55,7 +55,7 @@ const Home = () => {
         <div className={`transition-all duration-300 ${showDetailsPanel ? 'w-[70%]' : 'w-full'}`}>
           <div className="h-full overflow-x-auto">
             <div className="min-w-[1440px] pr-4">
-              <Accordion type="multiple" collapsible defaultValue={['phases', ...phases.map(a => a.cuid)]}>
+              <Accordion type="multiple" collapsible defaultValue={areas.filter(a => a.name === 'Project Management').map(a => a.cuid)}>
                 <TaskAccordion color="#F9F9FB" />
 
                 {/* Phase Header Grid */}
@@ -287,7 +287,7 @@ const Home = () => {
                                       markColor: task.color || "#E5484D",
                                       id: task.cuid,
                                       title: task.name,
-                                      description: task.description || "Developing a master project schedule involves organising and structuring all aspects of the project into a cohesive timeline",
+                                      description: "Project identified",
                                       status: task.status,
                                       assignee: task.assignee || "Amit Tyagi",
                                       startDate: task.planned_start || "2024-01-01",
