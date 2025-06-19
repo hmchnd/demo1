@@ -95,7 +95,7 @@ const Home = () => {
                             }}
                           />
                           <div 
-                            className="absolute -right-6 top-[54%] w-6 h-6 rotate-45 flex items-center justify-center z-10"
+                            className="absolute -right-4 top-[54%] w-6 h-6 rotate-45 flex items-center justify-center z-10"
                             style={{
                               borderRadius: 'var(--size-border-radius-4px, 4px)',
                               border: '2px solid #808080',
@@ -229,9 +229,9 @@ const Home = () => {
                 </div>
 
                 {/* Task Cards by Area and Phase */}
-                <div style={{ background: '#FEFEFE' }}>
+                <div style={{ background: '#FEFEFE', marginTop: 0, paddingTop: 0 }}>
                 {areas.map((area) => (
-                  <AccordionItem key={area.cuid} value={area.cuid} className="rounded-sm mt-2">
+                  <AccordionItem key={area.cuid} value={area.cuid} className="rounded-sm mt-0">
                     <AccordionTrigger className="bg-[#F9F9FB] px-2 rounded-sm [&>svg]:ml-0 [&>svg]:mr-auto [&>svg]:order-2 flex flex-row">
                       <div className="text-[18px] font-bold flex items-center gap-2 order-1">
                         {area.name}
