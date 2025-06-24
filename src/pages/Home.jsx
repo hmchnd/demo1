@@ -55,37 +55,26 @@ const Home = () => {
         <div className={`transition-all duration-300 ${showDetailsPanel ? 'w-[70%]' : 'w-full'}`}>
           <div className="h-full overflow-x-auto">
             <div className="min-w-[1440px] pr-4">
-              <Accordion type="multiple" collapsible defaultValue={areas.filter(a => a.name === 'Project Management').map(a => a.cuid)}>
-                <TaskAccordion color="#F9F9FB" />
+              <div style={{
+                borderTop: '1px solid #E0E0E0',
+                borderLeft: '1px solid #E0E0E0',
+                borderTopLeftRadius: '8px',
+                boxShadow: '0 1px 2px 0 rgba(0, 0, 0, 0.05)'
+              }}>
+                <Accordion type="multiple" collapsible defaultValue={areas.filter(a => a.name === 'Project Management').map(a => a.cuid)}>
+                  <TaskAccordion color="#F9F9FB" />
 
-                {/* Phase Header Grid */}
-                <div className="grid grid-cols-6 gap-2 py-2 pl-6 pr-6 relative">
-                  {phases.map((phase, index) => (
-                    <div key={phase.cuid} className="relative h-full">
-                      {/* Start separator for first column */}
-                      {index === 0 && (
-                        <div
-                          style={{
-                            position: 'absolute',
-                            top: 0,
-                            left: '-8px',
-                            width: '8px',
-                            height: '100%',
-                            background: '#EBEBEB',
-                            borderRadius: '2px',
-                            pointerEvents: 'none',
-                            zIndex: 1,
-                          }}
-                        />
-                      )}
-                      {/* End separator for last column and last G icon */}
-                      {index === phases.length - 1 && (
-                        <>
+                  {/* Phase Header Grid */}
+                  <div className="grid grid-cols-6 gap-2 pt-2 pl-6 pr-6 relative" style={{ paddingBottom: '2px' }}>
+                    {phases.map((phase, index) => (
+                      <div key={phase.cuid} className="relative h-full">
+                        {/* Start separator for first column */}
+                        {index === 0 && (
                           <div
                             style={{
                               position: 'absolute',
                               top: 0,
-                              right: '-8px',
+                              left: '-8px',
                               width: '8px',
                               height: '100%',
                               background: '#EBEBEB',
@@ -94,8 +83,110 @@ const Home = () => {
                               zIndex: 1,
                             }}
                           />
+                        )}
+                        {/* End separator for last column and last G icon */}
+                        {index === phases.length - 1 && (
+                          <>
+                            <div
+                              style={{
+                                position: 'absolute',
+                                top: 0,
+                                right: '-8px',
+                                width: '8px',
+                                height: '100%',
+                                background: '#EBEBEB',
+                                borderRadius: '2px',
+                                pointerEvents: 'none',
+                                zIndex: 1,
+                              }}
+                            />
+                            <div 
+                              className="absolute -right-4 top-[54%] w-6 h-6 rotate-45 flex items-center justify-center z-10"
+                              style={{
+                                borderRadius: 'var(--size-border-radius-4px, 4px)',
+                                border: '2px solid #808080',
+                                background: 'var(--color-fill-component-neutral-dim1-default, #F9F9FB)'
+                              }}
+                            >
+                              <span 
+                                className="text-sm font-semibold -rotate-45"
+                                style={{
+                                  color: '#808080',
+                                  textAlign: 'center',
+                                  fontFamily: 'var(--text-font-primary, Inter)',
+                                  fontSize: 'var(--text-size-small, 12px)',
+                                  fontStyle: 'normal',
+                                  fontWeight: 'var(--text-weight-semibold, 600)',
+                                  lineHeight: 'normal'
+                                }}
+                              >
+                                G
+                              </span>
+                            </div>
+                          </>
+                        )}
+                        {/* G icons with updated styling */}
+                        {index === 0 && (
+                          <div className="absolute -left-4 top-[54%] w-6 h-6 rotate-45 flex items-center justify-center z-10"
+                            style={{
+                              borderRadius: 'var(--size-border-radius-4px, 4px)',
+                              border: '2px solid var(--color-stroke-support-green-dim1-default, #157D15)',
+                              background: 'var(--color-fill-component-neutral-dim1-default, #F9F9FB)'
+                            }}>
+                            <span
+                              className="text-sm font-semibold -rotate-45"
+                              style={{
+                                color: 'var(--color-text-green-default, #0D4F0D)',
+                                textAlign: 'center',
+                                fontFamily: 'var(--text-font-primary, Inter)',
+                                fontSize: 'var(--text-size-small, 12px)',
+                                fontStyle: 'normal',
+                                fontWeight: 'var(--text-weight-semibold, 600)',
+                                lineHeight: 'normal',
+                              }}
+                            >
+                              G
+                            </span>
+                          </div>
+                        )}
+                        {index > 0 && index < 4 && (
+                          <div className="absolute -left-4 top-[54%] w-6 h-6 bg-gray-100 rotate-45 flex items-center justify-center z-10"
+                            style={{
+                              borderRadius: 'var(--size-border-radius-4px, 4px)',
+                              border: '2px solid var(--color-stroke-support-green-dim1-default, #157D15)',
+                              background: 'var(--color-fill-component-neutral-dim1-default, #F9F9FB)'
+                            }}>
+                            <span className="text-sm font-semibold -rotate-45" style={{ color: '#0D4F0D' }}>G</span>
+                          </div>
+                        )}
+                        {index === 4 && (
                           <div 
-                            className="absolute -right-4 top-[54%] w-6 h-6 rotate-45 flex items-center justify-center z-10"
+                            className="absolute -left-4 top-[54%] w-6 h-6 rotate-45 flex items-center justify-center z-10"
+                            style={{
+                              borderRadius: 'var(--size-border-radius-4px, 4px)',
+                              border: '2px solid var(--color-stroke-support-yellow-default, #D4C209)',
+                              background: 'var(--color-fill-component-neutral-dim1-default, #F9F9FB)'
+                            }}
+                          >
+                            <span 
+                              className="text-sm font-semibold -rotate-45"
+                              style={{
+                                color: 'var(--color-text-yellow-default, #5A3E00)',
+                                textAlign: 'center',
+                                fontFamily: 'var(--text-font-primary, Inter)',
+                                fontSize: 'var(--text-size-small, 12px)',
+                                fontStyle: 'normal',
+                                fontWeight: 'var(--text-weight-semibold, 600)',
+                                lineHeight: 'normal'
+                              }}
+                            >
+                              G
+                            </span>
+                          </div>
+                        )}
+                        {index === 5 && (
+                          <div 
+                            className="absolute -left-4 top-[54%] w-6 h-6 rotate-45 flex items-center justify-center z-10"
                             style={{
                               borderRadius: 'var(--size-border-radius-4px, 4px)',
                               border: '2px solid #808080',
@@ -117,213 +208,129 @@ const Home = () => {
                               G
                             </span>
                           </div>
-                        </>
-                      )}
-                      {/* G icons with updated styling */}
-                      {index === 0 && (
-                        <div className="absolute -left-4 top-[54%] w-6 h-6 rotate-45 flex items-center justify-center z-10"
-                          style={{
-                            borderRadius: 'var(--size-border-radius-4px, 4px)',
-                            border: '2px solid var(--color-stroke-support-green-dim1-default, #157D15)',
-                            background: 'var(--color-fill-component-neutral-dim1-default, #F9F9FB)'
-                          }}>
-                          <span
-                            className="text-sm font-semibold -rotate-45"
-                            style={{
-                              color: 'var(--color-text-green-default, #0D4F0D)',
-                              textAlign: 'center',
-                              fontFamily: 'var(--text-font-primary, Inter)',
-                              fontSize: 'var(--text-size-small, 12px)',
-                              fontStyle: 'normal',
-                              fontWeight: 'var(--text-weight-semibold, 600)',
-                              lineHeight: 'normal',
-                            }}
-                          >
-                            G
-                          </span>
-                        </div>
-                      )}
-                      {index > 0 && index < 4 && (
-                        <div className="absolute -left-4 top-[54%] w-6 h-6 bg-gray-100 rotate-45 flex items-center justify-center z-10"
-                          style={{
-                            borderRadius: 'var(--size-border-radius-4px, 4px)',
-                            border: '2px solid var(--color-stroke-support-green-dim1-default, #157D15)',
-                            background: 'var(--color-fill-component-neutral-dim1-default, #F9F9FB)'
-                          }}>
-                          <span className="text-sm font-semibold -rotate-45" style={{ color: '#0D4F0D' }}>G</span>
-                        </div>
-                      )}
-                      {index === 4 && (
-                        <div 
-                          className="absolute -left-4 top-[54%] w-6 h-6 rotate-45 flex items-center justify-center z-10"
-                          style={{
-                            borderRadius: 'var(--size-border-radius-4px, 4px)',
-                            border: '2px solid var(--color-stroke-support-yellow-default, #D4C209)',
-                            background: 'var(--color-fill-component-neutral-dim1-default, #F9F9FB)'
-                          }}
-                        >
-                          <span 
-                            className="text-sm font-semibold -rotate-45"
-                            style={{
-                              color: 'var(--color-text-yellow-default, #5A3E00)',
-                              textAlign: 'center',
-                              fontFamily: 'var(--text-font-primary, Inter)',
-                              fontSize: 'var(--text-size-small, 12px)',
-                              fontStyle: 'normal',
-                              fontWeight: 'var(--text-weight-semibold, 600)',
-                              lineHeight: 'normal'
-                            }}
-                          >
-                            G
-                          </span>
-                        </div>
-                      )}
-                      {index === 5 && (
-                        <div 
-                          className="absolute -left-4 top-[54%] w-6 h-6 rotate-45 flex items-center justify-center z-10"
-                          style={{
-                            borderRadius: 'var(--size-border-radius-4px, 4px)',
-                            border: '2px solid #808080',
-                            background: 'var(--color-fill-component-neutral-dim1-default, #F9F9FB)'
-                          }}
-                        >
-                          <span 
-                            className="text-sm font-semibold -rotate-45"
-                            style={{
-                              color: '#808080',
-                              textAlign: 'center',
-                              fontFamily: 'var(--text-font-primary, Inter)',
-                              fontSize: 'var(--text-size-small, 12px)',
-                              fontStyle: 'normal',
-                              fontWeight: 'var(--text-weight-semibold, 600)',
-                              lineHeight: 'normal'
-                            }}
-                          >
-                            G
-                          </span>
-                        </div>
-                      )}
-                      <PhaseColumn
-                        phase={phase.name}
-                        taskNumbers={getPhaseTaskNumbers(index)}
-                        isActive={index === 3}
-                      />
-                      {/* Separator: only between phases, not after last */}
-                      {index !== phases.length - 1 && (
-                        <div
-                          style={{
-                            position: 'absolute',
-                            top: 0,
-                            right: '-8px',
-                            width: '8px',
-                            height: '100%',
-                            background: '#EBEBEB',
-                            borderRadius: '2px',
-                            pointerEvents: 'none',
-                            zIndex: 1,
-                          }}
+                        )}
+                        <PhaseColumn
+                          phase={phase.name}
+                          taskNumbers={getPhaseTaskNumbers(index)}
+                          isActive={index === 3}
                         />
-                      )}
-                    </div>
-                  ))}
-                </div>
-
-                {/* Task Cards by Area and Phase */}
-                <div style={{ background: '#FEFEFE', marginTop: 0, paddingTop: 0 }}>
-                {areas.map((area) => (
-                  <AccordionItem key={area.cuid} value={area.cuid} className="rounded-sm mt-0">
-                    <AccordionTrigger className="bg-[#F9F9FB] px-2 rounded-sm [&>svg]:ml-0 [&>svg]:mr-auto [&>svg]:order-2 flex flex-row">
-                      <div className="text-[18px] font-bold flex items-center gap-2 order-1">
-                        {area.name}
+                        {/* Separator: only between phases, not after last */}
+                        {index !== phases.length - 1 && (
+                          <div
+                            style={{
+                              position: 'absolute',
+                              top: 0,
+                              right: '-8px',
+                              width: '8px',
+                              height: '100%',
+                              background: '#EBEBEB',
+                              borderRadius: '2px',
+                              pointerEvents: 'none',
+                              zIndex: 1,
+                            }}
+                          />
+                        )}
                       </div>
-                    </AccordionTrigger>
-                    <AccordionContent>
-                      <div className="pl-6 pr-6 relative">
-                        <div className="grid grid-cols-6 gap-2 py-4 relative">
-                          {phases.map((phase, index) => {
-                            const phaseTasks = tasks.filter(
-                              task => task.area_id === area.cuid && task.phase_id === phase.cuid
-                            );
+                    ))}
+                  </div>
 
-                            return (
-                              <div key={`${area.cuid}-${phase.cuid}`} className="flex flex-col gap-3 relative z-10 h-full px-2">
-                                {/* Start separator for first column */}
-                                {index === 0 && (
-                                  <div
-                                    style={{
-                                      position: 'absolute',
-                                      top: 0,
-                                      left: '-8px',
-                                      width: '8px',
-                                      height: '100%',
-                                      background: '#EBEBEB',
-                                      borderRadius: '2px',
-                                      pointerEvents: 'none',
-                                      zIndex: 1,
-                                    }}
-                                  />
-                                )}
-                                {/* End separator for last column */}
-                                {index === phases.length - 1 && (
-                                  <div
-                                    style={{
-                                      position: 'absolute',
-                                      top: 0,
-                                      right: '-8px',
-                                      width: '8px',
-                                      height: '100%',
-                                      background: '#EBEBEB',
-                                      borderRadius: '2px',
-                                      pointerEvents: 'none',
-                                      zIndex: 1,
-                                    }}
-                                  />
-                                )}
-                                {phaseTasks.map((task) => (
-                                  <AccordionCard
-                                    key={task.cuid}
-                                    data={{
-                                      code: task.code || "1A-1",
-                                      markColor: task.color || "#E5484D",
-                                      id: task.cuid,
-                                      title: task.name,
-                                      description: "Project identified",
-                                      status: task.status,
-                                      assignee: task.assignee || "Amit Tyagi",
-                                      startDate: task.planned_start || "2024-01-01",
-                                      endDate: task.planned_finish || "2025-10-19",
-                                      progress: task.pct_complete || "50%",
-                                    }}
-                                    onClick={() => handleTaskClick(task)}
-                                    isSelected={selectedTask?.cuid === task.cuid}
-                                  />
-                                ))}
-                                {/* Separator: only between phases, not after last */}
-                                {index !== phases.length - 1 && (
-                                  <div
-                                    style={{
-                                      position: 'absolute',
-                                      top: 0,
-                                      right: '-8px',
-                                      width: '8px',
-                                      height: '100%',
-                                      background: '#EBEBEB',
-                                      borderRadius: '2px',
-                                      pointerEvents: 'none',
-                                      zIndex: 1,
-                                    }}
-                                  />
-                                )}
-                              </div>
-                            );
-                          })}
+                  {/* Task Cards by Area and Phase */}
+                  <div style={{ background: '#FEFEFE', marginTop: 0, paddingTop: 0 }}>
+                  {areas.map((area) => (
+                    <AccordionItem key={area.cuid} value={area.cuid} className="rounded-sm mt-0">
+                      <AccordionTrigger className="bg-[#F9F9FB] px-2 rounded-sm [&>svg]:ml-0 [&>svg]:mr-auto [&>svg]:order-2 flex flex-row">
+                        <div className="text-[18px] font-bold flex items-center gap-2 order-1">
+                          {area.name}
                         </div>
-                      </div>
-                    </AccordionContent>
-                  </AccordionItem>
-                ))}
-                </div>
-              </Accordion>
+                      </AccordionTrigger>
+                      <AccordionContent>
+                        <div className="pl-6 pr-6 relative">
+                          <div className="grid grid-cols-6 gap-2 py-4 relative">
+                            {phases.map((phase, index) => {
+                              const phaseTasks = tasks.filter(
+                                task => task.area_id === area.cuid && task.phase_id === phase.cuid
+                              );
+
+                              return (
+                                <div key={`${area.cuid}-${phase.cuid}`} className="flex flex-col gap-3 relative z-10 h-full px-2">
+                                  {/* Start separator for first column */}
+                                  {index === 0 && (
+                                    <div
+                                      style={{
+                                        position: 'absolute',
+                                        top: 0,
+                                        left: '-8px',
+                                        width: '8px',
+                                        height: '100%',
+                                        background: '#EBEBEB',
+                                        borderRadius: '2px',
+                                        pointerEvents: 'none',
+                                        zIndex: 1,
+                                      }}
+                                    />
+                                  )}
+                                  {/* End separator for last column */}
+                                  {index === phases.length - 1 && (
+                                    <div
+                                      style={{
+                                        position: 'absolute',
+                                        top: 0,
+                                        right: '-8px',
+                                        width: '8px',
+                                        height: '100%',
+                                        background: '#EBEBEB',
+                                        borderRadius: '2px',
+                                        pointerEvents: 'none',
+                                        zIndex: 1,
+                                      }}
+                                    />
+                                  )}
+                                  {phaseTasks.map((task) => (
+                                    <AccordionCard
+                                      key={task.cuid}
+                                      data={{
+                                        code: task.code || "1A-1",
+                                        markColor: task.color || "#E5484D",
+                                        id: task.cuid,
+                                        title: task.name,
+                                        description: "Project identified",
+                                        status: task.status,
+                                        assignee: task.assignee || "Amit Tyagi",
+                                        startDate: task.planned_start || "2024-01-01",
+                                        endDate: task.planned_finish || "2025-10-19",
+                                        progress: task.pct_complete || "50%",
+                                      }}
+                                      onClick={() => handleTaskClick(task)}
+                                      isSelected={selectedTask?.cuid === task.cuid}
+                                    />
+                                  ))}
+                                  {/* Separator: only between phases, not after last */}
+                                  {index !== phases.length - 1 && (
+                                    <div
+                                      style={{
+                                        position: 'absolute',
+                                        top: 0,
+                                        right: '-8px',
+                                        width: '8px',
+                                        height: '100%',
+                                        background: '#EBEBEB',
+                                        borderRadius: '2px',
+                                        pointerEvents: 'none',
+                                        zIndex: 1,
+                                      }}
+                                    />
+                                  )}
+                                </div>
+                              );
+                            })}
+                          </div>
+                        </div>
+                      </AccordionContent>
+                    </AccordionItem>
+                  ))}
+                  </div>
+                </Accordion>
+              </div>
             </div>
           </div>
         </div>
